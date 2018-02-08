@@ -1,0 +1,32 @@
+ul {list-style-type: none;}
+body {font-family: Verdana, sans-serif;}
+
+/* Month header */
+.month {
+	padding: 25px 25px;
+	width: 100%
+}
+
+/* Month list */
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+
+.month ul li {
+    color: black;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Add button */
+.month .add {
+	padding-top: 0px;
+	float: right;	
+	padding-right: 10%;
+}
+
+table, th, td {
+	border: 1px solid black;
+}
