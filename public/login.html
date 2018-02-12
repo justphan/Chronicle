@@ -5,10 +5,28 @@
 	<title>Login</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
+<form action="calendar.html">
 	<h1>Login</h1>
-	<a href="calendar.html">Login</a>
+
+	<div class="container">
+    <label for="name"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="name" required>
+
+    <label for="pass"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="pass" required>
+
+    <!-- <a href="calendar.html"><button type="submit">Login</button></a> -->
+    <button type="submit">Log In</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+	<!-- <a href="calendar.html">Login</a> -->
 	<a href="signup.html">Sign Up</a>
+
+</form>
 </body>
 </html>

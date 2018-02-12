@@ -1,0 +1,12 @@
+button{
+	display: block;
+}
+
+input{
+	width: 100%;
+	display: inline-block;
+}
+
+.container{
+	padding:16px;
+}
