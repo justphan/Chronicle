@@ -31,5 +31,9 @@ table {
 }
 
 td {
+	border-bottom: 1px solid black;
+}
+
+.quarter td, .half td, .zero td{
 	border-bottom: 1px dashed black;
 }
