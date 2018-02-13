@@ -1,6 +1,6 @@
 var accounts = require("../accounts.json");
 
-exports.addFriend = function(req, res){
+exports.addAccount = function(req, res){
 	req.query.name;
 	req.query.pass;
 	var newAccount = {
