@@ -9,7 +9,8 @@ exports.addEvent = function(req, res) {
 		else {
 			req.query.name;
 		},
-		"time": req.query.time,
+		"timestart": req.query.timestart,
+		"timeend": req.query.timeend,
 		"date": req.query.date
 	};
 	data.events.push(event);
