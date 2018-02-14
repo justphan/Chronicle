@@ -9,5 +9,6 @@ exports.addAccount = function(req, res){
 	};
 	console.log();
 	accounts.accounts.push(newAccount);
+	console.log(accounts.accounts);
 	res.render('index');
 }

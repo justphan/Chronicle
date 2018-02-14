@@ -41,7 +41,7 @@ app.get('/', index.view);
 // app.get('/users', user.list);
 app.get('/add', add.addEvent);
 app.get('/add', add.addCategory);
-app.get('/addaccount'. addaccount.addAccount);
+app.get('/addaccount', addaccount.addAccount);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
