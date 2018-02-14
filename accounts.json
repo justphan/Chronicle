@@ -2,7 +2,21 @@
 	"accounts": [
 		{
 			"name": "ucsdcogs120",
-			"pass": "ilikepizza"
-		}
+			"pass": "ilikepizza",
+			"events": [
+				{
+					"category": null,
+					"name": null,
+					"timestart": null,
+					"timeend": null,
+					"date": null
+				}
+			],
+			"categories": [
+				{ "name": "Work" },
+				{ "name": "Sleep" },
+				{ "name": "Exercise" }
+			]
+		}	
 	]
 }
