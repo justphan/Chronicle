@@ -1,4 +1,4 @@
-var data = require("../data.json");
+var data = require("../accounts.json");
 
 exports.addEvent = function(req, res) {
 	var newName;
