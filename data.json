@@ -1,0 +1,24 @@
+{
+	"events": [
+		{
+			"category": null,
+			"name": null,
+			"timestart": null,
+			"timeend": null,
+			"date": null
+		}
+	],
+
+	"categories": [
+		{
+			"name": "Work"
+
+		},
+		{
+			"name": "Sleep"
+		},
+		{
+			"name": "Exercise"
+		}
+	]
+}

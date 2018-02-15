@@ -7,8 +7,49 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="css/navbar.css" rel="stylesheet">
 	<link href="css/calendar.css" rel="stylesheet">
+	<script>
+		function time(){
+			var today = new Date();
+			var mo = today.getMonth();
+			var d = today.getDate();
+			var day = today.getDay();
+			var h = today.getHours();
+			var m = today.getMinutes();
+
+			var dayoftheweek= new Array(7);
+			dayoftheweek[0] = "Sun";
+			dayoftheweek[1] = "Mon";
+			dayoftheweek[2] = "Tue";
+			dayoftheweek[3] = "Wed";
+			dayoftheweek[4] = "Thu";
+			dayoftheweek[5] = "Fri";
+			dayoftheweek[6] = "Sat";
+			day = dayoftheweek[day];
+
+			var month= new Array(12);
+			month[0] = "January";
+			month[1] = "February";
+			month[2] = "March";
+			month[3] = "April";
+			month[4] = "May";
+			month[5] = "June";
+			month[6] = "July";
+			month[7] = "August";
+			month[8] = "September";
+			month[9] = "October";
+			month[10] = "November";
+			month[11] = "December";
+			mo = month[mo];
+
+			document.getElementById("day").innerHTML = day;
+			document.getElementById("month").innerHTML = mo;
+			document.getElementById("date").innerHTML = d;
+
+			var t = setTimeout(time, 500);
+		}
+	</script>
 </head>
-<body>
+<body onload="time()">
 	<div class="month"> 
   		<ul>
     		<li class="add">
@@ -16,7 +57,7 @@
     				<input type="submit" value="+"/>
     			</form>
     		</li>
-    		<li>January<br></li>
+    		<li id="month"><br></li>
   		</ul>
 	</div>
 
@@ -27,10 +68,10 @@
 		
 		<tr height="100">
 			<th style="width:25%">
-				<h1>Wed</h1>
+				<h1 id="day"></h1>
 			</th>
 			<td style="width:75%">
-				<h1>31</h1>
+				<h1 id="date"></h1>
 			</td>
 		</tr>
 
