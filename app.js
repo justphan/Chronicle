@@ -8,8 +8,11 @@ var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
 
-var index = require('./routes/index');
-var calendar = require('./routes/calendar')
+var login = require('./routes/login');
+var signup = require('./routes/signup');
+var calendar = require('./routes/calendar');
+
+
 // Example route
 // var user = require('./routes/user');
 var add = require('./routes/add');
@@ -37,12 +40,15 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', calendar.view);
+app.get('/', login.view);
+app.get('/calendar', calendar.view);
+
 // Example route
 // app.get('/users', user.list);
 app.get('/add', add.addEvent);
 app.get('/add', add.addCategory);
 app.get('/addaccount', addaccount.addAccount);
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
