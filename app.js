@@ -42,6 +42,7 @@ if ('development' == app.get('env')) {
 
 app.get('/', login.view);
 app.get('/calendar', calendar.view);
+app.get('.signup', signup.view);
 
 // Example route
 // app.get('/users', user.list);
