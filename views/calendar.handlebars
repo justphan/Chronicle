@@ -51,16 +51,10 @@
 			}
 
 			document.getElementById("h").innerHTML = h;
-			document.getElementsById("merid") = "PM";
-			if (document.getElementById("h").innerHTML > 12){
-				document.getElementsById("merid") = "AM";
-			}
 
 			document.getElementById("h+1").innerHTML = h + 1;
-			document.getElementsById("merid+1") = "PM";
 			if (document.getElementById("h+1").innerHTML > 12){
 				document.getElementById("h+1").innerHTML = document.getElementById("h+1").innerHTML-12;
-				documents.getElementById("merid+1").innerHTML = "AM";
 			}
 
 			document.getElementById("h+2").innerHTML = h + 2;
@@ -137,7 +131,7 @@
 		</tr>
 
 		<tr class="zero" >
-			<th rowspan="4"><span id="h"></span></th>
+			<th rowspan="4"><span id="h"></span>PM</th>
 			<td >:00</td>
 		</tr>
 		<tr class="quarter">

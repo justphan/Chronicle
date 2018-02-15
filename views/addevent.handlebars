@@ -7,6 +7,7 @@
 	<meta name="viewport">
 	<link href="css/navbar.css" rel="stylesheet">
 	<link href="css/bootstrap.css" rel="stylesheet">
+	<script src="/accounts.json"></script>
 
 </head>
 
@@ -17,8 +18,15 @@
 
 		<div>
 			<select name="category">
-				{{#each categories}}
+				<script type="text/javascript"> 
+					var data= require("../accounts.json");
+					var acc = data.accounts[0];
+				</script>
+				{{#each accounts}}
+					{{#each categories}}
 					<option value="{{name}}">{{name}}</option>
+					
+					{{/each}}
 				{{/each}}
 			</select>
 		</div>
