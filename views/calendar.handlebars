@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="css/navbar.css" rel="stylesheet">
 	<link href="css/calendar.css" rel="stylesheet">
+	<script src="js/daypilot-all.min.js" type="text/javascript"></script>
 	<script>
 		function time(){
 			var today = new Date();
@@ -53,7 +54,7 @@
 	<div class="month"> 
   		<ul>
     		<li class="add">
-    			<form action="addevent.html">
+    			<form action="/addevent">
     				<input type="submit" value="+"/>
     			</form>
     		</li>
@@ -61,9 +62,17 @@
   		</ul>
 	</div>
 
-
+<div id="dp"></div>
+<script type="text/javascript">
+	var dp = new DayPilot.Calendar("dp");
+	dp.viewType = "Day";
+	dp.init();
+	dp.events.list = [{"id":"1", "text":"Event", "start":"2018-02-14T10:30:00", "end":"2018-02-14T12:30:00"}];
+	dp.update();
+</script>
 
 <!-- Calendar elements  -->
+<!--
 	<table style="width:100%">
 		
 		<tr height="100">
@@ -75,8 +84,6 @@
 			</td>
 		</tr>
 
-
-<!-- Each hour,  should edit eventually to make this a loop and contain every day -->
 		<tr class="zero" >
 			<th rowspan="4">1PM</th>
 			<td >:00</td>
@@ -202,9 +209,9 @@
 		<tr>
 			<td>:45</td>
 		</tr>
-<!-- End of hour elements -->
+	
 
-	</table>
+	</table>  -->
 
 	<div class="navbar">
 		<a href="calendar.html">Calendar</a>
