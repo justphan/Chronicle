@@ -46,7 +46,7 @@
 			document.getElementById("month").innerHTML = mo;
 			document.getElementById("date").innerHTML = d;
 
-			if (h>12){
+		/*	if (h>12){
 				h=h-12
 			}
 
@@ -92,11 +92,11 @@
 				document.getElementById("h+8").innerHTML = document.getElementById("h+8").innerHTML-12;
 			}
 
-			var t = setTimeout(time, 500);
+			var t = setTimeout(time, 500);*/
 		}
 	</script>
 </head>
-<body onload="time()">
+<body onload="time()" style="padding-bottom:50px">
 	<div class="month"> 
   		<ul>
     		<li class="add">
@@ -119,7 +119,7 @@
 -->
 <!-- Calendar elements  -->
 
-	<table style="width:100%">
+	<table style="width:100%; height:50%" >
 		
 		<tr height="100">
 			<th style="width:25%">
@@ -131,7 +131,7 @@
 		</tr>
 
 		<tr class="zero" >
-			<th rowspan="4"><span id="h"></span>PM</th>
+			<th rowspan="4">12AM</th>
 			<td >:00</td>
 		</tr>
 		<tr class="quarter">
@@ -145,7 +145,7 @@
 		</tr>
 
 		<tr class="zero" >
-			<th rowspan="4"><span id="h+1"></span>PM</th>
+			<th rowspan="4">1AM</th>
 			<td >:00</td>
 		</tr>
 		<tr class="quarter">
@@ -159,7 +159,7 @@
 		</tr>
 
 		<tr class="zero" >
-			<th rowspan="4"><span id="h+2"></span>PM</th>
+			<th rowspan="4">2AM</th>
 			<td >:00</td>
 		</tr>
 		<tr class="quarter">
@@ -173,7 +173,7 @@
 		</tr>
 
 		<tr class="zero" >
-			<th rowspan="4"><span id="h+3"></span>PM</th>
+			<th rowspan="4">3AM</th>
 			<td >:00</td>
 		</tr>
 		<tr class="quarter">
@@ -187,7 +187,7 @@
 		</tr>
 
 		<tr class="zero" >
-			<th rowspan="4"><span id="h+4"></span>PM</th>
+			<th rowspan="4">4AM</th>
 			<td >:00</td>
 		</tr>
 		<tr class="quarter">
@@ -201,7 +201,7 @@
 		</tr>
 
 		<tr class="zero" >
-			<th rowspan="4"><span id="h+5"></span>PM</th>
+			<th rowspan="4">5AM</th>
 			<td >:00</td>
 		</tr>
 		<tr class="quarter">
@@ -215,7 +215,7 @@
 		</tr>
 
 		<tr class="zero" >
-			<th rowspan="4"><span id="h+6"></span>PM</th>
+			<th rowspan="4">6AM</th>
 			<td >:00</td>
 		</tr>
 		<tr class="quarter">
@@ -229,7 +229,7 @@
 		</tr>
 
 		<tr class="zero" >
-			<th rowspan="4"><span id="h+7"></span>PM</th>
+			<th rowspan="4">7AM</th>
 			<td >:00</td>
 		</tr>
 		<tr class="quarter">
@@ -243,7 +243,35 @@
 		</tr>
 
 		<tr class="zero" >
-			<th rowspan="4"><span id="h+8"></span>PM</th>
+			<th rowspan="4">8AM</th>
+			<td >:00</td>
+		</tr>
+		<tr class="quarter">
+			<td >:15</td>
+		</tr>
+		<tr class="half">
+			<td>:30</td>
+		</tr>
+		<tr>
+			<td>:45</td>
+		</tr>
+
+		<tr class="zero" >
+			<th rowspan="4">9AM</th>
+			<td >:00</td>
+		</tr>
+		<tr class="quarter">
+			<td >:15</td>
+		</tr>
+		<tr class="half">
+			<td>:30</td>
+		</tr>
+		<tr>
+			<td>:45</td>
+		</tr>
+
+		<tr class="zero" >
+			<th rowspan="4">10AM</th>
 			<td >:00</td>
 		</tr>
 		<tr class="quarter">
@@ -256,7 +284,187 @@
 			<td>:45</td>
 		</tr>
 	
+		<tr class="zero" >
+			<th rowspan="4">11AM</th>
+			<td >:00</td>
+		</tr>
+		<tr class="quarter">
+			<td >:15</td>
+		</tr>
+		<tr class="half">
+			<td>:30</td>
+		</tr>
+		<tr>
+			<td>:45</td>
+		</tr>
 
+		<tr class="zero" >
+			<th rowspan="4">12PM</th>
+			<td >:00</td>
+		</tr>
+		<tr class="quarter">
+			<td >:15</td>
+		</tr>
+		<tr class="half">
+			<td>:30</td>
+		</tr>
+		<tr>
+			<td>:45</td>
+		</tr>
+
+		<tr class="zero" >
+			<th rowspan="4">1PM</th>
+			<td >:00</td>
+		</tr>
+		<tr class="quarter">
+			<td >:15</td>
+		</tr>
+		<tr class="half">
+			<td>:30</td>
+		</tr>
+		<tr>
+			<td>:45</td>
+		</tr>
+
+		<tr class="zero" >
+			<th rowspan="4">2PM</th>
+			<td >:00</td>
+		</tr>
+		<tr class="quarter">
+			<td >:15</td>
+		</tr>
+		<tr class="half">
+			<td>:30</td>
+		</tr>
+		<tr>
+			<td>:45</td>
+		</tr>
+
+		<tr class="zero" >
+			<th rowspan="4">3PM</th>
+			<td >:00</td>
+		</tr>
+		<tr class="quarter">
+			<td >:15</td>
+		</tr>
+		<tr class="half">
+			<td>:30</td>
+		</tr>
+		<tr>
+			<td>:45</td>
+		</tr>
+
+		<tr class="zero" >
+			<th rowspan="4">4PM</th>
+			<td >:00</td>
+		</tr>
+		<tr class="quarter">
+			<td >:15</td>
+		</tr>
+		<tr class="half">
+			<td>:30</td>
+		</tr>
+		<tr>
+			<td>:45</td>
+		</tr>
+
+		<tr class="zero" >
+			<th rowspan="4">5PM</th>
+			<td >:00</td>
+		</tr>
+		<tr class="quarter">
+			<td >:15</td>
+		</tr>
+		<tr class="half">
+			<td>:30</td>
+		</tr>
+		<tr>
+			<td>:45</td>
+		</tr>
+
+		<tr class="zero" >
+			<th rowspan="4">6PM</th>
+			<td >:00</td>
+		</tr>
+		<tr class="quarter">
+			<td >:15</td>
+		</tr>
+		<tr class="half">
+			<td>:30</td>
+		</tr>
+		<tr>
+			<td>:45</td>
+		</tr>
+
+		<tr class="zero" >
+			<th rowspan="4">7PM</th>
+			<td >:00</td>
+		</tr>
+		<tr class="quarter">
+			<td >:15</td>
+		</tr>
+		<tr class="half">
+			<td>:30</td>
+		</tr>
+		<tr>
+			<td>:45</td>
+		</tr>
+
+		<tr class="zero" >
+			<th rowspan="4">8PM</th>
+			<td >:00</td>
+		</tr>
+		<tr class="quarter">
+			<td >:15</td>
+		</tr>
+		<tr class="half">
+			<td>:30</td>
+		</tr>
+		<tr>
+			<td>:45</td>
+		</tr>
+
+		<tr class="zero" >
+			<th rowspan="4">9PM</th>
+			<td >:00</td>
+		</tr>
+		<tr class="quarter">
+			<td >:15</td>
+		</tr>
+		<tr class="half">
+			<td>:30</td>
+		</tr>
+		<tr>
+			<td>:45</td>
+		</tr>
+
+		<tr class="zero" >
+			<th rowspan="4">10PM</th>
+			<td >:00</td>
+		</tr>
+		<tr class="quarter">
+			<td >:15</td>
+		</tr>
+		<tr class="half">
+			<td>:30</td>
+		</tr>
+		<tr>
+			<td>:45</td>
+		</tr>
+
+		<tr class="zero" >
+			<th rowspan="4">11PM</th>
+			<td >:00</td>
+		</tr>
+		<tr class="quarter">
+			<td >:15</td>
+		</tr>
+		<tr class="half">
+			<td>:30</td>
+		</tr>
+		<tr>
+			<td>:45</td>
+		</tr>
 	</table>  
 
 	<div class="navbar">
