@@ -12,6 +12,7 @@ var login = require('./routes/login');
 var signup = require('./routes/signup');
 var calendar = require('./routes/calendar');
 var addevent = require('./routes/addevent');
+var graph = require('./routes/graph');
 
 
 // Example route
@@ -45,6 +46,7 @@ app.get('/', login.view);
 app.get('/calendar', calendar.view);
 app.get('/signup', signup.view);
 app.get('/addevent', addevent.view);
+app.get('/graph', graph.view);
 
 // Example route
 // app.get('/users', user.list);

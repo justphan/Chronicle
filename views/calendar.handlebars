@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="css/navbar.css" rel="stylesheet">
 	<link href="css/calendar.css" rel="stylesheet">
-	<script src="js/daypilot-all.min.js" type="text/javascript"></script>
+	
 	<script>
 		function time(){
 			var today = new Date();
@@ -125,14 +125,18 @@
 			<th style="width:25%">
 				<h1 id="day"></h1>
 			</th>
-			<td style="width:75%">
+			<td style="width:15%">
+				<h1 id="date"></h1>
+			</td>
+			<td style="width:60%">
 				<h1 id="date"></h1>
 			</td>
 		</tr>
 
-		<tr class="zero" >
+		<tr class="zero" id="AM12" >
 			<th rowspan="4">12AM</th>
 			<td >:00</td>
+			<td></td>
 		</tr>
 		<tr class="quarter">
 			<td >:15</td>

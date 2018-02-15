@@ -1,0 +1,85 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Your Activity</title>
+	<meta charset="utf-8">
+	<meta name="viewport">
+	<link href="css/navbar.css" rel="stylesheet">
+	<link href="css/dwmy.css" rel="stylesheet">
+	<style>
+		table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+		th, td{
+			padding: 20px;
+		}
+	</style>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     10],
+          ['Sleep',      2],
+          ['Exercise',  2],
+        ]);
+
+        var options = {
+          title: 'Your Daily Activity'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+</head>
+
+<body>
+	<div class="Heading">
+		<h1>Your Activity</h1>
+	</div>
+
+	<table width ="100%">
+		<tr>
+			<th><button type="button" class="button">D</button></th>
+			<th><button type="button" class="button">W</button></th>
+			<th><button type="button" class="button">M</button></th>
+			<th><button type="button" class="button">Y</button></th>
+		</tr>
+	</table>
+
+	<div class="graph">  
+		<a href="" class="thumbnail">
+			<img src ="piechart.JPG" alt = "JPEG Image">
+		</a>
+	</div>
+
+	<div class="activities" id="activity1">
+		<p>Work</p>
+	</div>
+
+	<div class="activities" id="activity2">
+		<p>Sleep</p>
+	</div>
+
+	<div class="activities" id="activity3">
+		<p>Exercise</p>
+	</div>
+
+	<div id="piechart" style="width: 800px; height: 800px;">	</div>
+
+	<div class="navbar">
+		<a href="calendar.html">Calendar</a>
+		<a href="graph.html">Your Activity</a>
+		<a href="settings.html">Settings</a>
+		<a href="login.html">Logout</a>
+	</div>
+</body>
+</html>
