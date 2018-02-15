@@ -45,6 +45,58 @@
 			document.getElementById("month").innerHTML = mo;
 			document.getElementById("date").innerHTML = d;
 
+			if (h>12){
+				h=h-12
+			}
+
+			document.getElementById("h").innerHTML = h;
+			document.getElementsById("merid") = "PM";
+			if (document.getElementById("h").innerHTML > 12){
+				document.getElementsById("merid") = "AM";
+			}
+
+			document.getElementById("h+1").innerHTML = h + 1;
+			document.getElementsById("merid+1") = "PM";
+			if (document.getElementById("h+1").innerHTML > 12){
+				document.getElementById("h+1").innerHTML = document.getElementById("h+1").innerHTML-12;
+				documents.getElementById("merid+1").innerHTML = "AM";
+			}
+
+			document.getElementById("h+2").innerHTML = h + 2;
+			if (document.getElementById("h+2").innerHTML > 12){
+				document.getElementById("h+2").innerHTML = document.getElementById("h+2").innerHTML-12;
+			}
+
+			document.getElementById("h+3").innerHTML = h + 3;
+			if (document.getElementById("h+3").innerHTML > 12){
+				document.getElementById("h+3").innerHTML = document.getElementById("h+3").innerHTML-12;
+			}
+
+			document.getElementById("h+4").innerHTML = h + 4;
+			if (document.getElementById("h+4").innerHTML > 12){
+				document.getElementById("h+4").innerHTML = document.getElementById("h+4").innerHTML-12;
+			}
+
+			document.getElementById("h+5").innerHTML = h + 5;
+			if (document.getElementById("h+5").innerHTML > 12){
+				document.getElementById("h+5").innerHTML = document.getElementById("h+5").innerHTML-12;
+			}
+
+			document.getElementById("h+6").innerHTML = h + 6;
+			if (document.getElementById("h+6").innerHTML > 12){
+				document.getElementById("h+6").innerHTML = document.getElementById("h+6").innerHTML-12;
+			}
+			
+			document.getElementById("h+7").innerHTML = h + 7;
+
+			if (document.getElementById("h+7").innerHTML > 12){
+				document.getElementById("h+7").innerHTML = document.getElementById("h+7").innerHTML-12;
+			}
+			document.getElementById("h+8").innerHTML = h + 8;
+			if (document.getElementById("h+8").innerHTML > 12){
+				document.getElementById("h+8").innerHTML = document.getElementById("h+8").innerHTML-12;
+			}
+
 			var t = setTimeout(time, 500);
 		}
 	</script>
@@ -78,7 +130,7 @@
 
 <!-- Each hour,  should edit eventually to make this a loop and contain every day -->
 		<tr class="zero" >
-			<th rowspan="4">1PM</th>
+			<th rowspan="4"><span id="h"></span></th>
 			<td >:00</td>
 		</tr>
 		<tr class="quarter">
@@ -92,7 +144,7 @@
 		</tr>
 
 		<tr class="zero" >
-			<th rowspan="4">2PM</th>
+			<th rowspan="4"><span id="h+1"></span>PM</th>
 			<td >:00</td>
 		</tr>
 		<tr class="quarter">
@@ -106,7 +158,7 @@
 		</tr>
 
 		<tr class="zero" >
-			<th rowspan="4">3PM</th>
+			<th rowspan="4"><span id="h+2"></span>PM</th>
 			<td >:00</td>
 		</tr>
 		<tr class="quarter">
@@ -120,7 +172,7 @@
 		</tr>
 
 		<tr class="zero" >
-			<th rowspan="4">4PM</th>
+			<th rowspan="4"><span id="h+3"></span>PM</th>
 			<td >:00</td>
 		</tr>
 		<tr class="quarter">
@@ -134,7 +186,7 @@
 		</tr>
 
 		<tr class="zero" >
-			<th rowspan="4">5PM</th>
+			<th rowspan="4"><span id="h+4"></span>PM</th>
 			<td >:00</td>
 		</tr>
 		<tr class="quarter">
@@ -148,7 +200,7 @@
 		</tr>
 
 		<tr class="zero" >
-			<th rowspan="4">6PM</th>
+			<th rowspan="4"><span id="h+5"></span>PM</th>
 			<td >:00</td>
 		</tr>
 		<tr class="quarter">
@@ -162,7 +214,7 @@
 		</tr>
 
 		<tr class="zero" >
-			<th rowspan="4">7PM</th>
+			<th rowspan="4"><span id="h+6"></span>PM</th>
 			<td >:00</td>
 		</tr>
 		<tr class="quarter">
@@ -176,7 +228,7 @@
 		</tr>
 
 		<tr class="zero" >
-			<th rowspan="4">8PM</th>
+			<th rowspan="4"><span id="h+7"></span>PM</th>
 			<td >:00</td>
 		</tr>
 		<tr class="quarter">
@@ -190,7 +242,7 @@
 		</tr>
 
 		<tr class="zero" >
-			<th rowspan="4">9PM</th>
+			<th rowspan="4"><span id="h+8"></span>PM</th>
 			<td >:00</td>
 		</tr>
 		<tr class="quarter">
