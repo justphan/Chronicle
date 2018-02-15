@@ -1,0 +1,111 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Add Event</title>
+	<meta charset="utf-8">
+	<meta name="viewport">
+	<link href="css/navbar.css" rel="stylesheet">
+	<link href="css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<form id="addEventForm" role="form" method="get" action="/add">
+		<h3>Add Event</h3>
+
+		<div>
+			<select name="category">
+				{{#each categories}}
+					<option value="{{name}}">{{name}}</option>
+				{{/each}}
+			</select>
+		</div>
+
+		<div> 
+			<br>Task name:<br>
+			<input type="text" name="name"><br>
+		</div>
+
+		<div>
+			<table>
+				<tr>
+					<td>
+						<select name="timestart">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+						</select>
+						&#58;
+					</td>
+					<td>
+						<select name="timestart">
+							<option value="00">00</option>
+							<option value="30">30</option>
+						</select>
+					</td>
+					<td>to</td>
+					<td>
+							<select name="timeend">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+						</select>
+						&#58;
+					</td>
+					<td>
+						<select name="timeend">
+							<option value="00">00</option>
+							<option value="30">30</option>
+						</select>
+					</td>
+			</table>	
+		</div>
+
+		<div>
+			<table>
+				<tr>
+					<th>
+
+						<div class="cancel">
+							<a href="/calendar" class="btn btn-default">Cancel</a>
+						</div>
+					</th>
+
+					<th>
+						<div class="save">
+							<button type="submit">Save</button>
+						</div>
+					</th>
+				</tr>
+			</table>
+		</div>
+	</form>
+
+	<div class="navbar">
+		<a href="calendar.html">Calendar</a>
+		<a href="graph.html">Your Activity</a>
+		<a href="settings.html">Settings</a>
+		<a href="login.html">Logout</a>
+	</div>
+
+</body>

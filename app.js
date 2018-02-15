@@ -11,6 +11,7 @@ var handlebars = require('express3-handlebars')
 var login = require('./routes/login');
 var signup = require('./routes/signup');
 var calendar = require('./routes/calendar');
+var addevent = require('./routes/addevent');
 
 
 // Example route
@@ -43,11 +44,12 @@ if ('development' == app.get('env')) {
 app.get('/', login.view);
 app.get('/calendar', calendar.view);
 app.get('/signup', signup.view);
+app.get('/addevent', addevent.view);
 
 // Example route
 // app.get('/users', user.list);
 app.get('/add', add.addEvent);
-app.get('/add', add.addCategory);
+//app.get('/add', add.addCategory);
 app.get('/addaccount', addaccount.addAccount);
 
 
