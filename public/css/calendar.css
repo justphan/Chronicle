@@ -28,6 +28,7 @@ ul {list-style-type: none;}
 
 table {
 	border: 1px solid black;
+	border-spacing: 0px;
 }
 
 td {
@@ -37,3 +38,11 @@ td {
 .quarter td, .half td, .zero td{
 	border-bottom: 1px dashed black;
 }
+
+.AM12.zero td.event{
+	background-color:blue;
+}
+
+ [id="69"]{
+ 	background-color:green;
+ }
