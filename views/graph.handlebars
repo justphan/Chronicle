@@ -18,26 +18,40 @@
 	</style>
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
 
-      function drawChart() {
+    	google.charts.load('current', {'packages':['corechart']});
+    	google.charts.setOnLoadCallback(drawChart);
+    	var json = [];
 
-        var data = google.visualization.arrayToDataTable([
+		{{#each categories}}
+			if({{name}}!== null)
+				json.push([{{name}}, 0]);
+		{{/each}}
+		{{#each events}}
+  			for(categ in json) {
+  				if({{category}} == categ[0])
+  					categ[1] += parseInt({{timeend}}[0]) - parseInt({{timestart}}[0]);
+  			}
+  		{{/each}}
+
+      	function drawChart() {
+
+        	var dataGraph = google.visualization.arrayToDataTable(json);
+        	/*[
           ['Task', 'Hours per Day'],
           ['Work',     10],
           ['Sleep',      2],
           ['Exercise',  2],
-        ]);
+        ]);*/
 
-        var options = {
-          title: 'Your Daily Activity'
-        };
+        	var options = {
+          	title: 'Your Daily Activity'
+        	};
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        	var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
-        chart.draw(data, options);
-      }
+        	chart.draw(dataGraph, options);
+    	}
     </script>
 </head>
 
@@ -76,10 +90,10 @@
 	<div id="piechart" style="width: 800px; height: 800px;">	</div>
 
 	<div class="navbar">
-		<a href="calendar.html">Calendar</a>
-		<a href="graph.html">Your Activity</a>
-		<a href="settings.html">Settings</a>
-		<a href="login.html">Logout</a>
+		<a href="/calendar">Calendar</a>
+		<a href="/graph">Your Activity</a>
+		<a href="/settings">Settings</a>
+		<a href="/login">Logout</a>
 	</div>
 </body>
 </html>
