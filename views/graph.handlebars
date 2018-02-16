@@ -18,21 +18,27 @@
 	</style>
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-
+    	var decodedJson = decodeURIComponent("{{{encodedJson}}}");
+		var jsonObj = JSON.parse(decodedJson);
     	google.charts.load('current', {'packages':['corechart']});
     	google.charts.setOnLoadCallback(drawChart);
-    	var json = [];
+    	var json = [['Task', 'Minutes per Day']];
 
-		{{#each categories}}
-			if({{name}}!== null)
-				json.push([{{name}}, 0]);
-		{{/each}}
-		{{#each events}}
+    	var x;
+		for(x in jsonObj.accounts[0].categories) {
+			if(jsonObj.accounts[0].categories[x] !== null)
+				json.push([jsonObj.accounts[0].categories[x].name, 0]);
+		}
+		var y;
+		var eve;
+		for(y in jsonObj.accounts[0].events) {
+			eve = jsonObj.accounts[0].events[y];
   			for(categ in json) {
-  				if({{category}} == categ[0])
-  					categ[1] += parseInt({{timeend}}[0]) - parseInt({{timestart}}[0]);
+  				if(eve.category == json[categ][0])
+  					json[categ][1] += (eve.timeend - eve.timestart)*15;
   			}
-  		{{/each}}
+  		}
+  		console.log(json);
 
       	function drawChart() {
 
@@ -59,7 +65,7 @@
 	<div class="Heading">
 		<h1>Your Activity</h1>
 	</div>
-
+<!--
 	<table width ="100%">
 		<tr>
 			<th><button type="button" class="button">D</button></th>
@@ -68,7 +74,8 @@
 			<th><button type="button" class="button">Y</button></th>
 		</tr>
 	</table>
-
+-->
+<!--
 	<div class="graph">  
 		<a href="" class="thumbnail">
 			<img src ="piechart.JPG" alt = "JPEG Image">
@@ -86,7 +93,7 @@
 	<div class="activities" id="activity3">
 		<p>Exercise</p>
 	</div>
-
+-->
 	<div id="piechart" style="width: 800px; height: 800px;">	</div>
 
 	<div class="navbar">
