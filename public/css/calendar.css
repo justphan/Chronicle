@@ -33,6 +33,7 @@ table {
 
 td {
 	border-bottom: 1px solid black;
+
 }
 
 .quarter td, .half td, .zero td{
@@ -43,6 +44,21 @@ td {
 	background-color:blue;
 }
 
- [id="69"]{
+ [id="4"]{
+ 	background-color:blue;
+ 	text-align: center;
+ }
+[id="36"]{
  	background-color:green;
+ 	text-align: center;
+ }
+
+[id="44"]{
+ 	background-color: orange;
+ 	text-align: center;
+ }
+
+ [id="60"]{
+ 	background-color:orange;
+ 	text-align: center;
  }

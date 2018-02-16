@@ -155,7 +155,7 @@
 		<tr class="zero" >
 			<th rowspan="4">1AM</th>
 			<td >:00</td>
-			<td id="4"></td>
+			<td id="4" rowspan="32">Sleep</td>
 		</tr>
 		<tr class="quarter">
 			<td >:15</td>
@@ -173,6 +173,7 @@
 		<tr class="zero">
 			<th rowspan="4">2AM</th>
 			<td id="8">:00</td>
+			<td></td>
 		</tr>
 		<tr class="quarter">
 			<td>:15</td>
@@ -298,7 +299,7 @@
 		<tr class="zero" >
 			<th rowspan="4">9AM</th>
 			<td >:00</td>
-			<td id="36"></td>
+			<td id="36" rowspan="5">Morning Run</td>
 		</tr>
 		<tr class="quarter">
 			<td >:15</td>
@@ -334,7 +335,7 @@
 		<tr class="zero" >
 			<th rowspan="4">11AM</th>
 			<td >:00</td>
-			<td id="44"></td>
+			<td id="44" rowspan="7">Class</td>
 		</tr>
 		<tr class="quarter">
 			<td >:15</td>
@@ -406,7 +407,7 @@
 		<tr class="zero" >
 			<th rowspan="4">3PM</th>
 			<td >:00</td>
-			<td id="60"></td>
+			<td id="60" rowspan="21">COGS 120 Assignment</td>
 		</tr>
 		<tr class="quarter">
 			<td >:15</td>
@@ -568,9 +569,9 @@
 
 
 	{{#each accounts.0.events}}
-		<p>name: {{name}}</p>
+	<!--	<p>name: {{name}}</p>
 		<p>id start: {{timestart}}</p>
-		<p>id end: {{timeend}}</p>
+		<p>id end: {{timeend}}</p> -->	
 		<script>
 			console.log("this is the timestart being called in javascript"+ {{timestart}});
 			//document.getElementByID({{timestart}}).style.background-color="red";
