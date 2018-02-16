@@ -41,7 +41,7 @@ exports.addEvent = function(req, res) {
 	data.accounts[0].events.push(toAddEvent);
 
 	console.log(data.accounts[0].events);
-	res.render('calendar');
+	res.render('calendar', {encodedJson : encodeURIComponent(JSON.stringify(data))});
 }
 
 exports.addCategory = function(req, res) {
