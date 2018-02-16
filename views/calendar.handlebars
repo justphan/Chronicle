@@ -157,7 +157,7 @@
 		<tr class="zero" >
 			<th rowspan="4">1AM</th>
 			<td >:00</td>
-			<td id="4" rowspan="32">Sleep</td>
+			<td id="4"></td>
 		</tr>
 		<tr class="quarter">
 			<td >:15</td>
@@ -174,8 +174,8 @@
 
 		<tr class="zero">
 			<th rowspan="4">2AM</th>
-			<td id="8">:00</td>
-			<td></td>
+			<td>:00</td>
+			<td id="8"></td>
 		</tr>
 		<tr class="quarter">
 			<td>:15</td>
@@ -301,7 +301,7 @@
 		<tr class="zero" >
 			<th rowspan="4">9AM</th>
 			<td >:00</td>
-			<td id="36" rowspan="5">Morning Run</td>
+			<td id="36"></td>
 		</tr>
 		<tr class="quarter">
 			<td >:15</td>
@@ -337,7 +337,7 @@
 		<tr class="zero" >
 			<th rowspan="4">11AM</th>
 			<td >:00</td>
-			<td id="44" rowspan="7">Class</td>
+			<td id="44"></td>
 		</tr>
 		<tr class="quarter">
 			<td >:15</td>
@@ -409,7 +409,7 @@
 		<tr class="zero" >
 			<th rowspan="4">3PM</th>
 			<td >:00</td>
-			<td id="60" rowspan="21">COGS 120 Assignment</td>
+			<td id="60"></td>
 		</tr>
 		<tr class="quarter">
 			<td >:15</td>
@@ -613,14 +613,14 @@
 		for (x in jsonObj.accounts[0].events) {
 			eve = jsonObj.accounts[0].events[x];
 			console.log(eve);
-			for (var i = 0; i <= eve.timeend; i++) {
+			for (var i = eve.timestart; i <= eve.timeend; i++) {
 				if(eve.category == "Work")
 					color = "orange";
 				if(eve.category == "Exercise")
 					color = "green";
 				if(eve.category == "Sleep")
 					color = "blue";
-				document.getElementById((eve.timestart+i).toString()).style.backgroundColor = color;
+				document.getElementById((i).toString()).style.backgroundColor = color;
 			}
 		}
 	</script>

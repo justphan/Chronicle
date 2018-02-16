@@ -9,28 +9,28 @@
 					"name": "COGS 120 Assignment",
 					"timestart": 60,
 					"timeend": 80,
-					"date": null
+					"date": ""
 				},
 				{
 					"category": "Exercise",
 					"name": "Morning Run",
 					"timestart": 36,
 					"timeend": 40,
-					"date": null
+					"date": ""
 				},
 				{
 					"category": "Sleep",
-					"name": null,
+					"name": "",
 					"timestart": 4,
 					"timeend": 35,
-					"date": null
+					"date": ""
 				},
 				{
 					"category": "Work",
 					"name": "class",
 					"timestart": 44,
 					"timeend": 50,
-					"date": null
+					"date": ""
 				}
 			],
 			"categories": [

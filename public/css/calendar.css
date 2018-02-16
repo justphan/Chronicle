@@ -39,7 +39,7 @@ td {
 .quarter td, .half td, .zero td{
 	border-bottom: 1px dashed black;
 }
-
+/*
 .AM12.zero td.event{
 	background-color:blue;
 }
@@ -61,4 +61,4 @@ td {
  [id="60"]{
  	background-color:orange;
  	text-align: center;
- }
+ }*/
