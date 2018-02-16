@@ -96,6 +96,8 @@
 			var t = setTimeout(time, 500);*/
 		}
 	</script>
+
+
 </head>
 <body onload="time()" style="padding-bottom:50px">
 	<div class="month"> 
@@ -595,5 +597,31 @@
 	<script type="text/javascript" src="/js/calendarLoad.js" data={{data}}></script>
 
 
+	<script type="text/javascript">
+		document.getElementById("3").style.backgroundColor = "blue";
+		var decodedJson = decodeURIComponent("{{{encodedJson}}}");
+		var jsonObj = JSON.parse(decodedJson);
+		console.log(jsonObj.accounts[0].events);
+		//console.log(jsonObj.accounts);
+		//console.log(jsonObj.accounts.0);
+		//var localdata = "{{accounts.0.events}}";
+		var color = "";
+		var eve;
+		var x;
+		
+		for (x in jsonObj.accounts[0].events) {
+			eve = jsonObj.accounts[0].events[x];
+			console.log(eve);
+			for (var i = 0; i <= eve.timeend; i++) {
+				if(eve.category == "Work")
+					color = "orange";
+				if(eve.category == "Exercise")
+					color = "green";
+				if(eve.category == "Sleep")
+					color = "blue";
+				document.getElementById((eve.timestart+i).toString()).style.backgroundColor = color;
+			}
+		}
+	</script>
 </body>
 </html>
