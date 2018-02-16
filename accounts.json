@@ -5,10 +5,31 @@
 			"pass": "ilikepizza",
 			"events": [
 				{
-					"category": null,
+					"category": "Work",
+					"name": "COGS 120 Assignment",
+					"timestart": 60,
+					"timeend": 80,
+					"date": null
+				},
+				{
+					"category": "Exercise",
+					"name": "Morning Run",
+					"timestart": 36,
+					"timeend": 40,
+					"date": null
+				},
+				{
+					"category": "Sleep",
 					"name": null,
-					"timestart": null,
-					"timeend": null,
+					"timestart": 4,
+					"timeend": 35,
+					"date": null
+				},
+				{
+					"category": "Work",
+					"name": "class",
+					"timestart": 44,
+					"timeend": 50,
 					"date": null
 				}
 			],
