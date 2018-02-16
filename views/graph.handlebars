@@ -4,7 +4,7 @@
 <head>
 	<title>Your Activity</title>
 	<meta charset="utf-8">
-	<meta name="viewport">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="css/navbar.css" rel="stylesheet">
 	<link href="css/dwmy.css" rel="stylesheet">
 	<style>
@@ -50,13 +50,13 @@
           ['Exercise',  2],
         ]);*/
 
-        	var options = {
+        	/*var options = {
           	title: 'Your Daily Activity'
-        	};
+        	};*/
 
         	var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
-        	chart.draw(dataGraph, options);
+        	chart.draw(dataGraph/*, options*/);
     	}
     </script>
 </head>
@@ -94,7 +94,7 @@
 		<p>Exercise</p>
 	</div>
 -->
-	<div id="piechart" style="width: 800px; height: 800px;">	</div>
+	<div id="piechart" style="height:400px">	</div>
 
 	<div class="navbar">
 		<a href="/calendar">Calendar</a>
