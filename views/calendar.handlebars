@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="css/navbar.css" rel="stylesheet">
 	<link href="css/calendar.css" rel="stylesheet">
+
 	
 	<script>
 		function time(){
@@ -565,6 +566,22 @@
 		</tr>
 	</table>  
 
+
+	{{#each accounts.0.events}}
+		<p>name: {{name}}</p>
+		<p>id start: {{timestart}}</p>
+		<p>id end: {{timeend}}</p>
+		<script>
+			console.log("this is the timestart being called in javascript"+ {{timestart}});
+			//document.getElementByID({{timestart}}).style.background-color="red";
+			
+		</script>
+	
+	{{/each}}
+
+
+
+
 	<div class="navbar">
 		<a href="/calendar">Calendar</a>
 		<a href="/graph">Your Activity</a>
@@ -575,7 +592,7 @@
 
 	<script src="/js/jquery-1.11.0.js"></script>
 	<script src="/js/bootstrap.js"></script>
-	<script src="/js/addEvent.js"></script>
+	<script type="text/javascript" src="/js/calendarLoad.js" data={{data}}></script>
 
 
 </body>
