@@ -614,11 +614,11 @@
 			console.log(eve);
 			for (var i = eve.timestart; i <= eve.timeend; i++) {
 				if(eve.category == "Work")
-					color = "orange";
-				if(eve.category == "Exercise")
-					color = "green";
-				if(eve.category == "Sleep")
 					color = "blue";
+				if(eve.category == "Exercise")
+					color = "orange";
+				if(eve.category == "Sleep")
+					color = "red";
 				document.getElementById((i).toString()).style.backgroundColor = color;
 			}
 		}
