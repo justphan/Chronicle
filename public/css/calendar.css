@@ -3,7 +3,13 @@ ul {list-style-type: none;}
 /* Month header */
 .month {
 	padding: 25px 25px;
-	width: 100%
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: white;
+	z-index:2;
+
 }
 
 /* Month list */
@@ -39,7 +45,14 @@ td {
 .quarter td, .half td, .zero td{
 	border-bottom: 1px dashed black;
 }
+
+
+.content{
+	padding-top: 200px;
+}
 /*
+
+
 .AM12.zero td.event{
 	background-color:blue;
 }

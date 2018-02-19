@@ -111,7 +111,7 @@
     		</li>
     		<li id="month"><br></li>
   		</ul>
-	</div>
+	
 <!--
 <div id="dp" height="90%"></div>
 <script type="text/javascript">
@@ -124,20 +124,25 @@
 -->
 <!-- Calendar elements  -->
 
-	<table style="width:100%; height:50%" >
+	<table style="width:100%; border:none" >
 		
 		<tr height="100">
 			<th style="width:25%">
 				<h1 id="day"></h1>
 			</th>
-			<td style="width:15%">
+			<td style="width:15%; border:none">
 				<h1 id="date"></h1>
 			</td>
-			<td style="width:60%">
+			<td style="width:60%; border:none">
 				<h1 id="date"></h1>
 			</td>
 		</tr>
+	</table>
 
+	</div>
+
+	<div class="content">
+		<table style="width:100%; height:50%; position: relative" >
 		<tr class="zero">
 			<th rowspan="4">12AM</th>
 			<td>:00</td>
@@ -570,6 +575,8 @@
 			<td id="95"></td>
 		</tr>
 	</table>  
+
+</div>
 
 
 	{{#each accounts.0.events}}
