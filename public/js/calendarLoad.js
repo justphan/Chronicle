@@ -17,6 +17,11 @@ function initializePage() {
 
 $("#63").css('background-color',"red");
 
+$("#add-button").click(function(event){
+	event.preventDefault();
+	
+}
+
 
 
 // function getEvents(){
