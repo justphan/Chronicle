@@ -2,7 +2,7 @@ ul {list-style-type: none;}
 
 /* Month header */
 .month {
-	padding: 25px 25px;
+	padding: 25px 25px 0px 25px;
 	width: 100%;
 	position: fixed;
 	top: 0;
@@ -48,8 +48,8 @@ td {
 
 
 .content{
-	padding-top: 200px;
-	padding-bottom:100px;
+	padding-top: 177px;
+	padding-bottom:60px;
 }
 /*
 
