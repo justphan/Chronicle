@@ -612,6 +612,8 @@
 		for (x in jsonObj.accounts[0].events) {
 			eve = jsonObj.accounts[0].events[x];
 			console.log(eve);
+
+			document.getElementById((eve.timestart.toString())).innerHTML = eve.name;
 			for (var i = eve.timestart; i <= eve.timeend; i++) {
 				if(eve.category == "Work")
 					color = "blue";
@@ -622,6 +624,7 @@
 				document.getElementById((i).toString()).style.backgroundColor = color;
 			}
 		}
+
 	</script>
 </body>
 </html>
