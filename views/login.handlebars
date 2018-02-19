@@ -6,27 +6,40 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/login.css">
+    <link href="css/bootstrap.css" rel="stylesheet">
 </head>
-<body>
-<form action="/calendar">
-	<h1>Login</h1>
+<body class="text-center">
+<div class="main"><div class="wrapper">
+<form class="form-signin" action="/calendar">
+    
+	<h1 class="h3 mb-3 font-weight-normal">Login</h1>
 
 	<div class="container">
-    <label for="name"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="name" required>
+    <label for="name"><b></b></label>
+    <input class="form-control" type="text" placeholder="Enter Username" name="name" required>
 
-    <label for="pass"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="pass" required>
+    <label for="pass"><b></b></label>
+    <input class="form-control"  type="password" placeholder="Enter Password" name="pass" required>
 
     <!-- <a href="calendar.html"><button type="submit">Login</button></a> -->
-    <button type="submit">Log In</button>
+    
+
+ <!--   <div class="checkbox mb-3">
     <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
+      <input type="checkbox" checked="checked" name="remember"> Remember Me
     </label>
-  </div>
+   </div> -->
+
+
+  
+
+  <button style="margin: 15px 0px" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 	<!-- <a href="calendar.html">Login</a> -->
 	<a href="/signup">Sign Up</a>
 
+  </div></div>
+
 </form>
+</div>
 </body>
 </html>

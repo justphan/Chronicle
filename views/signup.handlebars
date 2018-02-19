@@ -6,24 +6,27 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link href="css/bootstrap.css" rel="stylesheet">
 </head>
-<body>
-	<h1>Sign Up</h1>
-	<form action="/addaccount">
+<body class="text-center">
+	<div class="main"><div class="wrapper">
+	<h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
+	<form class="form-signin" action="/addaccount">
 		
 
 		<div class="container">
-	    	<label for="name"><b>Username</b></label>
-	    	<input type="text" placeholder="Create Username" name="name" required>
+	    	<label for="name"><b></b></label>
+	    	<input class="form-control" type="text" placeholder="Create Username" name="name" required>
 
-	    	<label for="pass"><b>Password</b></label>
-	    	<input type="password" placeholder="Create Password" name="pass" required
+	    	<label for="pass"><b></b></label>
+	    	<input class="form-control" type="password" placeholder="Create Password" name="pass" required>
 
-	    	<label for="pass-rpt"><b>Repeat Password</b></label>
-	    	<input type="password" placeholder="Repeat Password" name="pass-repeat" required>
+	    	<label for="pass-rpt"><b></b></label>
+	    	<input class="form-control" type="password" placeholder="Repeat Password" name="pass-repeat" required>
 
-			<button type="submit">Create Account</button>
+			 <button style="margin: 15px 0px" class="btn btn-lg btn-primary btn-block" 	 type="submit">Create Account</button>
 
 		<a href="/">Already have an account?  Click here to login</a>
+		</div></div>
 	</body>
 </html>
