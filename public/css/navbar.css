@@ -1,10 +1,13 @@
 /* Place the navbar at the bottom of the page, and make it stick */
-.navbar {
+.navbar.bootstrap-override{
     background-color: #333;
-    overflow: hidden;
+    /*overflow: hidden;*/
     position: fixed;
-    bottom: 0;
+    bottom: 0px;
+    left: 0px;
     width: 100%;
+    z-index: 2;  
+    margin-bottom: 0px;
 }
 
 /* Style the links inside the navigation bar */
