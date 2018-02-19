@@ -19,6 +19,8 @@ $("#63").css('background-color',"red");
 
 $("#add-button").click(function(event){
 	event.preventDefault();
+	console.log("button clicked");
+	window.location.replace("/addevent");
 	
 })
 
