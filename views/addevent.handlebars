@@ -6,11 +6,14 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="css/navbar.css" rel="stylesheet">
-	<!--<link href="css/bootstrap.css" rel="stylesheet">-->
+	<link href="css/bootstrap.css" rel="stylesheet">
+
+	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
 </head>
 
-<body>
+<body class="text-center">
+	<div class="main"><div class="wrapper">
 
 	<form id="addEventForm" role="form" method="get" action="/add">
 		<h3>Add Event</h3>
@@ -32,10 +35,10 @@
 
 		<div> 
 			<br>Task name:<br>
-			<input type="text" name="name"><br>
+			<input class="form-control" type="text" name="name"><br>
 		</div>
 
-		<div>
+		<!--<div>
 			<table>
 				<tr>
 					<td>
@@ -102,10 +105,32 @@
 						</select>
 					</td>
 			</table>	
-		</div>
+		</div> -->
 
-		<div>
-			<table>
+		<div class="container">
+    <div class="row">
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker3'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker3').datetimepicker({
+                    format: 'LT'
+                });
+            });
+        </script>
+    </div>
+</div
+
+		<div class="middle-bttn">
+			<table style="margin: auto">
 				<tr>
 					<th>
 
@@ -116,7 +141,7 @@
 
 					<th>
 						<div class="save">
-							<button type="submit">Save</button>
+							<button class="btn btn-primary" type="submit">Save</button>
 						</div>
 					</th>
 				</tr>
@@ -124,11 +149,12 @@
 		</div>
 	</form>
 
-	<div class="navbar">
-		<a href="/calendar">Calendar</a>
-		<a href="/graph">Your Activity</a>
-		<a href="/settings">Settings</a>
-		<a href="/login">Logout</a>
+</div></div>
+	<div class="navbar bootstrap-override">
+		<a href="/calendar" class="active"><i class="fas fa-calendar-alt" style="font-size: 16px"></i><br>Calendar</a>
+		<a href="/graph"><i class="fas fa-chart-pie" style="font-size: 16px"></i><br>Your Activity</a>
+		<a href="/settings"><i class="fas fa-cog" style="font-size: 16px"></i><br>Settings</a>
+		<a href="/login"><i class="fas fa-sign-out-alt" style="font-size: 16px"></i><br>Logout</a>
 	</div>
 
 </body>
