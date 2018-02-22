@@ -44,11 +44,19 @@
 			month[10] = "November";
 			month[11] = "December";
 			mo = month[mo];
-
+/*
 			document.getElementById("day").innerHTML=day;
 			document.getElementById("month").innerHTML=mo;
-			document.getElementById("date").innerHTML=d;
+			document.getElementById("date").innerHTML=d;*/
 
+			var mySelect = document.getElementById('changedate');
+
+			for(var i, j = 0; i = mySelect.options[j]; j++) {
+    			if(i.text == mo) {
+        			i.setAttribute("selected", "true");
+        		break;
+    			}
+			}
 		/*	if (h>12){
 				h=h-12
 			}
@@ -117,10 +125,23 @@
 -->
 
 	<div class="navbar bootstrap-override2">
-		<p id="day"></p>
-		<p id="month"></p>
-		<p id="date"></p>
-	</div>
+		<select name="month" id="changedate">
+			<option value="100">January</option>
+			<option value="200">February</option>
+			<option value="300">March</option>
+			<option value="400">April</option>
+			<option value="500">May</option>
+			<option value="600">June</option>
+			<option value="700">July</option>
+			<option value="800">August</option>
+			<option value="900">September</option>
+			<option value="1000">October</option>
+			<option value="1100">November</option>
+			<option value="1200">December</option>
+        </select>
+ 	</div>
+
+
 
 	<div class="navbar bootstrap-override">
 		<a href="/calendar" class="active"><i class="fas fa-calendar-alt"  style="font-size: 16px"></i><br>Calendar</a>
