@@ -21,15 +21,17 @@
 			var day = today.getDay();
 			var h = today.getHours();
 			var m = today.getMinutes();
+			var mm = today.getMonth()+1;
+			var y = today.getFullYear();
 
 			var dayoftheweek= new Array(7);
-			dayoftheweek[0] = "Sun";
-			dayoftheweek[1] = "Mon";
-			dayoftheweek[2] = "Tue";
-			dayoftheweek[3] = "Wed";
-			dayoftheweek[4] = "Thu";
-			dayoftheweek[5] = "Fri";
-			dayoftheweek[6] = "Sat";
+			dayoftheweek[0] = "Sunday";
+			dayoftheweek[1] = "Monday";
+			dayoftheweek[2] = "Tuesday";
+			dayoftheweek[3] = "Wednesday";
+			dayoftheweek[4] = "Thursday";
+			dayoftheweek[5] = "Friday";
+			dayoftheweek[6] = "Saturday";
 			day = dayoftheweek[day];
 
 			var month= new Array(12);
@@ -47,18 +49,19 @@
 			month[11] = "December";
 			mo = month[mo];
 
-			document.getElementById("day").innerHTML=day;
+			//document.getElementById("day").innerHTML=day;
 			//document.getElementById("month").innerHTML=mo;
 			//document.getElementById("date").innerHTML=d;
+			if(d<10)
+				d='0'+d;
+			if(mm<10)
+				mm='0'+mm;
 
-			var mySelect = document.getElementById('changemonth');
+			var today = y+'-'+mm+'-'+d;
+			document.getElementById('datePicker').defaultValue = today;
 
-			for(var i, j = 0; i = mySelect.options[j]; j++) {
-    			if(i.text == mo) {
-        			i.setAttribute("selected", "true");
-        		break;
-    			}
-			}
+
+		};
 	</script>
 
 
@@ -100,11 +103,12 @@
 
  	</div>
 -->
-<nav class="navbar fixed-top navbar-dark bg-dark">
-  <a class="navbar-brand">Navbar</a>
-  <form class="form-inline">
-    <input class="form-control mr-sm-2" type="text" placeholder="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+<nav class="navbar fixed-top navbar-expand-sm bg-dark navbar-dark">
+	  <span class="navbar-text" id="day"></span>
+  <form class="form-inline" action="/action_page.php">
+
+    <input class="form-control mr-sm-2" id='datePicker' type="date" name="viewdate">
+    <button class="btn btn-success" type="submit">Go</button>
   </form>
 </nav>
 
@@ -652,6 +656,7 @@
 
 
 		}
+
 	</script>
 
 		{{#each accounts.0.events}}
