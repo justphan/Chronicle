@@ -50,6 +50,9 @@
 
         	var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
+        	var formatter = new google.visualization.NumberFormat({suffix: " hours"});
+        	formatter.format(dataGraph, 1);
+
         	chart.draw(dataGraph/*, options*/);
     	}
     </script>
