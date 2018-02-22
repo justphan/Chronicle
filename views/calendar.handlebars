@@ -44,10 +44,10 @@
 			month[10] = "November";
 			month[11] = "December";
 			mo = month[mo];
-/*
-			document.getElementById("day").html(day);
-			document.getElementById("month").html(mo);
-			document.getElementById("date").html(d);*/
+
+			document.getElementById("day").innerHTML=day;
+			document.getElementById("month").innerHTML=mo;
+			document.getElementById("date").innerHTML=d;
 
 		/*	if (h>12){
 				h=h-12
@@ -117,7 +117,9 @@
 -->
 
 	<div class="navbar bootstrap-override2">
-		<a href="/addevent" style="float:right"><i class="fas fa-plus-square" style="font-size:16px"></i><br>Add Event</a>
+		<p id="day"></p>
+		<p id="month"></p>
+		<p id="date"></p>
 	</div>
 
 	<div class="navbar bootstrap-override">
