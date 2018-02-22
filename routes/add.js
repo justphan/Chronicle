@@ -12,20 +12,25 @@ exports.addEvent = function(req, res) {
 			newName = query.name;
 		}
 
-	var newArray = calcID(query.timestart, query.timeend, query.ampm);
-	var stringArray = timeToString(query.timestart, query.timeend, query.ampm);
-	//console.log("newArray[0] = "+ newArray[0]);
+	var dateStart = new Date(query.timestart);
+	var dateEnd = new Date(query.timeend);
 
-	//console.log("newArray[1] = "+ newArray[1]);
+	var timeStart = calcTime(dateStart);
+	var timeEnd = calcTime(dateEnd);
+	
+
+	var totalTime = Math.abs(dateEnd - dateStart);
+	totalTime = totalTime / (60*1000);
 
 	var toAddEvent = {
 		"category": query.category,
 		"name": newName,
-		"timestartID": newArray[0],
-		"timeendID": newArray[1],
-		"timestart" : stringArray[0],
-		"timeend" : stringArray[1],
-		"date": query.date
+		"totaltime": totalTime,
+		"timestart" : timeStart,
+		"timeend" : timeEnd,
+		"month" : dateStart.getMonth(),
+		"day" : dateStart.getDate(),
+		"year" : dateStart.getFullYear()
 	};
 
 	
@@ -73,6 +78,23 @@ function timeToString(starttime, endtime, meridiem){
 
 }
 
+function calcTime(time){
+	var returnTime = "";
+	if(time.getHours() > 0 && time.getHours() < 12) {
+		returnTime = time.getHours + ':' + time.getMinutes() + "am";
+	}
+	else if (time.getHours() == 0) {
+		returnTime = "12:" + time.getMinutes() + "am";
+	}
+	else if (time.getHours() == 12) {
+		returnTime = time.getHours + ':' + time.getMinutes() + "pm";
+	}
+	else {
+		returnTime = (time.getHours()-12).toString() + ':' + time.getMinutes() + "pm";
+	}
+	return returnTime;
+
+}
 function calcID(starttime, endtime, meridiem){
 	console.log("running calcID");
 	console.log(starttime[0]+" "+starttime[1]);

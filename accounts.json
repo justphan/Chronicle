@@ -7,8 +7,7 @@
 				{
 					"category": "Work",
 					"name": "COGS 120 Assignment",
-					"timestartID": 60,
-					"timeendID": 80,
+					"totaltime": 300,
 					"timestart": "3:00pm",
 					"timeend": "8:00pm",
 					"date": ""
@@ -16,8 +15,7 @@
 				{
 					"category": "Exercise",
 					"name": "Morning Run",
-					"timestartID": 36,
-					"timeendID": 40,
+					"totaltime": 60,
 					"timestart": "9:00am",
 					"timeend": "10:00am",
 					"date": ""
@@ -25,8 +23,7 @@
 				{
 					"category": "Sleep",
 					"name": "Sleep",
-					"timestartID": 4,
-					"timeendID": 35,
+					"totaltime": 465,
 					"timestart": "1:00am",
 					"timeend": "8:45am",
 					"date": ""
@@ -34,8 +31,7 @@
 				{
 					"category": "Work",
 					"name": "class",
-					"timestartID": 44,
-					"timeendID": 50,
+					"totaltime": 90,
 					"timestart": "11:00am",
 					"timeend": "12:30pm",
 					"date": ""
