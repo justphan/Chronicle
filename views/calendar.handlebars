@@ -48,83 +48,67 @@
 			mo = month[mo];
 
 			document.getElementById("day").innerHTML=day;
-			document.getElementById("month").innerHTML=mo;
-			document.getElementById("date").innerHTML=d;
+			//document.getElementById("month").innerHTML=mo;
+			//document.getElementById("date").innerHTML=d;
 
-		/*	if (h>12){
-				h=h-12
+			var mySelect = document.getElementById('changemonth');
+
+			for(var i, j = 0; i = mySelect.options[j]; j++) {
+    			if(i.text == mo) {
+        			i.setAttribute("selected", "true");
+        		break;
+    			}
 			}
-
-			document.getElementById("h").innerHTML = h;
-
-			document.getElementById("h+1").innerHTML = h + 1;
-			if (document.getElementById("h+1").innerHTML > 12){
-				document.getElementById("h+1").innerHTML = document.getElementById("h+1").innerHTML-12;
-			}
-
-			document.getElementById("h+2").innerHTML = h + 2;
-			if (document.getElementById("h+2").innerHTML > 12){
-				document.getElementById("h+2").innerHTML = document.getElementById("h+2").innerHTML-12;
-			}
-
-			document.getElementById("h+3").innerHTML = h + 3;
-			if (document.getElementById("h+3").innerHTML > 12){
-				document.getElementById("h+3").innerHTML = document.getElementById("h+3").innerHTML-12;
-			}
-
-			document.getElementById("h+4").innerHTML = h + 4;
-			if (document.getElementById("h+4").innerHTML > 12){
-				document.getElementById("h+4").innerHTML = document.getElementById("h+4").innerHTML-12;
-			}
-
-			document.getElementById("h+5").innerHTML = h + 5;
-			if (document.getElementById("h+5").innerHTML > 12){
-				document.getElementById("h+5").innerHTML = document.getElementById("h+5").innerHTML-12;
-			}
-
-			document.getElementById("h+6").innerHTML = h + 6;
-			if (document.getElementById("h+6").innerHTML > 12){
-				document.getElementById("h+6").innerHTML = document.getElementById("h+6").innerHTML-12;
-			}
-			
-			document.getElementById("h+7").innerHTML = h + 7;
-
-			if (document.getElementById("h+7").innerHTML > 12){
-				document.getElementById("h+7").innerHTML = document.getElementById("h+7").innerHTML-12;
-			}
-			document.getElementById("h+8").innerHTML = h + 8;
-			if (document.getElementById("h+8").innerHTML > 12){
-				document.getElementById("h+8").innerHTML = document.getElementById("h+8").innerHTML-12;
-			}
-
-			var t = setTimeout(time, 500);*/
-		}
 	</script>
 
 
 </head>
 <body onload="time()" style="padding-bottom:50px">
 	<!--
-	<div>
-		<nav class="navbar fixed-top navbar-inverse bg-inverse">
-			<button class="navbar-toggler" type="button">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-
-
-
-		</nav>
-
-	</div>
--->
-
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+	    	<div class="navbar-header">
+	    		<a class="navbar-brand" href="#">WebSiteName</a>
+	    	</div>
+	    	<ul class="nav navbar-nav">
+	    		<li class="active"><a href="#">Home</a></li>
+	    		<li><a href="#">Page 1</a></li>
+	      		<li><a href="#">Page 2</a></li>
+	      		<li><a href="#">Page 3</a></li>
+	    	</ul>
+	  </div>
+	</nav>-->
+	<!--
 	<div class="navbar bootstrap-override2">
 		<p id="day"></p>
-		<p id="month"></p>
-		<p id="date"></p>
-	</div>
+		<select name="month" id="changemonth">
+			<option value="100">January</option>
+			<option value="200">February</option>
+			<option value="300">March</option>
+			<option value="400">April</option>
+			<option value="500">May</option>
+			<option value="600">June</option>
+			<option value="700">July</option>
+			<option value="800">August</option>
+			<option value="900">September</option>
+			<option value="1000">October</option>
+			<option value="1100">November</option>
+			<option value="1200">December</option>
+        </select>
+        <select name="date" id="changedate">
+        	<option
 
-	<div class="navbar bootstrap-override">
+ 	</div>
+-->
+<nav class="navbar fixed-top navbar-dark bg-dark">
+  <a class="navbar-brand">Navbar</a>
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav>
+
+	<div class="navbad bootstrap-override">
 		<a href="/calendar" class="active"><i class="fas fa-calendar-alt"  style="font-size: 16px"></i><br>Calendar</a>
 		<a href="/graph"><i class="fas fa-chart-pie"  style="font-size: 16px"></i><br>Your Activity</a>
 		<a href="/settings"><i class="fas fa-cog"  style="font-size: 16px"></i><br>Settings</a>
@@ -626,11 +610,12 @@
 
 
 
-
+<!--
 	<script src="/js/jquery-1.11.0.js"></script>
-	<script src="/js/bootstrap.js"></script>
-	<script type="text/javascript" src="/js/calendarLoad.js" data={{data}}></script>
-
+	<script src="/js/bootstrap.js"></script>-->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 	<script type="text/javascript">
 		var decodedJson = decodeURIComponent("{{{encodedJson}}}");

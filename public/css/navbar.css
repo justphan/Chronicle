@@ -1,5 +1,5 @@
 /* Place the navbar at the bottom of the page, and make it stick */
-.navbar.bootstrap-override{
+.navbad.bootstrap-override{
     background-color: #333;
     /*overflow: hidden;*/
     position: fixed;
@@ -11,7 +11,7 @@
 }
 
 
-.navbar.bootstrap-override2{
+.navbad.bootstrap-override2{
     background-color: #333;
     /*overflow: hidden;*/
     position: fixed;
@@ -20,7 +20,7 @@
     z-index: 2;  
 }
 /* Style the links inside the navigation bar */
-.navbar a {
+.navbad a {
     float: left;
     display: block;
     color: #f2f2f2;
@@ -32,17 +32,7 @@
     border-right: 1px solid gray;
 }
 
-.navbar.bootstrap-override2 p {
-    float: left;
-    display: block;
-    text-align: center;
-    padding: 8px 2px;
-    font-size: 16px;
-    width: 33%;
-    border-right: 1px solid gray;
-    color: #f2f2f2;
-}
-.navbar a.graph {
+.navbad a.graph {
     float: left;
     display: block;
     color: #f2f2f2;
@@ -52,18 +42,18 @@
     width: 25%;
     border-right: 1px solid gray;
 }
-.navbar i{
+.navbad i{
     font-size: 16px;
 }
 
 /* Change the color of links on hover */
-.navbar a:hover {
+.navbad a:hover {
     background-color: #ddd;
     color: black;
 }
 
 /* Add a color to the active/current link */
-.navbar a.active {
+.navbad a.active {
     background-color: #4CAF50;
     color: white;
 }
