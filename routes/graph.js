@@ -1,7 +1,7 @@
 var data = require("../accounts.json");
 
 /*$("#week").click(function{
-	$('#' + json).push();
+	$('#' + json).push();     //how to push data into variable for different options?
 });*/
 
 exports.view = function(req,res){
