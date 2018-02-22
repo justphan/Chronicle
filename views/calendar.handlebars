@@ -46,12 +46,12 @@
 			month[10] = "November";
 			month[11] = "December";
 			mo = month[mo];
-/*
-			document.getElementById("day").innerHTML=day;
-			document.getElementById("month").innerHTML=mo;
-			document.getElementById("date").innerHTML=d;*/
 
-			var mySelect = document.getElementById('changedate');
+			document.getElementById("day").innerHTML=day;
+			//document.getElementById("month").innerHTML=mo;
+			//document.getElementById("date").innerHTML=d;
+
+			var mySelect = document.getElementById('changemonth');
 
 			for(var i, j = 0; i = mySelect.options[j]; j++) {
     			if(i.text == mo) {
@@ -59,75 +59,29 @@
         		break;
     			}
 			}
-		/*	if (h>12){
-				h=h-12
-			}
-
-			document.getElementById("h").innerHTML = h;
-
-			document.getElementById("h+1").innerHTML = h + 1;
-			if (document.getElementById("h+1").innerHTML > 12){
-				document.getElementById("h+1").innerHTML = document.getElementById("h+1").innerHTML-12;
-			}
-
-			document.getElementById("h+2").innerHTML = h + 2;
-			if (document.getElementById("h+2").innerHTML > 12){
-				document.getElementById("h+2").innerHTML = document.getElementById("h+2").innerHTML-12;
-			}
-
-			document.getElementById("h+3").innerHTML = h + 3;
-			if (document.getElementById("h+3").innerHTML > 12){
-				document.getElementById("h+3").innerHTML = document.getElementById("h+3").innerHTML-12;
-			}
-
-			document.getElementById("h+4").innerHTML = h + 4;
-			if (document.getElementById("h+4").innerHTML > 12){
-				document.getElementById("h+4").innerHTML = document.getElementById("h+4").innerHTML-12;
-			}
-
-			document.getElementById("h+5").innerHTML = h + 5;
-			if (document.getElementById("h+5").innerHTML > 12){
-				document.getElementById("h+5").innerHTML = document.getElementById("h+5").innerHTML-12;
-			}
-
-			document.getElementById("h+6").innerHTML = h + 6;
-			if (document.getElementById("h+6").innerHTML > 12){
-				document.getElementById("h+6").innerHTML = document.getElementById("h+6").innerHTML-12;
-			}
-			
-			document.getElementById("h+7").innerHTML = h + 7;
-
-			if (document.getElementById("h+7").innerHTML > 12){
-				document.getElementById("h+7").innerHTML = document.getElementById("h+7").innerHTML-12;
-			}
-			document.getElementById("h+8").innerHTML = h + 8;
-			if (document.getElementById("h+8").innerHTML > 12){
-				document.getElementById("h+8").innerHTML = document.getElementById("h+8").innerHTML-12;
-			}
-
-			var t = setTimeout(time, 500);*/
-		}
 	</script>
 
 
 </head>
 <body onload="time()" style="padding-bottom:50px">
 	<!--
-	<div>
-		<nav class="navbar fixed-top navbar-inverse bg-inverse">
-			<button class="navbar-toggler" type="button">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-
-
-
-		</nav>
-
-	</div>
--->
-
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+	    	<div class="navbar-header">
+	    		<a class="navbar-brand" href="#">WebSiteName</a>
+	    	</div>
+	    	<ul class="nav navbar-nav">
+	    		<li class="active"><a href="#">Home</a></li>
+	    		<li><a href="#">Page 1</a></li>
+	      		<li><a href="#">Page 2</a></li>
+	      		<li><a href="#">Page 3</a></li>
+	    	</ul>
+	  </div>
+	</nav>-->
+	<!--
 	<div class="navbar bootstrap-override2">
-		<select name="month" id="changedate">
+		<p id="day"></p>
+		<select name="month" id="changemonth">
 			<option value="100">January</option>
 			<option value="200">February</option>
 			<option value="300">March</option>
@@ -141,11 +95,14 @@
 			<option value="1100">November</option>
 			<option value="1200">December</option>
         </select>
+        <select name="date" id="changedate">
+        	<option
+
  	</div>
+-->
 
 
-
-	<div class="navbar bootstrap-override">
+	<div class="navbad bootstrap-override">
 		<a href="/calendar" class="active"><i class="fas fa-calendar-alt"  style="font-size: 16px"></i><br>Calendar</a>
 		<a href="/graph"><i class="fas fa-chart-pie"  style="font-size: 16px"></i><br>Your Activity</a>
 		<a href="/settings"><i class="fas fa-cog"  style="font-size: 16px"></i><br>Settings</a>
