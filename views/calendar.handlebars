@@ -650,19 +650,19 @@
 				div.innerHTML = 
 					'<div class="card-header">'+ eventsArray[x].timestart + ' - '+eventsArray[x].timeend+
 					'</div> <div class = "card-body"> <h5 class="card-title">'+eventsArray[x].name+
-					'</h5> <p class="card-text">insert more info here</p> </div>';
+					'</h5> <p class="card-text">Category: '+eve.category+'</p> </div>';
 
 				
 				var color;
 				if(eve.category == "Work")
-					color = "blue";
+					color = "linear-gradient(#abdcff, #0396ff)";
 				if(eve.category == "Exercise")
-					color = "orange";
+					color = "linear-gradient(#fccf31, #f55555)";
 				if(eve.category == "Sleep")
-					color = "red";
+					color = "linear-gradient(#81fbb8, #28c76f)";
 
 				div.style.color = "white";
-				div.style.backgroundColor = color;
+				div.style.background = color;
 				document.body.appendChild(div);
 
 

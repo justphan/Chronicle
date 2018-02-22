@@ -13,14 +13,18 @@ exports.addEvent = function(req, res) {
 		}
 
 	var newArray = calcID(query.timestart, query.timeend, query.ampm);
-	console.log("newArray[0] = "+ newArray[0]);
-	console.log("newArray[1] = "+ newArray[1]);
+	var stringArray = timeToString(query.timestart, query.timeend, query.ampm);
+	//console.log("newArray[0] = "+ newArray[0]);
+
+	//console.log("newArray[1] = "+ newArray[1]);
 
 	var toAddEvent = {
 		"category": query.category,
 		"name": newName,
-		"timestart": newArray[0],
-		"timeend": newArray[1],
+		"timestartID": newArray[0],
+		"timeendID": newArray[1],
+		"timestart" : stringArray[0],
+		"timeend" : stringArray[1],
 		"date": query.date
 	};
 
@@ -57,7 +61,17 @@ exports.addCategory = function(req, res) {
 	res.render('settings');
 }
 
+function timeToString(starttime, endtime, meridiem){
+	
 
+	var startString = starttime[0]+":"+starttime[1]+meridiem[0];
+	var endString = endtime[0]+":"+endtime[1]+meridiem[1];
+
+	var stringArray = [startString, endString];
+	return stringArray;
+
+
+}
 
 function calcID(starttime, endtime, meridiem){
 	console.log("running calcID");
