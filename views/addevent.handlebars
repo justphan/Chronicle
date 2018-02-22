@@ -10,16 +10,35 @@
 
 	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </head>
 
 <body class="text-center">
+
+
 	<div class="main"><div class="wrapper">
+
+
+	<!-- 		<div class="input-group mb-3">
+ 		 <div class="input-group-prepend">
+   	 <button class="btn btn-outline-secondary" id="category-btn" type="button">Add New Category</button>
+ 	 </div>
+
+ 	 	
+ 		 <input type="text" id="category-input" class="form-control hidden" placeholder="Ex. Self-Care" aria-label="" aria-describedby="basic-addon1" name="newCategory">
+ 		 <button class="btn btn-primary hidden" id="category-save" type="text" >Save New Category</button>
+ 		
+	</div> -->
 
 	<form id="addEventForm" role="form" method="get" action="/add">
 		<h3>Add Event</h3>
 
-		<div>
-			<select name="category">
+		<div class="form-group">
+			<select class="form-control" name="category">
+				<option selected>Choose Category</option>
 				<script type="text/javascript"> 
 					var data= require("../accounts.json");
 					var acc = data.accounts[0];
@@ -32,6 +51,12 @@
 				{{/each}}
 			</select>
 		</div>
+
+
+	
+
+
+
 
 		<div> 
 			<br>Task name:<br>
@@ -143,4 +168,28 @@
 		<a href="/settings"><i class="fas fa-cog"  style="font-size: 16px"></i><br>Settings</a>
 		<a href="/addevent" class="active"><i class="fas fa-plus-square"  style="font-size: 16px"></i><br>Add Event</a>
 	</div>
+
+
+	<script>
+		
+
+		$("#category-btn").click(function(event){
+			event.preventDefault();
+			document.getElementById("category-input").classList.toggle("hidden");
+			document.getElementById("category-save").classList.toggle("hidden");
+		})
+
+		$("#category-save").click(function(event){
+
+
+			var newCat = document.getElementById("category-input").value;
+			alert(newCat);
+			var category = {
+					"name": newCat
+			};
+			
+			
+		})
+
+		</script>
 </body>

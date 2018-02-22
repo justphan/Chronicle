@@ -21,6 +21,7 @@ var settings = require('./routes/settings');
 // var user = require('./routes/user');
 var add = require('./routes/add');
 var addaccount = require('./routes/addaccount');
+var addCategory = require('./routes/addcategory');
 
 var app = express();
 
@@ -55,7 +56,7 @@ app.get('/settings', settings.view);
 // Example route
 // app.get('/users', user.list);
 app.get('/add', add.addEvent);
-//app.get('/add', add.addCategory);
+app.get('/addcategory', addCategory.addCategory);
 app.get('/addaccount', addaccount.addAccount);
 
 
