@@ -45,11 +45,16 @@ exports.addEvent = function(req, res) {
 			data.accounts[i].events.push(toAddEvent);
 		}
 	}*/
+	/*
+	for(var i = 0; i < data.accounts.length; i++) {
+		if (data.accounts[i].name == username)
+			data.accounts[i].events.push(toAddEvent);
+	}*/
 	
 
 	data.accounts[0].events.push(toAddEvent);
 
-	console.log(data.accounts[0].events);
+	//console.log(data.accounts[0].events);
 	res.render('calendar', {encodedJson : encodeURIComponent(JSON.stringify(data))});
 }
 
@@ -80,17 +85,23 @@ function timeToString(starttime, endtime, meridiem){
 
 function calcTime(time){
 	var returnTime = "";
+	var hour = time.getHours();
+	var min = time.getMinutes();
+	if(hour < 10)
+		hour = '0'+hour;
+	if(min < 10)
+		min = '0'+min;
 	if(time.getHours() > 0 && time.getHours() < 12) {
-		returnTime = time.getHours + ':' + time.getMinutes() + "am";
+		returnTime = hour + ':' + min + "am";
 	}
 	else if (time.getHours() == 0) {
-		returnTime = "12:" + time.getMinutes() + "am";
+		returnTime = "12:" + min + "am";
 	}
 	else if (time.getHours() == 12) {
-		returnTime = time.getHours + ':' + time.getMinutes() + "pm";
+		returnTime = hour + ':' + min + "pm";
 	}
 	else {
-		returnTime = (time.getHours()-12).toString() + ':' + time.getMinutes() + "pm";
+		returnTime = (hour-12).toString() + ':' + min + "pm";
 	}
 	return returnTime;
 
