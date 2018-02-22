@@ -29,7 +29,7 @@
 			eve = jsonObj.accounts[0].events[y];
   			for(categ in json) {
   				if(eve.category == json[categ][0])
-  					json[categ][1] += (eve.timeendID - eve.timestartID)*15;
+  					json[categ][1] += eve.totaltime/60;
   			}
   		}
   		console.log(json);
@@ -49,6 +49,9 @@
         	};*/
 
         	var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        	var formatter = new google.visualization.NumberFormat({suffix: " hours"});
+        	formatter.format(dataGraph, 1);
 
         	chart.draw(dataGraph/*, options*/);
     	}
@@ -99,7 +102,7 @@
 		<p>Exercise</p>
 	</div>
 -->
-	<div id="piechart" style="height:400px">	</div>
+	<div id="piechart" style="height:400px; margin-top: 50px;">	</div>
 
 
 	
