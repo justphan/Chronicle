@@ -29,7 +29,7 @@
 			eve = jsonObj.accounts[0].events[y];
   			for(categ in json) {
   				if(eve.category == json[categ][0])
-  					json[categ][1] += eve.totaltime;
+  					json[categ][1] += eve.totaltime/60;
   			}
   		}
   		console.log(json);
