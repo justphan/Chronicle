@@ -7,7 +7,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="css/navbar.css" rel="stylesheet">
 	<link href="css/calendar.css" rel="stylesheet">
-	<link href="css/bootstrap.css" rel="stylesheet">
+	<!--<link href="css/bootstrap.css" rel="stylesheet">-->
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 	
@@ -191,7 +193,7 @@
 	</table>
 -->
 
-	<div class="content">
+<!--	<div class="content">
 		<table style="width:100%; height:50%; position: relative" >
 		<tr class="zero">
 			<th rowspan="4">12AM</th>
@@ -628,7 +630,7 @@
 
 </div>
 
-
+-->
 	{{#each accounts.0.events}}
 	<!--	<p>name: {{name}}</p>
 		<p>id start: {{timestart}}</p>
@@ -654,29 +656,74 @@
 	<script type="text/javascript">
 		var decodedJson = decodeURIComponent("{{{encodedJson}}}");
 		var jsonObj = JSON.parse(decodedJson);
-		console.log(jsonObj.accounts[0].events);
+		console.log("these are the fukin events"+jsonObj.accounts[0].events);
+		var eventsArray = jsonObj.accounts[0].events; 
 		//console.log(jsonObj.accounts);
 		//console.log(jsonObj.accounts.0);
 		//var localdata = "{{accounts.0.events}}";
-		var color = "";
-		var eve;
-		var x;
-		
-		for (x in jsonObj.accounts[0].events) {
-			eve = jsonObj.accounts[0].events[x];
-			console.log(eve);
 
-			document.getElementById((eve.timestart.toString())).innerHTML = eve.name;
-			for (var i = eve.timestart; i <= eve.timeend; i++) {
+		for( x in eventsArray){
+				var eve = eventsArray[x]
+				console.log("Name of this fuckin event is "+ eventsArray[x].name);
+				var div = document.createElement("div");
+				div.classList.add("card");
+				div.classList.add("mb-3");
+				div.innerHTML = 
+					'<div class="card-header">'+ eventsArray[x].timestart + ' - '+eventsArray[x].timeend+
+					'</div> <div class = "card-body"> <h5 class="card-title">'+eventsArray[x].name+
+					'</h5> <p class="card-text">insert more info here</p> </div>';
+
+				
+				var color;
 				if(eve.category == "Work")
 					color = "blue";
 				if(eve.category == "Exercise")
 					color = "orange";
 				if(eve.category == "Sleep")
 					color = "red";
-				document.getElementById((i).toString()).style.backgroundColor = color;
-			}
+
+				div.style.color = "white";
+				div.style.backgroundColor = color;
+				document.body.appendChild(div);
+
+
 		}
+	</script>
+
+		{{#each accounts.0.events}}
+		<script>console.log("event going in");</script>
+
+		<div class="card mb-3">
+				<div class="card-header"> {{timestart}} - {{timeend}}
+				</div>
+				<div class = "card=body">
+					<h5 class="card=title">{{name}}</h5>
+					<p class="card=text">insert more info here</p>
+				</div>
+
+		{{/each}}
+		<script>
+		// var color = "";
+		// var eve;
+		// var x;
+		
+		// for (x in jsonObj.accounts[0].events) {
+		// 	eve = jsonObj.accounts[0].events[x];
+		// 	console.log(eve);
+
+
+
+		// 	// document.getElementById((eve.timestart.toString())).innerHTML = eve.name;
+		// 	// for (var i = eve.timestart; i <= eve.timeend; i++) {
+				// if(eve.category == "Work")
+				// 	color = "blue";
+				// if(eve.category == "Exercise")
+				// 	color = "orange";
+				// if(eve.category == "Sleep")
+				// 	color = "red";
+		// 	// 	document.getElementById((i).toString()).style.backgroundColor = color;
+		// 	// }
+		// }
 
 	</script>
 </body>
