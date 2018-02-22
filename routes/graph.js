@@ -1,5 +1,9 @@
 var data = require("../accounts.json");
 
+/*$("#week").click(function{
+	$('#' + json).push();
+});*/
+
 exports.view = function(req,res){
 	console.log(data);
 

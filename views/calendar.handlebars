@@ -632,10 +632,11 @@
 
 		for( x in eventsArray){
 				var eve = eventsArray[x]
-				console.log("Name of this fuckin event is "+ eventsArray[x].name);
+				
 				var div = document.createElement("div");
 				div.classList.add("card");
 				div.classList.add("mb-3");
+				div.classList.add("eventCard");
 				div.innerHTML = 
 					'<div class="card-header">'+ eventsArray[x].timestart + ' - '+eventsArray[x].timeend+
 					'</div> <div class = "card-body"> <h5 class="card-title">'+eventsArray[x].name+
@@ -671,29 +672,18 @@
 				</div>
 
 		{{/each}}
+
+
+
+
+
+		<!-- TODO: option to click on events to edit -->
 		<script>
-		// var color = "";
-		// var eve;
-		// var x;
-		
-		// for (x in jsonObj.accounts[0].events) {
-		// 	eve = jsonObj.accounts[0].events[x];
-		// 	console.log(eve);
+		$("div.eventCard").click(function(event){
+			event.preventDefault();
+			alert("this event was clicked.  Edit page coming soon");
+		});
 
-
-
-		// 	// document.getElementById((eve.timestart.toString())).innerHTML = eve.name;
-		// 	// for (var i = eve.timestart; i <= eve.timeend; i++) {
-				// if(eve.category == "Work")
-				// 	color = "blue";
-				// if(eve.category == "Exercise")
-				// 	color = "orange";
-				// if(eve.category == "Sleep")
-				// 	color = "red";
-		// 	// 	document.getElementById((i).toString()).style.backgroundColor = color;
-		// 	// }
-		// }
-
-	</script>
+		</script>
 </body>
 </html>

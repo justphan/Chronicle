@@ -57,6 +57,11 @@ body{
 	left: 0;
 	right: 0;
 }
+
+.eventCard{
+	width: 85%;
+	margin: auto;
+}
 /*
 
 
