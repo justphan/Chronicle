@@ -70,14 +70,3 @@
     visibility: hidden;
 }
 
-.main {
-    height: 100%;
-    width: 100%;
-    display: table;
-}
-
-.wrapper {
-    display: table-cell;
-    height: 100%;
-    vertical-align: middle;
-}
