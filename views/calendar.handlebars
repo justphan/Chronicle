@@ -119,6 +119,9 @@
 		<a href="/addevent"><i class="fas fa-plus-square"  style="font-size: 16px"></i><br>Add Event</a>
 	</div>
 
+	<div>
+		<img style="width:100%; height:80%" id="default">
+	</div>
 <!--
 	<div class="month"> 
   		<ul>
@@ -673,6 +676,9 @@
 
 
 		}
+
+		if(eventsArray.length==1)
+			document.getElementById('default').src = "./images/default.png"
 
 	</script>
 <!--
