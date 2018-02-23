@@ -35,7 +35,6 @@ exports.addEvent = function(req, res) {
 
 	
 	
-
 	
 	/*for(var i = 0; i < data.accounts.length; i++) {
 		if data.accounts[i].events == undefined {
@@ -51,11 +50,23 @@ exports.addEvent = function(req, res) {
 			data.accounts[i].events.push(toAddEvent);
 	}*/
 	
+	data.accounts[0].events.push(toAddEvent);
+	var events = [];
+	var date = new Date();
+	events.push(date);
+	var month = date.getMonth();
+	var day = date.getDate();
+	var year = date.getFullYear();
 
 	data.accounts[0].events.push(toAddEvent);
-
+	var eventsArr = data.accounts[0].events;
+	for(var x=1; x<eventsArr.length; x++){
+		if(eventsArr[x]['month'] == month && eventsArr[x]['day'] == day && eventsArr[x]['year'] == year) {
+			events.push(eventsArr[x]);
+		}
+	}
 	//console.log(data.accounts[0].events);
-	res.render('calendar', {encodedJson : encodeURIComponent(JSON.stringify(data))});
+	res.render('calendar', {encodedJson : encodeURIComponent(JSON.stringify(events))});
 }
 
 exports.addCategory = function(req, res) {

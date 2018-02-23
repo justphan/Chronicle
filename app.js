@@ -52,6 +52,7 @@ app.get('/signup', signup.view);
 app.get('/addevent', addevent.view);
 app.get('/graph', graph.view);
 app.get('/settings', settings.view);
+app.get('/calendardate', calendar.date);
 
 // Example route
 // app.get('/users', user.list);

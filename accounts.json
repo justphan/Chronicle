@@ -30,6 +30,39 @@
 				},
 				{
 					"category": "Work",
+					"name": "COGS 120 Assignment",
+					"totaltime": 300,
+					"timestart": "3:00pm",
+					"timeend": "8:00pm",
+					"month" : 1,
+					"day": 21,
+					"year": 2018,
+					"date": ""
+				},
+				{
+					"category": "Sleep",
+					"name": "COGS 120 Assignment",
+					"totaltime": 300,
+					"timestart": "1:00pm",
+					"timeend": "2:00pm",
+					"month" : 1,
+					"day": 21,
+					"year": 2018,
+					"date": ""
+				},
+				{
+					"category": "Exercise",
+					"name": "COGS 120 Assignment",
+					"totaltime": 300,
+					"timestart": "1:00am",
+					"timeend": "3:00am",
+					"month" : 1,
+					"day": 21,
+					"year": 2018,
+					"date": ""
+				},
+				{
+					"category": "Work",
 					"name": "class",
 					"totaltime": 90,
 					"timestart": "11:00am",

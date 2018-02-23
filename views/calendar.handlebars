@@ -66,7 +66,7 @@
 
 
 </head>
-<body onload="time()" style="padding-bottom:50px">
+<body style="padding-bottom:50px">
 	<!--
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
@@ -105,7 +105,7 @@
 -->
 <nav class="navbar fixed-top navbar-expand-sm bg-dark navbar-dark">
 	  <span class="navbar-text" id="day"></span>
-  <form class="form-inline" method="get" action="/calendar">
+  <form class="form-inline" method="get" action="/calendardate">
 
     <input class="form-control mr-sm-2" id='datePicker' type="date" name="viewdate">
     <button class="btn btn-success" type="submit">Go</button>
@@ -624,13 +624,29 @@
 	<script type="text/javascript">
 		var decodedJson = decodeURIComponent("{{{encodedJson}}}");
 		var jsonObj = JSON.parse(decodedJson);
-		console.log("these are the fukin events"+jsonObj.accounts[0].events);
-		var eventsArray = jsonObj.accounts[0].events; 
+		console.log(jsonObj);
+		var eventsArray = jsonObj; 
+		var date = new Date(eventsArray[0]);
+		var tod = new Date();
+		var d = 0;
+		if (date.getDate() == new Date().getDate())
+			d = date.getDate();
+		else
+			d = date.getDate()+1;
+		var mm = date.getMonth()+1;
+		var y = date.getFullYear();
+		if(d<10)
+			d='0'+d;
+		if(mm<10)
+			mm='0'+mm;
+
+		var today = y+'-'+mm+'-'+d;
+		document.getElementById('datePicker').defaultValue = today;
 		//console.log(jsonObj.accounts);
 		//console.log(jsonObj.accounts.0);
 		//var localdata = "{{accounts.0.events}}";
 
-		for( x in eventsArray){
+		for(var x=1; x<eventsArray.length; x++){
 				var eve = eventsArray[x]
 				
 				var div = document.createElement("div");
