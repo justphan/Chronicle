@@ -1,14 +1,17 @@
-var accounts = require("../accounts.json");
+var data = require("../accounts.json");
 
 exports.addAccount = function(req, res){
-	req.query.name;
-	req.query.pass;
 	var newAccount = {
-		"name": req.query.name,
-		"pass": req.query.pass
-	};
-	console.log();
-	accounts.accounts.push(newAccount);
-	console.log(accounts.accounts);
-	res.render('calendar');
+		"name": req.body.name,
+		"pass": req.body.pass,
+		"events":[],
+		"categories": [
+				{ "name": "Work" },
+				{ "name": "Sleep" },
+				{ "name": "Exercise" }
+				]
+	}
+	data.accounts.push(newAccount);
+	console.log(data);
+	res.render('calendar', {encodedJson : encodeURIComponent(JSON.stringify(newAccount.events))});
 }

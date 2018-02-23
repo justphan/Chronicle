@@ -1,0 +1,58 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Login</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+    <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body class="text-center">
+<div class="main"><div class="wrapper">
+<form class="form-signin" method="post" action="/loginacc">
+    
+
+  <h1>Incorrect ID/pass! 
+  </h1>
+  <h1>Try again!</h1>
+  <br>
+  <br>
+	<h1 class="h3 mb-3 font-weight-normal">Login</h1>
+
+	<div class="container">
+    <label for="name"><b></b></label>
+    <input class="form-control" type="text" placeholder="Enter Username" name="name" required>
+
+    <label for="pass"><b></b></label>
+    <input class="form-control"  type="password" placeholder="Enter Password" name="pass" required>
+
+    <!-- <a href="calendar.html"><button type="submit">Login</button></a> -->
+    
+
+ <!--   <div class="checkbox mb-3">
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember Me
+    </label>
+   </div> -->
+
+
+  
+
+  <button style="margin: 15px 0px" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+	<!-- <a href="calendar.html">Login</a> -->
+	<a href="/signup">Sign Up</a>
+
+  </div></div>
+  
+
+</form>
+</div>
+<div style="margin-top: -10%">or Login with Facebook
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
+</div>
+{{> facebook}}
+<script src="/js/facebook.js"></script>
+</body>
+</html>

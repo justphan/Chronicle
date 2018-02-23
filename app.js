@@ -7,6 +7,7 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
+//var bodyParser = require('body-parser');
 
 var login = require('./routes/login');
 var signup = require('./routes/signup');
@@ -46,7 +47,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', login.view);
-app.get('/login', login.view);	
+app.post('/loginacc', login.login);	
 app.get('/calendar', calendar.view);
 app.get('/signup', signup.view);
 app.get('/addevent', addevent.view);
@@ -56,12 +57,14 @@ app.get('/calendardate', calendar.date);
 app.get('/graphweek', graph.week);
 app.get('/graphmonth', graph.month);
 app.get('/graphyear', graph.year);
+app.post('/addaccount', addaccount.addAccount);
+app.get('/signout', login.signout);
+app.get('/login', login.view);
 
-// Example route
+// view route
 // app.get('/users', user.list);
 app.get('/add', add.addEvent);
 app.get('/addcategory', addCategory.addCategory);
-app.get('/addaccount', addaccount.addAccount);
 
 
 http.createServer(app).listen(app.get('port'), function(){
