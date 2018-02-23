@@ -43,7 +43,7 @@
  		 <button class="btn btn-primary hidden" id="category-save" type="text" >Save New Category</button>
  		
 	</div> -->
-
+<!--
 	<form id="addEventForm" role="form" method="get" action="/add">
 		<h3>Add Event</h3>
 
@@ -58,7 +58,7 @@
   			<div>
 			<p>Date: <input type="text" id="datepicker" class="form-control" style="width:40%;display:inline"></p></div>
 			<script>
-				var currenDate = new Date();
+				var currentDate = new Date();
 				currentDate = $( "#datepicker" ).datepicker( "getDate" );
 				$("#datepicker").value = currentDate;
 			</script>
@@ -93,6 +93,8 @@
 			End:
 			<input class="form-control" type="time" name="timeend"style="width:30%; display:inline"></p>
 		</div>
+
+	-->
 		<!--
 		<div>
 			<table>
@@ -165,6 +167,36 @@
 -->
 		
 
+
+<form id="addEventForm" role="form" method="get" action="/add">
+		<h3>Add Event</h3>
+
+		<div>
+			<select name="category">
+				<script type="text/javascript"> 
+					var data= require("../accounts.json");
+					var acc = data.accounts[0];
+				</script>
+				{{#each accounts}}
+					{{#each categories}}
+					<option value="{{name}}">{{name}}</option>
+					
+					{{/each}}
+				{{/each}}
+			</select>
+		</div>
+
+		<div> 
+			<br>Task name:<br>
+			<input class="form-control" type="text" name="name"><br>
+		</div>
+
+		<div>
+			<br>Start:<br>
+			<input class="form-control" type="datetime-local" name="timestart"><br>
+			<br>End:<br>
+			<input class="form-control" type="datetime-local" name="timeend"><br>
+		</div>
 		<div class="middle-bttn">
 			<table style="margin: auto">
 				<tr>
