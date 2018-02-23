@@ -48,12 +48,16 @@
           	title: 'Your Daily Activity'
         	};*/
 
+        	var options = {
+        		slices:{0: {color:'#0396ff'}, 1: {color:'#28c76f'}, 2: {color: '#f55555'}}
+        	}
+
         	var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
         	var formatter = new google.visualization.NumberFormat({suffix: " hours"});
         	formatter.format(dataGraph, 1);
 
-        	chart.draw(dataGraph/*, options*/);
+        	chart.draw(dataGraph, options);
     	}
     </script>
 </head>
