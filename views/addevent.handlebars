@@ -50,8 +50,13 @@
 		<div class="form-group">
 			
 			
+			<div> 
+			<br>Task name:<br>
+			<input class="form-control" type="text" name="name"><br>
+		</div>	
   
-			<p>Date: <input type="text" id="datepicker" ></p>
+  			<div>
+			<p>Date: <input type="text" id="datepicker" class="form-control" style="width:40%;display:inline"></p></div>
 			<script>
 				var currenDate = new Date();
 				currentDate = $( "#datepicker" ).datepicker( "getDate" );
@@ -80,16 +85,13 @@
 
 
 
-		<div> 
-			<br>Task name:<br>
-			<input class="form-control" type="text" name="name"><br>
-		</div>
+		
 
 		<div>
-			<br>Start:<br>
-			<input class="form-control" type="datetime-local" name="timestart"><br>
-			<br>End:<br>
-			<input class="form-control" type="datetime-local" name="timeend"><br>
+			<p>Start:
+			<input class="form-control" type="time" name="timestart" style="width:30%; display:inline">
+			End:
+			<input class="form-control" type="time" name="timeend"style="width:30%; display:inline"></p>
 		</div>
 		<!--
 		<div>
