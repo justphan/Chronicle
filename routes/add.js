@@ -58,7 +58,6 @@ exports.addEvent = function(req, res) {
 	var day = date.getDate();
 	var year = date.getFullYear();
 
-	data.accounts[0].events.push(toAddEvent);
 	var eventsArr = data.accounts[0].events;
 	for(var x=1; x<eventsArr.length; x++){
 		if(eventsArr[x]['month'] == month && eventsArr[x]['day'] == day && eventsArr[x]['year'] == year) {
