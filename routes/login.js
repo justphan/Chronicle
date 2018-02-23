@@ -5,6 +5,10 @@ exports.view = function(req,res){
 	res.render('login');
 }
 
+exports.err = function(req,res){
+	res.render('loginerror');
+}
+
 exports.login = function(req,res){
 	console.log(data);
 	var username = req.body.name;
@@ -17,19 +21,21 @@ exports.login = function(req,res){
 		if(username == account.name) {
 			console.log('wow');
 			if(password == account.pass) {
+				req.session.user_id = username;
 				res.render('calendar', {encodedJson : encodeURIComponent(JSON.stringify(account.events))});
 				return;
 			}
 			else {
-				res.render('loginerror');
+				res.redirect('loginerror');
 				return;
 			}
 		}
 	}
-	res.render('loginerror');
+	res.redirect('loginerror');
 
 }
 
 exports.signout = function(req,res){
-	res.render('login');
+	delete req.session.user_id;
+	res.redirect('login');
 }

@@ -49,8 +49,15 @@ exports.addEvent = function(req, res) {
 		if (data.accounts[i].name == username)
 			data.accounts[i].events.push(toAddEvent);
 	}*/
-	
-	data.accounts[0].events.push(toAddEvent);
+	var account;
+	var eventsArr;
+	for(var x = 0; x < data.accounts.length; x++) {
+		if(data.accounts[x].name == req.session.user_id) {
+			account = data.accounts[x];
+			eventsArr = data.accounts[x].events;
+		}
+	}
+	account.events.push(toAddEvent);
 	var events = [];
 	var date = new Date();
 	events.push(date);
@@ -58,7 +65,6 @@ exports.addEvent = function(req, res) {
 	var day = date.getDate();
 	var year = date.getFullYear();
 
-	var eventsArr = data.accounts[0].events;
 	for(var x=1; x<eventsArr.length; x++){
 		if(eventsArr[x]['month'] == month && eventsArr[x]['day'] == day && eventsArr[x]['year'] == year) {
 			events.push(eventsArr[x]);

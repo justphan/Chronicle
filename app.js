@@ -48,24 +48,33 @@ if ('development' == app.get('env')) {
 
 app.get('/', login.view);
 app.post('/loginacc', login.login);	
-app.get('/calendar', calendar.view);
+app.get('/calendar', auth, calendar.view);
 app.get('/signup', signup.view);
-app.get('/addevent', addevent.view);
-app.get('/graph', graph.view);
-app.get('/settings', settings.view);
-app.get('/calendardate', calendar.date);
-app.get('/graphweek', graph.week);
-app.get('/graphmonth', graph.month);
-app.get('/graphyear', graph.year);
+app.get('/addevent', auth, addevent.view);
+app.get('/graph', auth, graph.view);
+app.get('/settings', auth, settings.view);
+app.get('/calendardate', auth, calendar.date);
+app.get('/graphweek', auth, graph.week);
+app.get('/graphmonth', auth, graph.month);
+app.get('/graphyear', auth, graph.year);
 app.post('/addaccount', addaccount.addAccount);
 app.get('/signout', login.signout);
 app.get('/login', login.view);
+app.get('/loginerror', login.err);
 
 // view route
 // app.get('/users', user.list);
 app.get('/add', add.addEvent);
 app.get('/addcategory', addCategory.addCategory);
 
+function auth(req, res, next) {
+	if(!req.session.user_id){
+		res.redirect('/');
+	}
+	else{
+		next();
+	}
+}
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

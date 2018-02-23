@@ -9,7 +9,15 @@ exports.view = function(req,res){
 	var day = date.getDate();
 	var year = date.getFullYear();
 
-	var eventsArr = data.accounts[0].events;
+
+	var account;
+	var eventsArr;
+	for(var x = 0; x < data.accounts.length; x++) {
+		if(data.accounts[x].name == req.session.user_id) {
+			account = data.accounts[x];
+			eventsArr = data.accounts[x].events;
+		}
+	}
 	for(var x=1; x<eventsArr.length; x++){
 		if(eventsArr[x]['month'] == month && eventsArr[x]['day'] == day && eventsArr[x]['year'] == year) {
 			events.push(eventsArr[x]);
@@ -27,7 +35,14 @@ exports.date = function(req,res){
 	var day = date.getDate()+1;
 	var year = date.getFullYear();
 
-	var eventsArr = data.accounts[0].events;
+	var account;
+	var eventsArr;
+	for(var x = 0; x < data.accounts.length; x++) {
+		if(data.accounts[x].name == req.session.user_id) {
+			account = data.accounts[x];
+			eventsArr = data.accounts[x].events;
+		}
+	}
 	for(var x=1; x<eventsArr.length; x++){
 		if(eventsArr[x]['month'] == month && eventsArr[x]['day'] == day && eventsArr[x]['year'] == year) {
 			events.push(eventsArr[x]);
