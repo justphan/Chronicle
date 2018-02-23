@@ -14,6 +14,17 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
 </head>
 
 <body class="text-center">
@@ -37,6 +48,17 @@
 		<h3>Add Event</h3>
 
 		<div class="form-group">
+			
+			
+  
+			<p>Date: <input type="text" id="datepicker" ></p>
+			<script>
+				var currenDate = new Date();
+				currentDate = $( "#datepicker" ).datepicker( "getDate" );
+				$("#datepicker").value = currentDate;
+			</script>
+
+
 			<select class="form-control" name="category">
 				<option selected>Choose Category</option>
 				<script type="text/javascript"> 
@@ -171,7 +193,6 @@
 
 
 	<script>
-		
 
 		$("#category-btn").click(function(event){
 			event.preventDefault();
@@ -180,16 +201,10 @@
 		})
 
 		$("#category-save").click(function(event){
-
-
 			var newCat = document.getElementById("category-input").value;
 			alert(newCat);
-			var category = {
-					"name": newCat
-			};
-			
-			
+			var category = {"name": newCat};
 		})
 
-		</script>
+	</script>
 </body>
