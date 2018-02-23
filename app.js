@@ -53,6 +53,9 @@ app.get('/addevent', addevent.view);
 app.get('/graph', graph.view);
 app.get('/settings', settings.view);
 app.get('/calendardate', calendar.date);
+app.get('/graphweek', graph.week);
+app.get('/graphmonth', graph.month);
+app.get('/graphyear', graph.year);
 
 // Example route
 // app.get('/users', user.list);

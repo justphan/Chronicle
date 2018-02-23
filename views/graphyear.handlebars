@@ -2,7 +2,7 @@
 
 <html>
 <head>
-	<title>Your Activity</title>
+	<title>Your Year</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="css/navbar.css" rel="stylesheet">
@@ -19,14 +19,14 @@
     	var json = [['Task', 'Minutes per Day']];
 
     	var x;
-		for(x in jsonObj.accounts[0].categories) {
-			if(jsonObj.accounts[0].categories[x] !== null)
-				json.push([jsonObj.accounts[0].categories[x].name, 0]);
+		for(x in jsonObj[0]) {
+			if(jsonObj[0][x] !== null)
+				json.push([jsonObj[0][x].name, 0]);
 		}
 		var y;
 		var eve;
-		for(y in jsonObj.accounts[0].events) {
-			eve = jsonObj.accounts[0].events[y];
+		for(y in jsonObj[1]) {
+			eve = jsonObj[1][y];
   			for(categ in json) {
   				if(eve.category == json[categ][0])
   					json[categ][1] += eve.totaltime/60;
@@ -49,7 +49,7 @@
         	};*/
 
         	var options = {
-        		title:'Your Day',
+        		title:'Your Year',
         		pieSliceText:'label',
         		slices:{0: {color:'#0396ff'}, 1: {color:'#28c76f'}, 2: {color: '#f55555'}}
         	}
@@ -67,10 +67,10 @@
 <body>
 
 	<div class="navbad bootstrap-override2">
-		<a href="/graph" style="font-size: 16px" class="graph active">Day</a>
+		<a href="/graph" style="font-size: 16px" class="graph">Day</a>
 		<a href="/graphweek" style="font-size: 16px" class="graph">Week</a>
 		<a href="/graphmonth" style="font-size: 16px" class="graph">Month</a>
-		<a href="/graphyear" style="font-size: 16px" class="graph">Year</a>
+		<a href="/graphyear" style="font-size: 16px" class="graph active">Year</a>
 	</div>
 
 	<div class="navbad bootstrap-override">
