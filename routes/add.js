@@ -66,18 +66,19 @@ exports.addEvent = function(req, res) {
 			&& eventsArr[x].year == toAddEvent.year) { added = true; }
 	}
 	var events = [];
+	var date = new Date();
+	var month = date.getMonth()+1;
+	var day = date.getDate()-1;
+	var year = date.getFullYear();
+	var date = year+'-'+month+'-'+day;
+	events.push(date);
 	if(!added) {
 		account.events.push(toAddEvent);
 	}
 	
-	var date = new Date();
-	events.push(date)
-	var month = date.getMonth();
-	var day = date.getDate();
-	var year = date.getFullYear();
 
 	for(var x=1; x<eventsArr.length; x++){
-		if(eventsArr[x]['month'] == month && eventsArr[x]['day'] == day && eventsArr[x]['year'] == year) {
+		if(eventsArr[x]['month'] == month-1 && eventsArr[x]['day'] == day+1 && eventsArr[x]['year'] == year) {
 			events.push(eventsArr[x]);
 		}
 	}

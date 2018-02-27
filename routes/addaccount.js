@@ -14,5 +14,12 @@ exports.addAccount = function(req, res){
 	data.accounts.push(newAccount);
 	console.log(data);
 	req.session.user_id = req.body.name;
-	res.render('calendar', {encodedJson : encodeURIComponent(JSON.stringify(newAccount.events))});
+	var date = new Date();
+	var month = date.getMonth()+1;
+	var day = date.getDate()-1;
+	var year = date.getFullYear();
+	var date = year+'-'+month+'-'+day;
+	var events=[];
+	events.push(date);
+	res.render('calendar', {encodedJson : encodeURIComponent(JSON.stringify(events))});
 }
