@@ -2,7 +2,7 @@
 
 <html>
 <head>
-	<title>Your Day</title>
+	<title>Your Month</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="css/navbar.css" rel="stylesheet">
@@ -25,7 +25,6 @@
 		}
 		var y;
 		var eve;
-		console.log(jsonObj.length);
 		for(y in jsonObj[1]) {
 			eve = jsonObj[1][y];
   			for(categ in json) {
@@ -34,7 +33,6 @@
   			}
   		}
   		console.log(json);
-  		console.log(jsonObj);
 
       	function drawChart() {
 
@@ -50,7 +48,7 @@
           	title: 'Your Daily Activity'
         	};*/
 
-        	var options = {
+			var options = {
         		//title:'Your Day',
         		pieSliceText:'label',
         		width: screen.width,
@@ -72,9 +70,9 @@
 <body>
 
 	<div class="navbad bootstrap-override2">
-		<a href="/graph" style="font-size: 16px" class="graph active">Day</a>
+		<a href="/graph" style="font-size: 16px" class="graph">Day</a>
 		<a href="/graphweek" style="font-size: 16px" class="graph">Week</a>
-		<a href="/graphmonth" style="font-size: 16px" class="graph">Month</a>
+		<a href="/graphmonth" style="font-size: 16px" class="graph active">Month</a>
 		<a href="/graphyear" style="font-size: 16px" class="graph">Year</a>
 	</div>
 

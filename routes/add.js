@@ -49,16 +49,33 @@ exports.addEvent = function(req, res) {
 		if (data.accounts[i].name == username)
 			data.accounts[i].events.push(toAddEvent);
 	}*/
-	
-	data.accounts[0].events.push(toAddEvent);
+	var account;
+	var eventsArr;
+	for(var x = 0; x < data.accounts.length; x++) {
+		if(data.accounts[x].name == req.session.user_id) {
+			account = data.accounts[x];
+			eventsArr = data.accounts[x].events;
+		}
+	}
+	var added = false;
+	for(var x = 0; x < eventsArr.length; x++) {
+		if(eventsArr[x].timestart == toAddEvent.timestart 
+			&& eventsArr[x].timeend==toAddEvent.timeend
+			&& eventsArr[x].month == toAddEvent.month
+			&& eventsArr[x].day==toAddEvent.day
+			&& eventsArr[x].year == toAddEvent.year) { added = true; }
+	}
 	var events = [];
+	if(!added) {
+		account.events.push(toAddEvent);
+	}
+	
 	var date = new Date();
-	events.push(date);
+	events.push(date)
 	var month = date.getMonth();
 	var day = date.getDate();
 	var year = date.getFullYear();
 
-	var eventsArr = data.accounts[0].events;
 	for(var x=1; x<eventsArr.length; x++){
 		if(eventsArr[x]['month'] == month && eventsArr[x]['day'] == day && eventsArr[x]['year'] == year) {
 			events.push(eventsArr[x]);
