@@ -16,7 +16,7 @@
 		var jsonObj = JSON.parse(decodedJson);
     	google.charts.load('current', {'packages':['corechart']});
     	google.charts.setOnLoadCallback(drawChart);
-    	var json = [['Task', 'Hours per Day']];
+    	var json = [['Task', 'Hours per Month']];
 
     	var x;
 		for(x in jsonObj[0]) {
