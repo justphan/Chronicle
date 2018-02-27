@@ -5,7 +5,7 @@ exports.view = function(req,res){
 	req.query.category;
 	req.query.name;
 	req.query.timestart;
-	req.query.ampm
+	req.query.date;
 	req.query.timeend;
 	/*var newEvent = {
 		"category": req.query.category,
