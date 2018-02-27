@@ -168,7 +168,7 @@
 		
 
 
-<form id="addEventForm" role="form" method="get" action="/add">
+<form id="editEventForm" role="form" method="get" action="/add">
 		<h3>Add Event</h3>
 
 		<div>
@@ -193,9 +193,9 @@
 
 		<div>
 			<br>Start:<br>
-			<input class="form-control" type="datetime-local" name="timestart"><br>
+			<input class="form-control" type="datetime-local" name="timestart" value= "{{timestart}}"><br>
 			<br>End:<br>
-			<input class="form-control" type="datetime-local" name="timeend"><br>
+			<input class="form-control" type="datetime-local" name={{timeend}}><br>
 		</div>
 		<div class="middle-bttn">
 			<table style="margin: auto">
@@ -214,7 +214,7 @@
 					</th>
 					<th>
 						<div class="delete">
-							<button class ="" type ="cancel">Delete</button>
+							<button class ="btn-delete" type ="cancel">Delete</button>
 						</div>
 					</th>
 				</tr>
