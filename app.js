@@ -66,7 +66,9 @@ app.get('/edit', auth, edit.view);
 // view route
 // app.get('/users', user.list);
 app.get('/add', auth, add.addEvent);
-app.get('/addcategory', auth, addCategory.addCategory);
+app.get('/addcategory', auth, add.addCategory);
+app.get('/changecolor', auth, add.changeColor);
+app.get('/delcategory', auth, add.delCategory);
 
 function auth(req, res, next) {
 	if(!req.session.user_id){

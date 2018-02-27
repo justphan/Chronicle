@@ -16,7 +16,7 @@
 		var jsonObj = JSON.parse(decodedJson);
     	google.charts.load('current', {'packages':['corechart']});
     	google.charts.setOnLoadCallback(drawChart);
-    	var json = [['Task', 'Minutes per Day']];
+    	var json = [['Task', 'Hours per Month']];
 
     	var x;
 		for(x in jsonObj[0]) {
@@ -63,6 +63,17 @@
         	formatter.format(dataGraph, 1);
 
         	chart.draw(dataGraph, options);
+
+        	var barOptions = {
+        		width: screen.width,
+        		height: screen.height,
+        		legend: { position: "none" }
+
+
+        	}
+
+        	var barchart = new google.visualization.ColumnChart(document.getElementById('barChart'));
+    		barchart.draw(dataGraph, barOptions);
     	}
     </script>
 </head>
@@ -112,7 +123,7 @@
 	</div>
 -->
 	<div id="piechart">	</div>
-
+	<div id="barChart"> </div>
 
 	
 </body>
