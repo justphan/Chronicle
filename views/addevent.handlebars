@@ -6,8 +6,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="css/navbar.css" rel="stylesheet">
-	<link href="css/bootstrap.css" rel="stylesheet">
-
+	<link href="css/addevent.css" rel="stylesheet">
+	<!-- <link href="css/bootstrap.css" rel="stylesheet"> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -15,7 +16,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
+  
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
@@ -45,24 +46,34 @@
 	</div> -->
 <!--
 	<form id="addEventForm" role="form" method="get" action="/add">
-		<h3>Add Event</h3>
+		<h3>Add Event</h3> <br> 
 
 		<div class="form-group">
 			
 			
 			<div> 
-			<br>Task name:<br>
-			<input class="form-control" type="text" name="name"><br>
+			
+			<input class="form-control" type="text" name="name" placeholder="Name of Event"><br>
 		</div>	
   
-  			<div>
-			<p>Date: <input type="text" id="datepicker" class="form-control" style="width:40%;display:inline"></p></div>
+  			<div class="input-group mb-3">
+  				 <div class="input-group-prepend">
+   				 <span class="input-group-text" id="basic-addon1">Date:</span>
+  				</div>
+
+			 <input type="text" id="datepicker" class="form-control" style="width:40%;display:inline"aria-label="Username" aria-describedby="basic-addon1" placeholder="Choose Date" name="date"></div>
 			<script>
 				var currentDate = new Date();
 				currentDate = $( "#datepicker" ).datepicker( "getDate" );
 				$("#datepicker").value = currentDate;
 			</script>
 
+
+
+			<div class="input-group mb-3">
+  				 <div class="input-group-prepend">
+   				 <span class="input-group-text" id="basic-addon1">Categories</span>
+  				</div>
 
 			<select class="form-control" name="category">
 				<option selected>Choose Category</option>
@@ -77,6 +88,7 @@
 					{{/each}}
 				{{/each}}
 			</select>
+		</div>
 		</div>
 
 

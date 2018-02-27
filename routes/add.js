@@ -5,6 +5,9 @@ exports.addEvent = function(req, res) {
 
 	var newName;
 	//var query = req.body;
+
+
+	//default if no name to name it the category
 	var query = req.query;
 	if (query.name == "") {
 		newName = query.category;
@@ -34,16 +37,22 @@ exports.addEvent = function(req, res) {
 		"color": newColor
 	};
 
+
+	//variable from the form
 	var dateStart = new Date(query.timestart);
 	var dateEnd = new Date(query.timeend);
 
+	//convert to number
 	var timeStart = calcTime(dateStart);
 	var timeEnd = calcTime(dateEnd);
 	
 
+	
 	var totalTime = Math.abs(dateEnd - dateStart);
 	totalTime = totalTime / (60*1000);
 
+
+	//creating new event
 	var toAddEvent = {
 		"category": newCategory,
 		"name": newName,
@@ -71,6 +80,14 @@ exports.addEvent = function(req, res) {
 		if (data.accounts[i].name == username)
 			data.accounts[i].events.push(toAddEvent);
 	}*/
+	var account;
+	var eventsArr;
+	for(var x = 0; x < data.accounts.length; x++) {
+		if(data.accounts[x].name == req.session.user_id) {
+			account = data.accounts[x];
+			eventsArr = data.accounts[x].events;
+		}
+	}
 
 	var added = false;
 	for(var x = 0; x < eventsArr.length; x++) {
@@ -209,6 +226,7 @@ function timeToString(starttime, endtime, meridiem){
 
 }
 
+//formatting time
 function calcTime(time){
 	var returnTime = "";
 	var hour = time.getHours();
@@ -232,6 +250,8 @@ function calcTime(time){
 	return returnTime;
 
 }
+
+
 function calcID(starttime, endtime, meridiem){
 	console.log("running calcID");
 	console.log(starttime[0]+" "+starttime[1]);
