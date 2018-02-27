@@ -629,11 +629,12 @@
 		var eventsArray = jsonObj; 
 		var date = new Date(eventsArray[0]);
 		var tod = new Date();
-		var d = 0;
-		if (date.getDate() == new Date().getDate())
+		
+		if (date.getDate() == tod.getDate())
 			d = date.getDate();
 		else
-			d = date.getDate()+1;
+		 	d = date.getDate()+1;
+
 		var mm = date.getMonth()+1;
 		var y = date.getFullYear();
 		if(d<10)
@@ -674,9 +675,10 @@
 
 
 		}
-
+		/*
 		if(eventsArray.length==1)
 			document.getElementById('default').src = "./images/default.png"
+		*/
 
 	</script>
 <!--

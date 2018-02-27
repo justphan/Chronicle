@@ -64,8 +64,8 @@ app.get('/loginerror', login.err);
 
 // view route
 // app.get('/users', user.list);
-app.get('/add', add.addEvent);
-app.get('/addcategory', addCategory.addCategory);
+app.get('/add', auth, add.addEvent);
+app.get('/addcategory', auth, addCategory.addCategory);
 
 function auth(req, res, next) {
 	if(!req.session.user_id){

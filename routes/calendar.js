@@ -18,7 +18,7 @@ exports.view = function(req,res){
 			eventsArr = data.accounts[x].events;
 		}
 	}
-	for(var x=1; x<eventsArr.length; x++){
+	for(var x=0; x<eventsArr.length; x++){
 		if(eventsArr[x]['month'] == month && eventsArr[x]['day'] == day && eventsArr[x]['year'] == year) {
 			events.push(eventsArr[x]);
 		}
@@ -43,7 +43,7 @@ exports.date = function(req,res){
 			eventsArr = data.accounts[x].events;
 		}
 	}
-	for(var x=1; x<eventsArr.length; x++){
+	for(var x=0; x<eventsArr.length; x++){
 		if(eventsArr[x]['month'] == month && eventsArr[x]['day'] == day && eventsArr[x]['year'] == year) {
 			events.push(eventsArr[x]);
 		}

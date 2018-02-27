@@ -173,16 +173,10 @@
 
 		<div>
 			<select name="category">
-				<script type="text/javascript"> 
-					var data= require("../accounts.json");
-					var acc = data.accounts[0];
-				</script>
-				{{#each accounts}}
 					{{#each categories}}
 					<option value="{{name}}">{{name}}</option>
 					
 					{{/each}}
-				{{/each}}
 			</select>
 		</div>
 
@@ -193,9 +187,9 @@
 
 		<div>
 			<br>Start:<br>
-			<input class="form-control" type="datetime-local" name="timestart"><br>
+			<input class="form-control" type="datetime-local" value="" name="timestart"><br>
 			<br>End:<br>
-			<input class="form-control" type="datetime-local" name="timeend"><br>
+			<input class="form-control" type="datetime-local" value="" name="timeend"><br>
 		</div>
 		<div class="middle-bttn">
 			<table style="margin: auto">

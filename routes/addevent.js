@@ -16,6 +16,12 @@ exports.view = function(req,res){
 	};
 	console.log(newEvent);
 	data.accounts.events.push(newEvent);*/
-	res.render('addevent', data);
+	var account;
+	for(var x = 0; x < data.accounts.length; x++) {
+		if(data.accounts[x].name == req.session.user_id) {
+			account = data.accounts[x];
+		}
+	}
+	res.render('addevent', account);
 
 }
