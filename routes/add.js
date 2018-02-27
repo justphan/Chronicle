@@ -57,10 +57,21 @@ exports.addEvent = function(req, res) {
 			eventsArr = data.accounts[x].events;
 		}
 	}
-	account.events.push(toAddEvent);
+	var added = false;
+	for(var x = 0; x < eventsArr.length; x++) {
+		if(eventsArr[x].timestart == toAddEvent.timestart 
+			&& eventsArr[x].timeend==toAddEvent.timeend
+			&& eventsArr[x].month == toAddEvent.month
+			&& eventsArr[x].day==toAddEvent.day
+			&& eventsArr[x].year == toAddEvent.year) { added = true; }
+	}
 	var events = [];
+	if(!added) {
+		account.events.push(toAddEvent);
+	}
+	
 	var date = new Date();
-	events.push(date);
+	events.push(date)
 	var month = date.getMonth();
 	var day = date.getDate();
 	var year = date.getFullYear();
