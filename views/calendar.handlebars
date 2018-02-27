@@ -628,12 +628,8 @@
 		console.log(jsonObj);
 		var eventsArray = jsonObj; 
 		var date = new Date(eventsArray[0]);
-		var tod = new Date();
 		
-		if (date.getDate() == tod.getDate())
-			d = date.getDate();
-		else
-		 	d = date.getDate()+1;
+		var d = date.getDate()+1;
 
 		var mm = date.getMonth()+1;
 		var y = date.getFullYear();

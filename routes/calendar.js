@@ -4,10 +4,11 @@ exports.view = function(req,res){
 	console.log(data);
 	var events = [];
 	var date = new Date();
-	events.push(date);
-	var month = date.getMonth();
-	var day = date.getDate();
+	var month = date.getMonth()+1;
+	var day = date.getDate()-1;
 	var year = date.getFullYear();
+	var date = year+'-'+month+'-'+day;
+	events.push(date);
 
 
 	var account;
@@ -19,7 +20,7 @@ exports.view = function(req,res){
 		}
 	}
 	for(var x=0; x<eventsArr.length; x++){
-		if(eventsArr[x]['month'] == month && eventsArr[x]['day'] == day && eventsArr[x]['year'] == year) {
+		if(eventsArr[x]['month'] == month-1 && eventsArr[x]['day'] == day+1 && eventsArr[x]['year'] == year) {
 			events.push(eventsArr[x]);
 		}
 	}
@@ -30,10 +31,15 @@ exports.view = function(req,res){
 exports.date = function(req,res){
 	var events = [];
 	var date = new Date(req.query.viewdate);
-	events.push(date);
-	var month = date.getMonth();
-	var day = date.getDate()+1;
+	var month = date.getMonth()+1;
+	var day = date.getDate();
 	var year = date.getFullYear();
+	var date = year+'-'+month+'-'+day;
+	events.push(date);
+	/*
+	var month = parseInt(date.substring(5,6));
+	var day = parseInt(date.substring(8,9));
+	var year = parseInt(date.substring(0,3));*/
 
 	var account;
 	var eventsArr;
@@ -44,7 +50,7 @@ exports.date = function(req,res){
 		}
 	}
 	for(var x=0; x<eventsArr.length; x++){
-		if(eventsArr[x]['month'] == month && eventsArr[x]['day'] == day && eventsArr[x]['year'] == year) {
+		if(eventsArr[x]['month'] == month-1 && eventsArr[x]['day'] == day+1 && eventsArr[x]['year'] == year) {
 			events.push(eventsArr[x]);
 		}
 	}
