@@ -4,6 +4,9 @@ var data = require("../accounts.json");
 exports.addEvent = function(req, res) {
 	var newName;
 	//var query = req.body;
+
+
+	//default if no name to name it the category
 	var query = req.query;
 	 if (query.name == "") {
 			newName = query.category;
@@ -12,16 +15,22 @@ exports.addEvent = function(req, res) {
 			newName = query.name;
 		}
 
+
+	//variable from the form
 	var dateStart = new Date(query.timestart);
 	var dateEnd = new Date(query.timeend);
 
+	//convert to number
 	var timeStart = calcTime(dateStart);
 	var timeEnd = calcTime(dateEnd);
 	
 
+	
 	var totalTime = Math.abs(dateEnd - dateStart);
 	totalTime = totalTime / (60*1000);
 
+
+	//creating new event
 	var toAddEvent = {
 		"category": query.category,
 		"name": newName,
@@ -57,6 +66,7 @@ exports.addEvent = function(req, res) {
 			eventsArr = data.accounts[x].events;
 		}
 	}
+
 	var added = false;
 	for(var x = 0; x < eventsArr.length; x++) {
 		if(eventsArr[x].timestart == toAddEvent.timestart 
@@ -115,6 +125,7 @@ function timeToString(starttime, endtime, meridiem){
 
 }
 
+//formatting time
 function calcTime(time){
 	var returnTime = "";
 	var hour = time.getHours();
@@ -138,6 +149,8 @@ function calcTime(time){
 	return returnTime;
 
 }
+
+
 function calcID(starttime, endtime, meridiem){
 	console.log("running calcID");
 	console.log(starttime[0]+" "+starttime[1]);
