@@ -6,9 +6,12 @@ exports.addAccount = function(req, res){
 		"pass": req.body.pass,
 		"events":[],
 		"categories": [
-				{ "name": "Work" },
-				{ "name": "Sleep" },
-				{ "name": "Exercise" }
+				{ "name": "Work",
+				"color": "linear-gradient(#9cecfb, #65c7f7, #0052d4)"},
+				{ "name": "Sleep",
+				"color": "linear-gradient(#dce35b, #45b649)"},
+				{ "name": "Exercise",
+				"color": "linear-gradient(#dce35b, #45b649)"}
 				]
 	};
 	data.accounts.push(newAccount);

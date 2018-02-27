@@ -2,15 +2,37 @@ var data = require("../accounts.json");
 
 
 exports.addEvent = function(req, res) {
+
 	var newName;
 	//var query = req.body;
 	var query = req.query;
-	 if (query.name == "") {
-			newName = query.category;
+	if (query.name == "") {
+		newName = query.category;
+	}
+	else {
+		newName = query.name;
+	}
+	var account;
+	var eventsArr;
+	var categories;
+	for(var x = 0; x < data.accounts.length; x++) {
+		if(data.accounts[x].name == req.session.user_id) {
+			account = data.accounts[x];
+			eventsArr = data.accounts[x].events;
+			categories = data.accounts[x].categories;
 		}
-		else {
-			newName = query.name;
+	}
+	var newColor;
+	for (var x = 0; x < categories.length; x++) {
+		if(query.category == categories[x]['name']) {
+			newColor = categories[x]['color'];
 		}
+	}
+
+	var newCategory = {
+		"name": query.category,
+		"color": newColor
+	};
 
 	var dateStart = new Date(query.timestart);
 	var dateEnd = new Date(query.timeend);
@@ -23,7 +45,7 @@ exports.addEvent = function(req, res) {
 	totalTime = totalTime / (60*1000);
 
 	var toAddEvent = {
-		"category": query.category,
+		"category": newCategory,
 		"name": newName,
 		"totaltime": totalTime,
 		"timestart" : timeStart,
@@ -49,14 +71,7 @@ exports.addEvent = function(req, res) {
 		if (data.accounts[i].name == username)
 			data.accounts[i].events.push(toAddEvent);
 	}*/
-	var account;
-	var eventsArr;
-	for(var x = 0; x < data.accounts.length; x++) {
-		if(data.accounts[x].name == req.session.user_id) {
-			account = data.accounts[x];
-			eventsArr = data.accounts[x].events;
-		}
-	}
+
 	var added = false;
 	for(var x = 0; x < eventsArr.length; x++) {
 		if(eventsArr[x].timestart == toAddEvent.timestart 
@@ -77,9 +92,9 @@ exports.addEvent = function(req, res) {
 	}
 	
 
-	for(var x=1; x<eventsArr.length; x++){
-		if(eventsArr[x]['month'] == month-1 && eventsArr[x]['day'] == day+1 && eventsArr[x]['year'] == year) {
-			events.push(eventsArr[x]);
+	for(var x=0; x<account.events.length; x++){
+		if(account.events[x]['month'] == month-1 && account.events[x]['day'] == day+1 && account.events[x]['year'] == year) {
+			events.push(account.events[x]);
 		}
 	}
 	//console.log(data.accounts[0].events);
@@ -91,16 +106,95 @@ exports.addCategory = function(req, res) {
 	console.log("adding category");
 	//var post_body = req.bdy;
 	var query = req.query;
+	var newcolor = query.color;
+
+	
+	if(newcolor == "red")
+		newcolor = "linear-gradient(#f85032, #e73827)";
+	else if (newcolor == "orange")
+		newcolor = "linear-gradient(#ff7e5f, #feb47b)";
+	else if (newcolor == "yellow")
+		newcolor = "linear-gradient(#fffc00, #ffffff)";
+	else if (newcolor == "green")
+		newcolor = "linear-gradient(#dce35b, #45b649)";
+	else if (newcolor == "blue")
+		newcolor = "linear-gradient(#9cecfb, #65c7f7, #0052d4)";
+	else if (newcolor == "purple")
+		newcolor = "linear-gradient(#20002c, #cbb4d4)";
+	else
+		newcolor = "linear-gradient(#bdc3c7, #2c3e50)";
+
 
 	var category = {
-		"name": query.newCategory
+		"name": query.name,
+		"color": newcolor
 	};
 
-	for(account in data.accounts) {
-		account.categories.push(category);
+	var categories;
+	var account;
+	for(var x = 0; x < data.accounts.length; x++) {
+		if(data.accounts[x].name == req.session.user_id) {
+			data.accounts[x].categories.push(category);
+			account = data.accounts[x];
+			categories = data.accounts[x].categories;
+		}
 	}
-	data.categories.push(category);
-	res.render('addevent');
+	res.render('settings', account);
+}
+
+exports.delCategory = function(req, res) {
+	var account;
+	for(var x = 0; x < data.accounts.length; x++) {
+		if(data.accounts[x].name == req.session.user_id) {
+			account = data.accounts[x];
+		}
+	}
+	var category = req.query.category;
+	for (var x = 0; x < account.categories.length; x++) {
+		if(category == account.categories[x]['name']) {
+			account.categories.splice(x, 1);
+			x--;
+		}
+	}
+	for (var x = 0; x < account.events.length; x++) {
+		if(account.events[x]['category'] == category) {
+			account.events.splice(x, 1);
+			x--;
+		}
+	}
+	res.render('settings', account);
+}
+
+exports.changeColor = function(req, res) {
+	var account;
+	for(var x = 0; x < data.accounts.length; x++) {
+		if(data.accounts[x].name == req.session.user_id) {
+			account = data.accounts[x];
+		}
+	}
+	var category = req.query.category;
+	var newcolor = req.query.color;
+	if(newcolor == "red")
+		newcolor = "linear-gradient(#f85032, #e73827)";
+	else if (newcolor == "orange")
+		newcolor = "linear-gradient(#ff7e5f, #feb47b)";
+	else if (newcolor == "yellow")
+		newcolor = "linear-gradient(#fffc00, #ffffff)";
+	else if (newcolor == "green")
+		newcolor = "linear-gradient(#dce35b, #45b649)";
+	else if (newcolor == "blue")
+		newcolor = "linear-gradient(#9cecfb, #65c7f7, #0052d4)";
+	else if (newcolor == "purple")
+		newcolor = "linear-gradient(#20002c, #cbb4d4)";
+	else
+		newcolor = "linear-gradient(#bdc3c7, #2c3e50)";
+
+	for (var x = 0; x < account.categories.length; x++) {
+		if(category == account.categories[x]['name']) {
+			account.categories[x]['color'] = newcolor;
+		}
+	}
+	res.render('settings', account.categories);
 }
 
 function timeToString(starttime, endtime, meridiem){
