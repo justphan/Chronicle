@@ -183,26 +183,64 @@
 <form id="addEventForm" role="form" method="get" action="/add">
 		<h3>Add Event</h3>
 
+		
+
+		<div class="input-group mb-3 input-group-lg"> 
+			<input class="form-control" placeholder="New Event Name" type="text" name="name">
+		</div>
+
 		<div>
-			<select name="category">
+
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text">Date</span>
+				</div>
+				<input type="date" class="form-control" name="date">
+			</div>
+
+			<div class="form-group">
+			<select class="form-control" name="category">
+					<option selected>Select Category</option>
 					{{#each categories}}
 					<option value="{{name}}">{{name}}</option>
 					
 					{{/each}}
 			</select>
+			</div>
 		</div>
 
-		<div> 
-			<br>Task name:<br>
-			<input class="form-control" type="text" name="name"><br>
-		</div>
 
+
+<div class="row">
+	<div class="col-6">
+		<div class="input-group mb-3 input-group-sm">
+			<div class="input-group-prepend">
+				<span class="input-group-text">Start Time</span>
+			</div>
+			<input class="form-control" type="time" name="timestart">
+		</div>
+	</div>
+	<div class="col-6">
+		<div class="input-group mb-3 input-group-sm">
+			<div class="input-group-prepend">
+				<span class="input-group-text">End Time</span>
+			</div>
+			<input class="form-control" type="time" name="timeend">
+		</div>
+	</div>
+</div>
+		
+		
+		
+
+		
+<!-- 
 		<div>
 			<br>Start:<br>
 			<input class="form-control" type="datetime-local" value="" name="timestart"><br>
 			<br>End:<br>
 			<input class="form-control" type="datetime-local" value="" name="timeend"><br>
-		</div>
+		</div> -->
 		<div class="middle-bttn">
 			<table style="margin: auto">
 				<tr>

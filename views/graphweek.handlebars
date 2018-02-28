@@ -16,12 +16,12 @@
 		var jsonObj = JSON.parse(decodedJson);
     	google.charts.load('current', {'packages':['corechart']});
     	google.charts.setOnLoadCallback(drawChart);
-    	var json = [['Task', 'Hours per Day']];
+    	var json = [['Task', 'Hours per Week', {role: 'style'}]];
 
     	var x;
 		for(x in jsonObj[0]) {
 			if(jsonObj[0][x] !== null)
-				json.push([jsonObj[0][x].name, 0]);
+				json.push([jsonObj[0][x].name, 0/*, jsonObj[0][x].color.substring(16, 22)*/]);
 		}
 		var y;
 		var eve;

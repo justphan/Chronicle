@@ -15,9 +15,13 @@ exports.addEvent = function(req, res) {
 	else {
 		newName = query.name;
 	}
+
+
 	var account;
 	var eventsArr;
 	var categories;
+
+	//account verification
 	for(var x = 0; x < data.accounts.length; x++) {
 		if(data.accounts[x].name == req.session.user_id) {
 			account = data.accounts[x];
@@ -25,6 +29,7 @@ exports.addEvent = function(req, res) {
 			categories = data.accounts[x].categories;
 		}
 	}
+
 	var newColor;
 	for (var x = 0; x < categories.length; x++) {
 		if(query.category == categories[x]['name']) {
@@ -39,18 +44,26 @@ exports.addEvent = function(req, res) {
 
 
 	//variable from the form
-	var dateStart = new Date(query.timestart);
-	var dateEnd = new Date(query.timeend);
+/*	var dateStart = new Date(query.timestart);
+	var dateEnd = new Date(query.timeend); */
+
+	var date = new Date(query.date);
+	console.log("Date is: "+date);
 
 	//convert to number
-	var timeStart = calcTime(dateStart);
-	var timeEnd = calcTime(dateEnd);
+	
+	var timeStart = query.timestart;
+	var timeEnd = query.timeend;
 	
 
 	
-	var totalTime = Math.abs(dateEnd - dateStart);
+	var totalTime = Math.abs(timeStart - timeEnd);
 	totalTime = totalTime / (60*1000);
+	console.log("totalTime is " + totalTime);
 
+
+	
+	
 
 	//creating new event
 	var toAddEvent = {
@@ -59,10 +72,16 @@ exports.addEvent = function(req, res) {
 		"totaltime": totalTime,
 		"timestart" : timeStart,
 		"timeend" : timeEnd,
-		"month" : dateStart.getMonth(),
-		"day" : dateStart.getDate(),
-		"year" : dateStart.getFullYear()
+		"month" : date.getMonth()+1,
+		"day" : date.getDate()+1,
+		"year" : date.getFullYear()
 	};
+
+	console.log("month: "+toAddEvent["month"]);
+	console.log("day: "+toAddEvent["day"]);
+	console.log("year: "+toAddEvent["year"]);
+
+	
 
 	
 	
@@ -80,6 +99,8 @@ exports.addEvent = function(req, res) {
 		if (data.accounts[i].name == username)
 			data.accounts[i].events.push(toAddEvent);
 	}*/
+
+	//get the corresponding events for the account
 	var account;
 	var eventsArr;
 	for(var x = 0; x < data.accounts.length; x++) {
@@ -89,6 +110,8 @@ exports.addEvent = function(req, res) {
 		}
 	}
 
+
+	//prevent page refresh error
 	var added = false;
 	for(var x = 0; x < eventsArr.length; x++) {
 		if(eventsArr[x].timestart == toAddEvent.timestart 
@@ -97,20 +120,23 @@ exports.addEvent = function(req, res) {
 			&& eventsArr[x].day==toAddEvent.day
 			&& eventsArr[x].year == toAddEvent.year) { added = true; }
 	}
+
+
 	var events = [];
-	var date = new Date();
-	var month = date.getMonth()+1;
-	var day = date.getDate()-1;
-	var year = date.getFullYear();
-	var date = year+'-'+month+'-'+day;
-	events.push(date);
+	var date2 = new Date();
+	var month = date2.getMonth()+1;
+	var day = date2.getDate();
+	var year = date2.getFullYear();
+	date2 = year+'-'+month+'-'+day;
+	console.log("date2: "+date2);
+	events.push(date2);
 	if(!added) {
 		account.events.push(toAddEvent);
 	}
 	
 
 	for(var x=0; x<account.events.length; x++){
-		if(account.events[x]['month'] == month-1 && account.events[x]['day'] == day+1 && account.events[x]['year'] == year) {
+		if(account.events[x]['month'] == month && account.events[x]['day'] == day && account.events[x]['year'] == year) {
 			events.push(account.events[x]);
 		}
 	}
