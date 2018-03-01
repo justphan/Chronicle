@@ -1,0 +1,165 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Calendar</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/navbar.css" rel="stylesheet">
+	<link href="css/calendar.css" rel="stylesheet">
+	<!--<link href="css/bootstrap.css" rel="stylesheet">-->
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+	<script src="js/burgermenu.js"> </script>
+	
+	
+
+
+</head>
+<body>
+	
+<nav class="navbar fixed-top navbar-expand bg-dark navbar-dark">
+	
+
+  <form class="float-left form-inline" method="get" action="/calendardate">
+    <input class="float-left form-control mr-sm-2" id='datePicker' type="date" name="viewdate">
+    <button class="btn btn-success" type="submit">Go</button>
+  </form>
+
+  
+
+</nav>
+
+
+
+	<div class="navbad bootstrap-override">
+		<a href="/calendar" class="active"><i class="fas fa-calendar-alt"  style="font-size: 16px"></i><br>Calendar</a>
+		<a href="/graph"><i class="fas fa-chart-pie"  style="font-size: 16px"></i><br>Your Activity</a>
+		<a href="/settings"><i class="fas fa-cog"  style="font-size: 16px"></i><br>Settings</a>
+		<a href="/addevent"><i class="fas fa-plus-square"  style="font-size: 16px"></i><br>Add Event</a>
+	</div>
+
+
+	
+
+
+	
+
+	
+		<p id="centerMsg">No Events Added Today<br>Calendar 2</p>
+	
+
+	<script type="text/javascript">
+		var decodedJson = decodeURIComponent("{{{encodedJson}}}");
+		var jsonObj = JSON.parse(decodedJson);
+		console.log(jsonObj);
+		var eventsArray = jsonObj; 
+		var date = new Date(eventsArray[0]);
+		
+		var d = date.getDate();
+
+		var mm = date.getMonth()+1;
+		var y = date.getFullYear();
+		if(d<10)
+			d='0'+d;
+		if(mm<10)
+			mm='0'+mm;
+
+		var today = y+'-'+mm+'-'+d;
+		document.getElementById('datePicker').defaultValue = today;
+		//console.log(jsonObj.accounts);
+		//console.log(jsonObj.accounts.0);
+		//var localdata = "{{accounts.0.events}}";
+
+		console.log("eventsArray.length="+eventsArray.length)
+
+		for(var x=1; x<eventsArray.length; x++){
+
+				document.getElementById("centerMsg").style.display="none";
+				var eve = eventsArray[x]
+				
+				var div = document.createElement("div");
+				div.classList.add("card");
+				div.classList.add("mb-3");
+				div.classList.add("eventCard");
+				div.innerHTML = 
+					'<div class="card-header">'+ eventsArray[x].timestart + ' - '+eventsArray[x].timeend+
+					'</div> <div class = "card-body"> <h5 class="card-title">'+eventsArray[x].name+
+					'</h5> <p class="card-text">Category: '+eve.category.name+'</p> </div>';
+
+				
+				var color = eve['category']['color'];				/*
+				if(eve.category == "Work")
+					color = "linear-gradient(#abdcff, #0396ff)";
+				if(eve.category == "Exercise")
+					color = "linear-gradient(#fccf31, #f55555)";
+				if(eve.category == "Sleep")
+					color = "linear-gradient(#81fbb8, #28c76f)";*/
+
+				div.style.color = "white";
+				div.style.background = color;
+				document.body.appendChild(div);
+
+
+		}
+
+
+		
+		// if(eventsArray.length==1){
+		// 	var middleDiv = document.createElement("div");
+		// 	middleDiv.classList.add("middleDiv");
+		// 	// middleDiv.style.width = "800px";
+		// 	// middleDiv.style.margin = "0 auto";
+		// 	// middleDiv.style.backgroundColor = "red";
+
+		// 	middleDiv.innerHTML = "<div class='emptyMsg'><h1>No Events Added for This Day</h1></div>";
+		// 	document.body.appendChild(middleDiv);
+		// }
+		
+
+	</script>
+<!--
+		{{#each accounts.0.events}}
+		<script>console.log("event going in");</script>
+
+		<div class="card mb-3">
+				<div class="card-header"> {{timestart}} - {{timeend}}
+				</div>
+				<div class = "card=body">
+					<h5 class="card=title">{{name}}</h5>
+					<p class="card=text">insert more info here</p>
+				</div>
+
+		{{/each}}
+-->
+
+
+
+
+		<!-- TODO: option to click on events to edit -->
+		<script>
+		$("div.eventCard").click(function(event){
+			event.preventDefault();
+			eventsArray[x].timestart
+			eventsArray[x].timeend
+			//get timestart, timeend, and name
+			//somehow put this into the json file by editing in the spots instead of pushing all the data
+			/*alert("this event was clicked.  Edit page coming soon");*/
+		});
+
+		</script>
+
+
+</body>
+
+
+</html>

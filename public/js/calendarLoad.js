@@ -6,6 +6,7 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
+	
 
 })
 
@@ -23,6 +24,10 @@ $("#add-button").click(function(event){
 	window.location.replace("/addevent");
 	
 });
+
+
+
+
 
 
 

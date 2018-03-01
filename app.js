@@ -49,6 +49,7 @@ if ('development' == app.get('env')) {
 app.get('/', login.view);
 app.post('/loginacc', login.login);	
 app.get('/calendar', auth, calendar.view);
+app.get('/calendar2', auth, calendar.view2);
 app.get('/signup', signup.view);
 app.get('/addevent', auth, addevent.view);
 app.get('/graph', auth, graph.view);
