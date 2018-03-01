@@ -49,7 +49,12 @@ exports.addEvent = function(req, res) {
 
 	var date = new Date(query.date);
 	console.log("Date is: "+date);
-
+	/*
+	if(mm<10)
+		mm='0'+mm;
+	if(dd<10)
+		dd='0'+dd;
+	*/
 	//convert to number
 	
 	var timeStart = query.timestart;
@@ -76,7 +81,8 @@ exports.addEvent = function(req, res) {
 		"timeend" : timeEnd,
 		"month" : date.getMonth()+1,
 		"day" : date.getDate()+1,
-		"year" : date.getFullYear()
+		"year" : date.getFullYear(),
+		"date" : query.date
 	};
 
 	console.log("month: "+toAddEvent["month"]);
@@ -278,8 +284,8 @@ function calcTime(time){
 	var min = time.substring(x, x+2);
 	if(militaryHour < 10)
 		hour = '0'+militaryHour;
-	if(min < 10 && min > 0)
-		min = '0'+min;
+	//if(min < 10 && min > 0)
+	//	min = '0'+min;
 	if(militaryHour > 0 && militaryHour < 12) {
 		returnTime = militaryHour + ':' + min + "am";
 	}

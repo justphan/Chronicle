@@ -2,248 +2,164 @@
 
 <html>
 <head>
-	<title>Add Event</title>
+	<title>Edit Event</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="css/navbar.css" rel="stylesheet">
-	<link href="css/bootstrap.css" rel="stylesheet">
-
+	<link href="css/addevent.css" rel="stylesheet">
+	<!-- <link href="css/bootstrap.css" rel="stylesheet"> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  
+  	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 
-  <script>
-  $( function() {
-    $( "#datepicker" ).datepicker();
-  } );
-  </script>
+	  <script>
+	  $( function() {
+	    $( "#datepicker" ).datepicker();
+	  } );
+
+	  </script>
 </head>
 
 <body class="text-center">
 
-
-	<div class="main"><div class="wrapper">
-
-
-	<!-- 		<div class="input-group mb-3">
- 		 <div class="input-group-prepend">
-   	 <button class="btn btn-outline-secondary" id="category-btn" type="button">Add New Category</button>
- 	 </div>
-
- 	 	
- 		 <input type="text" id="category-input" class="form-control hidden" placeholder="Ex. Self-Care" aria-label="" aria-describedby="basic-addon1" name="newCategory">
- 		 <button class="btn btn-primary hidden" id="category-save" type="text" >Save New Category</button>
- 		
-	</div> -->
-<!--
-	<form id="addEventForm" role="form" method="get" action="/add">
-		<h3>Add Event</h3>
-
-		<div class="form-group">
-			
-			
-			<div> 
-			<br>Task name:<br>
-			<input class="form-control" type="text" name="name"><br>
-		</div>	
-  
-  			<div>
-			<p>Date: <input type="text" id="datepicker" class="form-control" style="width:40%;display:inline"></p></div>
-			<script>
-				var currentDate = new Date();
-				currentDate = $( "#datepicker" ).datepicker( "getDate" );
-				$("#datepicker").value = currentDate;
-			</script>
+<div class="main">
+	<div class="wrapper">
+		
 
 
-			<select class="form-control" name="category">
-				<option selected>Choose Category</option>
-				<script type="text/javascript"> 
-					var data= require("../accounts.json");
-					var acc = data.accounts[0];
-				</script>
-				{{#each accounts}}
-					{{#each categories}}
-					<option value="{{name}}">{{name}}</option>
-					
-					{{/each}}
-				{{/each}}
-			</select>
-		</div>
-
-
+<form id="editEventForm" class="form-group" role="form" method="get" action="/editEvent">
 	
-
-
-
-
-		
-
-		<div>
-			<p>Start:
-			<input class="form-control" type="time" name="timestart" style="width:30%; display:inline">
-			End:
-			<input class="form-control" type="time" name="timeend"style="width:30%; display:inline"></p>
-		</div>
-
-	-->
-		<!--
-		<div>
-			<table>
-				<tr>
-					<td>
-						<select name="timestart">
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-							<option value="6">6</option>
-							<option value="7">7</option>
-							<option value="8">8</option>
-							<option value="9">9</option>
-							<option value="10">10</option>
-							<option value="11">11</option>
-							<option value="12">12</option>
-						</select>
-						
-					</td>
-					<td>
-						<select name="timestart">
-							<option value="00">00</option>
-							<option value="15">15</option>
-							<option value="30">30</option>
-							<option valie="45">45</option>
-						</select>
-					</td>
-					<td>
-						<select name="ampm">
-							<option value="am">am</option>
-							<option value="pm">pm</option>
-						</select>
-					</td>
-					<td>to</td>
-					<td>
-							<select name="timeend">
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-							<option value="6">6</option>
-							<option value="7">7</option>
-							<option value="8">8</option>
-							<option value="9">9</option>
-							<option value="10">10</option>
-							<option value="11">11</option>
-							<option value="12">12</option>
-						</select>
-						
-					</td>
-					<td>
-						<select name="timeend">
-							<option value="00">00</option>
-							<option value="15">15</option>
-							<option value="30">30</option>
-							<option valie="45">45</option>
-						</select>
-					</td>
-					<td>
-						<select name="ampm">
-							<option value="am">am</option>
-							<option value="pm">pm</option>
-						</select>
-					</td>
-			</table>	
-		</div>
--->
-		
-
-
-<form id="editEventForm" role="form" method="get" action="/add">
-		<h3>Add Event</h3>
-
-		<div>
-			<select name="category">
-				<script type="text/javascript"> 
-					var data= require("../accounts.json");
-					var acc = data.accounts[0];
-				</script>
-				{{#each accounts}}
-					{{#each categories}}
-					<option value="{{name}}">{{name}}</option>
-					
-					{{/each}}
-				{{/each}}
-			</select>
-		</div>
-
-		<div> 
-			<br>Task name:<br>
-			<input class="form-control" type="text" name="name"><br>
-		</div>
-
-		<div>
-			<br>Start:<br>
-			<input class="form-control" type="datetime-local" name="timestart" value= "{{timestart}}"><br>
-			<br>End:<br>
-			<input class="form-control" type="datetime-local" name={{timeend}}><br>
-		</div>
-		<div class="middle-bttn">
-			<table style="margin: auto">
-				<tr>
-					<th>
-
-						<div class="cancel">
-							<a href="/calendar" class="btn btn-default">Cancel</a>
-						</div>
-					</th>
-
-					<th>
-						<div class="save">
-							<button class="btn btn-primary" type="submit">Save</button>
-						</div>
-					</th>
-					<th>
-						<div class="delete">
-							<button class ="btn-delete" type ="cancel">Delete</button>
-						</div>
-					</th>
-				</tr>
-			</table>
-		</div>
-	</form>
-
-</div></div>
-	<div class="navbad bootstrap-override">
-		<a href="/calendar"><i class="fas fa-calendar-alt"  style="font-size: 16px"></i><br>Calendar</a>
-		<a href="/graph"><i class="fas fa-chart-pie"  style="font-size: 16px"></i><br>Your Activity</a>
-		<a href="/settings"><i class="fas fa-cog"  style="font-size: 16px"></i><br>Settings</a>
-		<a href="/addevent" class="active"><i class="fas fa-plus-square"  style="font-size: 16px"></i><br>Add Event</a>
+	<h3>Edit Event</h3>
+	
+	<div class="input-group mb-3 input-group-lg"> 
+		<input class="form-control" type="text" name="name" id="taskname">
 	</div>
 
+	<div>
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text">Date</span>
+			</div>
+			<input type="date" class="form-control" name="date" id="taskdate" required>
+		</div>
+
+		<div class="form-group">
+		<select class="custom-select" name="category" id="taskcat" required>
+		</select>
+		<div class="invalid-feedback">Please select a category!</div>
+		</div>
+	</div>	
+
+	<div class="row">
+		<div class="col-6">
+			<div class="input-group mb-3 input-group-sm">
+				<div class="input-group-prepend">
+					<span class="input-group-text">Start Time</span>
+				</div>
+				<input class="form-control" type="time" name="timestart" id="taskstart" required>
+			</div>
+		</div>
+		<div class="col-6">
+			<div class="input-group mb-3 input-group-sm">
+				<div class="input-group-prepend">
+					<span class="input-group-text">End Time</span>
+				</div>
+				<input class="form-control" type="time" name="timeend" id="taskend" required>
+			</div>
+		</div>
+	</div>
+		
+		
+	<div class="middle-bttn">
+		<table style="margin: auto">
+			<tr>
+				<th>
+
+					<div class="cancel">
+						<a href="/calendar" class="btn btn-default">Cancel</a>
+					</div>
+				</th>
+
+				<th>
+					<div class="save">
+						<button class="btn btn-primary" type="submit">Save</button>
+					</div>
+				</th>
+			</tr>
+		</table>
+	</div>
+</form>
+
+</div>
+</div>
+	
+<div class="navbad bootstrap-override">
+	<a href="/calendar"><i class="fas fa-calendar-alt"  style="font-size: 16px"></i><br>Calendar</a>
+	<a href="/graph"><i class="fas fa-chart-pie"  style="font-size: 16px"></i><br>Your Activity</a>
+	<a href="/settings"><i class="fas fa-cog"  style="font-size: 16px"></i><br>Settings</a>
+	<a href="/addevent"><i class="fas fa-plus-square"  style="font-size: 16px"></i><br>Add Event</a>
+</div>
 
 	<script>
+		var decodedJson = decodeURIComponent("{{{encodedJson}}}");
+		var obj = JSON.parse(decodedJson);
+		var cats = obj.categories;
+		var eve = obj.eve;
+		console.log(obj);
+		/*
+		document.getElementById("taskname").defaultValue = eve.name;
+		document.getElementById("taskstart").defaultValue = eve.timestart;
+		document.getElementById("taskend").defaultValue = eve.timeend;
+		*/
+		document.getElementById("taskname").value = eve.name;
+		var timestart = eve.timestart.substring(0,4);
+		var timeend = eve.timeend.substring(0,4);
+		if(timestart.charAt(0) != '0')
+			timestart = '0'+timestart;
+		if(timeend.charAt(0) != '0')
+			timeend = '0'+timeend;
+		if(eve.timestart.substring(5) == "pm") {
+			if(timestart.substring(0,2) != '12')
+				timestart = (parseInt(timestart.substring(0,2))+12).toString() + timestart.substring(2);
+		}
 
-		$("#category-btn").click(function(event){
-			event.preventDefault();
-			document.getElementById("category-input").classList.toggle("hidden");
-			document.getElementById("category-save").classList.toggle("hidden");
-		})
+		if(eve.timeend.substring(5) == "pm") {
+			if(timeend.substring(0,2) != '12')
+				timeend = (parseInt(timeend.substring(0,2))+12).toString() + timeend.substring(2);
+		}
+	
 
-		$("#category-save").click(function(event){
-			var newCat = document.getElementById("category-input").value;
-			alert(newCat);
-			var category = {"name": newCat};
-		})
+		document.getElementById("taskstart").defaultValue = timestart;
+		document.getElementById("taskend").defaultValue = timeend;
 
+		var mm = eve.month;
+		if(mm<10)
+			mm='0'+mm;
+		var dd = eve.day;
+		if(dd<10)
+			dd='0'+dd;
+		var date = eve.year + '-' + mm + '-' + dd;
+		document.getElementById("taskdate").defaultValue = eve.date;
+		var mySelect = document.getElementById("taskcat");
+		for (var x = 0; x < cats.length; x++) {
+			var opt = document.createElement('option');
+			opt.value = cats[x].name;
+			opt.innerHTML = cats[x].name;
+			if(cats[x].name == eve.category.name)
+				opt.selected = "selected";
+			mySelect.appendChild(opt);
+		}
+		
 	</script>
 </body>
+
+</html>
