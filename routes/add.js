@@ -53,7 +53,9 @@ exports.addEvent = function(req, res) {
 	//convert to number
 	
 	var timeStart = query.timestart;
+	timeStart = calcTime(timeStart);
 	var timeEnd = query.timeend;
+	timeEnd = calcTime(timeEnd);
 	
 
 	
@@ -255,23 +257,38 @@ function timeToString(starttime, endtime, meridiem){
 //formatting time
 function calcTime(time){
 	var returnTime = "";
-	var hour = time.getHours();
-	var min = time.getMinutes();
-	if(hour < 10)
-		hour = '0'+hour;
-	if(min < 10)
-		min = '0'+min;
-	if(time.getHours() > 0 && time.getHours() < 12) {
-		returnTime = hour + ':' + min + "am";
+	var militaryHour = "";
+	var x = 0;
+	console.log("Time is "+time);
+
+	while(time.charAt(x)!=":"){
+		militaryHour += time.charAt(x);
+		x++;
 	}
-	else if (time.getHours() == 0) {
+	console.log("militaryHour= "+militaryHour);
+
+	x++;
+
+	var hour="";
+
+
+
+	var min = time.substring(x, x+2);
+	if(militaryHour < 10)
+		hour = '0'+militaryHour;
+	if(min < 10 && min > 0)
+		min = '0'+min;
+	if(militaryHour > 0 && militaryHour < 12) {
+		returnTime = militaryHour + ':' + min + "am";
+	}
+	else if (militaryHour == 0) {
 		returnTime = "12:" + min + "am";
 	}
-	else if (time.getHours() == 12) {
-		returnTime = hour + ':' + min + "pm";
+	else if (militaryHour == 12) {
+		returnTime = militaryHour + ':' + min + "pm";
 	}
 	else {
-		returnTime = (hour-12).toString() + ':' + min + "pm";
+		returnTime = (militaryHour-12).toString() + ':' + min + "pm";
 	}
 	return returnTime;
 
