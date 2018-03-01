@@ -12,6 +12,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css?family=Inconsolata|Krona+One" rel="stylesheet">
+
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -33,11 +35,13 @@
 </div>
 
 
+
+
   <div class="input-group mb-3">
   <form class="form-inline" method="get" action="/calendardate">
-    <input class="form-control mr-sm-2" id='datePicker' type="date" name="viewdate" style="width:auto">
+    <input class="form-control mr-sm-2" id='datePicker' type="date" name="viewdate" style="width:auto;font-family: 'Inconsolata', monospace;font-size: 1.3rem">
     <div class="input-group-prepend">
-    <button class="btn btn-success" type="submit">Go</button>
+    <button class="btn btn-success" type="submit" style="background-color:rgb(60, 178, 200); border-color:rgb(60, 178, 200); margin-left:10px">Go</button>
 	</div>
   </form>
   </div>
@@ -47,10 +51,10 @@
 </nav>
 
 <nav class="menu" id="hamburger-pullout">
-		<a href="/calendar" class="active item_menu"><i class="fas fa-calendar-alt"  style="font-size: 16px"></i> Calendar</a>
-		<a href="/graph"><i class="fas fa-chart-pie  item_menu"  style="font-size: 16px"></i> Your Activity</a>
-		<a href="/settings"><i class="fas fa-cog  item_menu"  style="font-size: 16px"></i> Settings</a>
-		<a href="/addevent"><i class="fas fa-plus-square  item_menu"  style="font-size: 16px"></i> Add Event</a>
+		<a href="/calendar2" class="active item_menu"><i class="fas fa-calendar-alt"  style="font-size: 16px; margin-right:5px"></i> Calendar</a>
+		<a href="/graph" class="item_menu"><i class="fas fa-chart-pie  item_menu"  style="font-size: 16px; margin-right:5px"></i> Your Activity</a>
+		<a href="/settings" class="item_menu"><i class="fas fa-cog  item_menu"  style="font-size: 16px; margin-right:5px"></i> Settings</a>
+		<a href="/addevent" class="item_menu"><i class="fas fa-plus-square  item_menu"  style="font-size: 16px; margin-right:5px"></i> Add Event</a>
 </nav>
 
 
