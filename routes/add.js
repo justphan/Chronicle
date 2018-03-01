@@ -172,7 +172,8 @@ exports.addCategory = function(req, res) {
 
 	var category = {
 		"name": query.name,
-		"color": newcolor
+		"color": newcolor,
+		"colorname": query.color 
 	};
 
 	var categories;
@@ -237,6 +238,7 @@ exports.changeColor = function(req, res) {
 	for (var x = 0; x < account.categories.length; x++) {
 		if(category == account.categories[x]['name']) {
 			account.categories[x]['color'] = newcolor;
+			account.categories[x]['colorname'] = req.query.color;
 		}
 	}
 	res.render('settings', account.categories);

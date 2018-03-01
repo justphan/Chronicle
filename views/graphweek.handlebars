@@ -17,11 +17,15 @@
     	google.charts.load('current', {'packages':['corechart']});
     	google.charts.setOnLoadCallback(drawChart);
     	var json = [['Task', 'Hours per Week']];
+		var barjson = [['Task', 'Hours per Week', {role: 'style'}]];
 
-    	var x;
+		var x;
+		var slice = {};
 		for(x in jsonObj[0]) {
 			if(jsonObj[0][x] !== null) {
 				json.push([jsonObj[0][x].name, 0]);
+				slice[x] = {color: jsonObj[0][x].colorname};
+				barjson.push([jsonObj[0][x].name, 0, jsonObj[0][x].colorname]);
 			}
 		}
 /*
@@ -36,6 +40,8 @@
 			for (categ in json) {
 				if(eve.category.name == json[categ][0])
 					json[categ][1] += eve.totaltime;
+				if(eve.category.name == barjson[categ][0])
+					barjson[categ][1] += eve.totaltime;
 			}
 		}
 /*
@@ -109,7 +115,7 @@
 				width: screen.width,
 				height: screen.height,
 				legend: 'none',
-				slices:{0: {color:'#0396ff'}, 1: {color:'#28c76f'}, 2: {color: '#f55555'}}
+				slices: slice
 			};
 
 			var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -120,6 +126,7 @@
 			
 			chart.draw(dataGraph, options);
 
+			var dataBarGraph = google.visualization.arrayToDataTable(barjson);
 			var barOptions = {
 				width: screen.width,
 				height: screen.height,
@@ -127,8 +134,9 @@
 			};
 
 
+
 			var barchart = new google.visualization.ColumnChart(document.getElementById('barChart'));
-			barchart.draw(dataGraph, barOptions);
+			barchart.draw(dataBarGraph, barOptions);
 		}
     </script>
 </head>
