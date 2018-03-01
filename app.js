@@ -70,6 +70,7 @@ app.get('/add', auth, add.addEvent);
 app.get('/addcategory', auth, add.addCategory);
 app.get('/changecolor', auth, add.changeColor);
 app.get('/delcategory', auth, add.delCategory);
+app.get('/editEvent', auth, edit.editEvent);
 
 function auth(req, res, next) {
 	if(!req.session.user_id){

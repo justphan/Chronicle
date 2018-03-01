@@ -77,6 +77,14 @@
 			</div>
 		</div>
 	</div>
+
+	<div>
+		<input name="olddate" type="hidden" id="olddate"/>
+		<input name="oldname" type="hidden" id="oldname"/>
+		<input name="oldstart" type="hidden" id="oldstart"/>
+		<input name="oldend" type="hidden" id="oldend"/>
+		<input name="oldcat" type="hidden" id="oldcat"/>
+	</div>
 		
 		
 	<div class="middle-bttn">
@@ -121,18 +129,19 @@
 		document.getElementById("taskend").defaultValue = eve.timeend;
 		*/
 		document.getElementById("taskname").value = eve.name;
+		document.getElementById("oldname").value = eve.name;
 		var timestart = eve.timestart.substring(0,4);
 		var timeend = eve.timeend.substring(0,4);
 		if(timestart.charAt(0) != '0')
 			timestart = '0'+timestart;
 		if(timeend.charAt(0) != '0')
 			timeend = '0'+timeend;
-		if(eve.timestart.substring(5) == "pm") {
+		if(eve.timestart.includes("pm")) {
 			if(timestart.substring(0,2) != '12')
 				timestart = (parseInt(timestart.substring(0,2))+12).toString() + timestart.substring(2);
 		}
 
-		if(eve.timeend.substring(5) == "pm") {
+		if(eve.timeend.includes("pm")) {
 			if(timeend.substring(0,2) != '12')
 				timeend = (parseInt(timeend.substring(0,2))+12).toString() + timeend.substring(2);
 		}
@@ -140,6 +149,9 @@
 
 		document.getElementById("taskstart").defaultValue = timestart;
 		document.getElementById("taskend").defaultValue = timeend;
+		document.getElementById("oldstart").value = timestart;
+		document.getElementById("oldend").value = timeend;
+
 
 		var mm = eve.month;
 		if(mm<10)
@@ -149,6 +161,7 @@
 			dd='0'+dd;
 		var date = eve.year + '-' + mm + '-' + dd;
 		document.getElementById("taskdate").defaultValue = eve.date;
+		document.getElementById("olddate").value = eve.date;
 		var mySelect = document.getElementById("taskcat");
 		for (var x = 0; x < cats.length; x++) {
 			var opt = document.createElement('option');
@@ -159,6 +172,7 @@
 			mySelect.appendChild(opt);
 		}
 		
+		document.getElementById("oldcat").value = eve.category.name;
 	</script>
 </body>
 
