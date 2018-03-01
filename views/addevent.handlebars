@@ -180,7 +180,7 @@
 		
 
 
-<form id="addEventForm" role="form" method="get" action="/add">
+<form id="addEventForm" class="form-group"role="form" method="get" action="/add">
 		<h3>Add Event</h3>
 
 		
@@ -195,17 +195,18 @@
 				<div class="input-group-prepend">
 					<span class="input-group-text">Date</span>
 				</div>
-				<input type="date" class="form-control" name="date">
+				<input type="date" class="form-control" name="date" required>
 			</div>
 
 			<div class="form-group">
-			<select class="form-control" name="category">
+			<select class="custom-select" name="category" required>
 					<option selected>Select Category</option>
 					{{#each categories}}
 					<option value="{{name}}">{{name}}</option>
 					
 					{{/each}}
 			</select>
+			<div class="invalid-feedback">Please select a category!</div>
 			</div>
 		</div>
 
@@ -217,7 +218,7 @@
 			<div class="input-group-prepend">
 				<span class="input-group-text">Start Time</span>
 			</div>
-			<input class="form-control" type="time" name="timestart">
+			<input class="form-control" type="time" name="timestart" required>
 		</div>
 	</div>
 	<div class="col-6">
@@ -225,7 +226,7 @@
 			<div class="input-group-prepend">
 				<span class="input-group-text">End Time</span>
 			</div>
-			<input class="form-control" type="time" name="timeend">
+			<input class="form-control" type="time" name="timeend" required>
 		</div>
 	</div>
 </div>

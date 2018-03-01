@@ -26,17 +26,24 @@
 
 		var x;
 		for(x in jsonObj[0]) {
-			if(jsonObj[0][x] !== null)
+			if(jsonObj[0][x] !== null) {
+				json.push([jsonObj[0][x].name, 0]);
+			}
+		}
 /*
 				json.push([jsonObj[0][x].name, 0, "color: "+jsonObj[0][x].color]);
 				json.push([jsonObj[0][x].name, 0, /*jsonObj[0][x].color.substring(16, 22)]);*/
 
-		}
 		var y;
 		var eve;
 		console.log(jsonObj.length);
 		for(y in jsonObj[1]) {
 			eve = jsonObj[1][y];
+			for (categ in json) {
+				if(eve.category.name == json[categ][0])
+					json[categ][1] += eve.totaltime;
+			}
+		}
 /*
   			for(categ in json) {
   				if(eve.category == json[categ][0])
@@ -90,6 +97,7 @@
 		function drawChart() {
 
 			var dataGraph = google.visualization.arrayToDataTable(json);
+			console.log(json);
 			/*[
 		  ['Task', 'Hours per Day'],
 		  ['Work',     10],
@@ -108,7 +116,7 @@
 				height: screen.height,
 				legend: 'none',
 				slices:{0: {color:'#0396ff'}, 1: {color:'#28c76f'}, 2: {color: '#f55555'}}
-			}
+			};
 
 			var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
@@ -120,9 +128,9 @@
 
 			var barOptions = {
 				width: screen.width,
-				height: screen.height
+				height: screen.height,
 				legend: { position: "none" }
-			}
+			};
 
 
 			var barchart = new google.visualization.ColumnChart(document.getElementById('barChart'));
