@@ -53,7 +53,7 @@ td {
 }
 
 body{
-	padding-top: 100px;
+	padding-top: 74px;
 	left: 0;
 	right: 0;
 }
@@ -63,7 +63,7 @@ body{
 	margin: auto;
 }
 
-#centerMsg{
+.centerMsg{
 	padding-top: 60%;
 	text-align: center;
 	font-size:24px;
@@ -107,10 +107,11 @@ header > .top a.menu_icon:hover i {
 nav.menu {
 	width: 300px;
 	min-height: calc(100vh - 121px);
-	background-color: #03a9f4;
+	background-color: white;
 	position: absolute;
 	left: -300px;
 	transition: .3s all;
+	border-right: 1px solid gray;
 }
 nav.menu > a {
     display: block;
@@ -150,4 +151,28 @@ footer {
 		width: 100%;
 		left: -100%; 
 	}
+}
+
+
+.top{
+	padding-right: 25px;
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+#add-event-button{
+	position: fixed;
+    bottom: 35px;
+    right: 35px;
+
+    color:green;
+}
+
+#calendar-icon{
+	margin-top: 15px;
+    font-size: 100px;
 }

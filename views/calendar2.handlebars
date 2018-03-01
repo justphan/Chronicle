@@ -27,35 +27,45 @@
 </head>
 <body>
 	
-<nav class="navbar fixed-top navbar-expand bg-dark navbar-dark">
-	
+<nav class="navbar fixed-top navbar-expand bg-faded navbar-light" style="border-bottom: 1px solid gray">
+<div class="top">
+	<a href="#" class="menu_icon"><i class="material-icons">dehaze</i></a>
+</div>
 
-  <form class="float-left form-inline" method="get" action="/calendardate">
-    <input class="float-left form-control mr-sm-2" id='datePicker' type="date" name="viewdate">
+
+  <div class="input-group mb-3">
+  <form class="form-inline" method="get" action="/calendardate">
+    <input class="form-control mr-sm-2" id='datePicker' type="date" name="viewdate" style="width:auto">
+    <div class="input-group-prepend">
     <button class="btn btn-success" type="submit">Go</button>
+	</div>
   </form>
+  </div>
 
   
 
 </nav>
 
+<nav class="menu">
+		<a href="/calendar" class="active item_menu"><i class="fas fa-calendar-alt"  style="font-size: 16px"></i> Calendar</a>
+		<a href="/graph"><i class="fas fa-chart-pie  item_menu"  style="font-size: 16px"></i> Your Activity</a>
+		<a href="/settings"><i class="fas fa-cog  item_menu"  style="font-size: 16px"></i> Settings</a>
+		<a href="/addevent"><i class="fas fa-plus-square  item_menu"  style="font-size: 16px"></i> Add Event</a>
+</nav>
 
 
-	<div class="navbad bootstrap-override">
-		<a href="/calendar" class="active"><i class="fas fa-calendar-alt"  style="font-size: 16px"></i><br>Calendar</a>
-		<a href="/graph"><i class="fas fa-chart-pie"  style="font-size: 16px"></i><br>Your Activity</a>
-		<a href="/settings"><i class="fas fa-cog"  style="font-size: 16px"></i><br>Settings</a>
-		<a href="/addevent"><i class="fas fa-plus-square"  style="font-size: 16px"></i><br>Add Event</a>
-	</div>
 
 
+
+	
+			<a href="/addevent"><i id="add-event-button" class="fas fa-plus-circle  item_menu"  style="font-size: 52px"></i></a>
 	
 
 
 	
 
-	
-		<p id="centerMsg">No Events Added Today<br>Calendar 2</p>
+		
+		<p class="centerMsg">No Events Added Today<br><i id="calendar-icon" class="fas fa-calendar-alt"></i></p>
 	
 
 	<script type="text/javascript">
