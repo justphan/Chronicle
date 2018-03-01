@@ -124,16 +124,20 @@
 				document.getElementById("centerMsg").style.display="none";
 				var eve = eventsArray[x]
 				
+
 				var div = document.createElement("div");
 				div.classList.add("card");
 				div.classList.add("mb-3");
 				div.classList.add("eventCard");
-				div.innerHTML = 
+				/*div.innerHTML = 
 					'<div class="card-header">'+ eventsArray[x].timestart + ' - '+eventsArray[x].timeend+
-					'</div> <div class = "card-body"> <h5 class="card-title">'+eventsArray[x].name+
-					'</h5> <p class="card-text">Category: '+eve.category.name+'</p> </div>';
+					'</div> <div class = "card-block"> <h5 class="card-title">'+eventsArray[x].name+
+					'</h5> <p class="card-text" id="category'+x+'">Category: '+eve.category.name+'</p> <a href="#" id="'+x+'" class="btn btn-primary">Edit</a> </div>';
 
-				
+				*/
+				//var form = document.createElement("form");
+				div.innerHTML = 
+				'<div class="card-header">' + eventsArray[x].timestart + ' - ' + eventsArray[x].timeend + '</div> <div class="card-block"><h5 class="card-title">' + eventsArray[x].name + '</h5><p class="card-text">Category: ' + eve.category.name + '</p><form method="get" action="/edit"><input type="hidden" name="timestart" value="' + eventsArray[x].timestart + '"/><input type="hidden" name="timeend" value="' + eventsArray[x].timeend + '"/><input type="hidden" name="name" value="' + eventsArray[x].name + '"/><input type="hidden" name="category" value="' + eve.category.name + '"/><button class="btn btn-primary" type="submit">Edit</button></form></div></div>';
 				var color = eve['category']['color'];				/*
 				if(eve.category == "Work")
 					color = "linear-gradient(#abdcff, #0396ff)";
@@ -141,6 +145,7 @@
 					color = "linear-gradient(#fccf31, #f55555)";
 				if(eve.category == "Sleep")
 					color = "linear-gradient(#81fbb8, #28c76f)";*/
+
 
 				div.style.color = "white";
 				div.style.background = color;
@@ -184,14 +189,15 @@
 
 		<!-- TODO: option to click on events to edit -->
 		<script>
-		$("div.eventCard").click(function(event){
-			event.preventDefault();
+		//$("div .card-block a").click(function(eventy){
+		//	event.preventDefault();
+
 			//eventsArray[x].timestart
 			//eventsArray[x].timeend
 			//get timestart, timeend, and name
 			//somehow put this into the json file by editing in the spots instead of pushing all the data
 			/*alert("this event was clicked.  Edit page coming soon");*/
-		});
+		//});
 
 		</script>
 
