@@ -143,7 +143,7 @@ exports.addEvent = function(req, res) {
 		}
 	}
 	//console.log(data.accounts[0].events);
-	res.render('calendar', {encodedJson : encodeURIComponent(JSON.stringify(events))});
+	res.render('calendar2', {encodedJson : encodeURIComponent(JSON.stringify(events))});
 }
 
 exports.addCategory = function(req, res) {
