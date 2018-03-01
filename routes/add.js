@@ -59,7 +59,7 @@ exports.addEvent = function(req, res) {
 	
 
 	
-	var totalTime = parseInt(timeEnd.substring(0,1))-parseInt(timeStart.substring(0,1))+(parseInt(timeEnd.substring(3,4))-parseInt(timeStart.substring(3,4)))/60;//Math.abs(timeStart - timeEnd);
+	var totalTime = Math.abs((parseInt(timeEnd.substring(0,2))-parseInt(timeStart.substring(0,2))))+Math.abs(((parseInt(timeEnd.substring(3,5))-parseInt(timeStart.substring(3,5)))/60));//Math.abs(timeStart - timeEnd);
 	//totalTime = totalTime / (60*1000);
 	console.log("totalTime is " + totalTime);
 
