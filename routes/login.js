@@ -23,7 +23,7 @@ exports.login = function(req,res){
 			if(password == account.pass) {
 				var date = new Date();
 				var month = date.getMonth()+1;
-				var day = date.getDate()-1;
+				var day = date.getDate()/*-1*/;
 				var year = date.getFullYear();
 				var date = year+'-'+month+'-'+day;
 				var events = [];

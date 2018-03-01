@@ -16,18 +16,35 @@
 		var jsonObj = JSON.parse(decodedJson);
     	google.charts.load('current', {'packages':['corechart']});
     	google.charts.setOnLoadCallback(drawChart);
-    	var json = [['Task', 'Hours per Week', {role: 'style'}]];
+    	var json = [['Task', 'Hours per Week']];
+		var barjson = [['Task', 'Hours per Week', {role: 'style'}]];
 
-    	var x;
+		var x;
+		var slice = {};
 		for(x in jsonObj[0]) {
-			if(jsonObj[0][x] !== null)
-				json.push([jsonObj[0][x].name, 0/*, jsonObj[0][x].color.substring(16, 22)*/]);
+			if(jsonObj[0][x] !== null) {
+				json.push([jsonObj[0][x].name, 0]);
+				slice[x] = {color: jsonObj[0][x].colorname};
+				barjson.push([jsonObj[0][x].name, 0, jsonObj[0][x].colorname]);
+			}
 		}
+/*
+				json.push([jsonObj[0][x].name, 0, "color: "+jsonObj[0][x].color]);
+				json.push([jsonObj[0][x].name, 0, /*jsonObj[0][x].color.substring(16, 22)]);*/
+
 		var y;
 		var eve;
 		console.log(jsonObj.length);
 		for(y in jsonObj[1]) {
 			eve = jsonObj[1][y];
+			for (categ in json) {
+				if(eve.category.name == json[categ][0])
+					json[categ][1] += eve.totaltime;
+				if(eve.category.name == barjson[categ][0])
+					barjson[categ][1] += eve.totaltime;
+			}
+		}
+/*
   			for(categ in json) {
   				if(eve.category == json[categ][0])
   					json[categ][1] += eve.totaltime/60;
@@ -35,10 +52,15 @@
   		}
   		console.log(json);
   		console.log(jsonObj);
+  		/*
+  		var colors = {};
+  		for (var x = 0; x < jsonObj[0].length; x++) {
+  			colors[x] = {color: jsonObj[0][x].color.substring(16,23)}
+  		}
+  		console.log(colors);*/
+    //  	function drawChart() {
 
-      	function drawChart() {
-
-        	var dataGraph = google.visualization.arrayToDataTable(json);
+      //  	var dataGraph = google.visualization.arrayToDataTable(json);
         	/*[
           ['Task', 'Hours per Day'],
           ['Work',     10],
@@ -49,34 +71,73 @@
         	/*var options = {
           	title: 'Your Daily Activity'
         	};*/
-
+/*
         	var options = {
         		//title:'Your Day',
         		pieSliceText:'label',
         		width: screen.width,
         		height: screen.height,
-        		legend: 'none',
-        		slices:{0: {color:'#0396ff'}, 1: {color:'#28c76f'}, 2: {color: '#f55555'}}
+        		legend: 'none'//,
+        		//slices: colors
         	}
 
         	var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
         	var formatter = new google.visualization.NumberFormat({suffix: " hours"});
         	formatter.format(dataGraph, 1);
+        	
+			for(categ in json) {
+				if(eve.category == json[categ][0])
+					json[categ][1] += eve.totaltime/60;
+			}
+		}
+		console.log(json);
+		console.log(jsonObj);*/
 
-        	chart.draw(dataGraph, options);
+		function drawChart() {
 
-        	var barOptions = {
-        		width: screen.width,
-        		height: screen.height,
-        		legend: { position: "none" }
+			var dataGraph = google.visualization.arrayToDataTable(json);
+			console.log(json);
+			/*[
+		  ['Task', 'Hours per Day'],
+		  ['Work',     10],
+		  ['Sleep',      2],
+		  ['Exercise',  2],
+		]);*/
+
+			/*var options = {
+			title: 'Your Daily Activity'
+			};*/
+
+			var options = {
+				//title:'Your Day',
+				pieSliceText:'label',
+				width: screen.width,
+				height: screen.height,
+				legend: 'none',
+				slices: slice
+			};
+
+			var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+			var formatter = new google.visualization.NumberFormat({suffix: " hours"});
+			formatter.format(dataGraph, 1);
+
+			
+			chart.draw(dataGraph, options);
+
+			var dataBarGraph = google.visualization.arrayToDataTable(barjson);
+			var barOptions = {
+				width: screen.width,
+				height: screen.height,
+				legend: { position: "none" }
+			};
 
 
-        	}
 
-        	var barchart = new google.visualization.ColumnChart(document.getElementById('barChart'));
-    		barchart.draw(dataGraph, barOptions);
-    	}
+			var barchart = new google.visualization.ColumnChart(document.getElementById('barChart'));
+			barchart.draw(dataBarGraph, barOptions);
+		}
     </script>
 </head>
 

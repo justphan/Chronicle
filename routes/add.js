@@ -59,7 +59,7 @@ exports.addEvent = function(req, res) {
 	
 
 	
-	var totalTime = parseInt(timeEnd.substring(0,1))-parseInt(timeStart.substring(0,1))+(parseInt(timeEnd.substring(3,4))-parseInt(timeStart.substring(3,4)))/60;//Math.abs(timeStart - timeEnd);
+	var totalTime = Math.abs((parseInt(timeEnd.substring(0,2))-parseInt(timeStart.substring(0,2))))+Math.abs(((parseInt(timeEnd.substring(3,5))-parseInt(timeStart.substring(3,5)))/60));//Math.abs(timeStart - timeEnd);
 	//totalTime = totalTime / (60*1000);
 	console.log("totalTime is " + totalTime);
 
@@ -172,7 +172,8 @@ exports.addCategory = function(req, res) {
 
 	var category = {
 		"name": query.name,
-		"color": newcolor
+		"color": newcolor,
+		"colorname": query.color 
 	};
 
 	var categories;
@@ -237,6 +238,7 @@ exports.changeColor = function(req, res) {
 	for (var x = 0; x < account.categories.length; x++) {
 		if(category == account.categories[x]['name']) {
 			account.categories[x]['color'] = newcolor;
+			account.categories[x]['colorname'] = req.query.color;
 		}
 	}
 	res.render('settings', account.categories);

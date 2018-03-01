@@ -7,11 +7,14 @@ exports.addAccount = function(req, res){
 		"events":[],
 		"categories": [
 				{ "name": "Work",
-				"color": "linear-gradient(#9cecfb, #65c7f7, #0052d4)"},
+				"color": "linear-gradient(#9cecfb, #65c7f7, #0052d4)",
+				"colorname": "blue"},
 				{ "name": "Sleep",
-				"color": "linear-gradient(#dce35b, #45b649)"},
+				"color": "linear-gradient(#dce35b, #45b649)",
+				"colorname": "green"},
 				{ "name": "Exercise",
-				"color": "linear-gradient(#dce35b, #45b649)"}
+				"color": "linear-gradient(#f85032, #e73827)",
+				"colorname": "red"}
 				]
 	};
 	data.accounts.push(newAccount);
