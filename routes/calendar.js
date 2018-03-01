@@ -24,6 +24,8 @@ exports.view = function(req,res){
 			events.push(eventsArr[x]);
 		}
 	}
+
+	console.log("events.length = "+events.length);
 	//res.render('calendar', data);
 	res.render('calendar', {encodedJson : encodeURIComponent(JSON.stringify(events))});
 }

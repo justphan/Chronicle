@@ -52,6 +52,7 @@
 			//document.getElementById("day").innerHTML=day;
 			//document.getElementById("month").innerHTML=mo;
 			//document.getElementById("date").innerHTML=d;
+
 			if(d<10)
 				d='0'+d;
 			if(mm<10)
@@ -67,42 +68,7 @@
 
 </head>
 <body>
-	<!--
-	<nav class="navbar navbar-inverse">
-		<div class="container-fluid">
-	    	<div class="navbar-header">
-	    		<a class="navbar-brand" href="#">WebSiteName</a>
-	    	</div>
-	    	<ul class="nav navbar-nav">
-	    		<li class="active"><a href="#">Home</a></li>
-	    		<li><a href="#">Page 1</a></li>
-	      		<li><a href="#">Page 2</a></li>
-	      		<li><a href="#">Page 3</a></li>
-	    	</ul>
-	  </div>
-	</nav>-->
-	<!--
-	<div class="navbar bootstrap-override2">
-		<p id="day"></p>
-		<select name="month" id="changemonth">
-			<option value="100">January</option>
-			<option value="200">February</option>
-			<option value="300">March</option>
-			<option value="400">April</option>
-			<option value="500">May</option>
-			<option value="600">June</option>
-			<option value="700">July</option>
-			<option value="800">August</option>
-			<option value="900">September</option>
-			<option value="1000">October</option>
-			<option value="1100">November</option>
-			<option value="1200">December</option>
-        </select>
-        <select name="date" id="changedate">
-        	<option
-
- 	</div>
--->
+	
 <nav class="navbar fixed-top navbar-expand bg-dark navbar-dark">
   <form class="float-left form-inline" method="get" action="/calendardate">
     <input class="float-left form-control mr-sm-2" id='datePicker' type="date" name="viewdate">
@@ -116,511 +82,18 @@
 		<a href="/settings"><i class="fas fa-cog"  style="font-size: 16px"></i><br>Settings</a>
 		<a href="/addevent"><i class="fas fa-plus-square"  style="font-size: 16px"></i><br>Add Event</a>
 	</div>
-<!--
-	<div>
-		<img style="width:100%; height:100%" id="default">
-	</div>-->
-<!--
-	<div class="month"> 
-  		<ul>
-    		<li class="add">
-    			<div id="add-button">
-    				<i  style="font-size: 50px;" class="fas fa-plus-square"></i>
-    			</div>
-    		</li>
-    		<li id="month"><br></li>
-  		</ul>
-  	-->
+
+
 	
-<!--
-<div id="dp" height="90%"></div>
-<script type="text/javascript">
-	var dp = new DayPilot.Calendar("dp");
-	dp.viewType = "Day";
-	dp.init();
-	dp.events.list = [{"id":"1", "text":"Event", "start":"2018-02-14T10:30:00", "end":"2018-02-14T12:30:00"}];
-	dp.update();
-</script>
--->
-<!-- Calendar elements  -->
-<!--
-	<table style="width:100%; border:none; " >
-		
-		<tr height="100">
-			<th style="width:25%">
-				<h1 id="day"></h1>
-			</th>
-			<td style="width:15%; border:none">
-				<h1 id="date"></h1>
-			</td>
-			<td style="width:60%; border:none">
-				<h1 id="date"></h1>
-			</td>
-		</tr>
-
-	</table>
--->
-
-<!--	<div class="content">
-		<table style="width:100%; height:50%; position: relative" >
-		<tr class="zero">
-			<th rowspan="4">12AM</th>
-			<td>:00</td>
-			<td id="0"></td>
-		</tr>
-		<tr class="quarter"  >
-			<td >:15</td>
-			<td id="1"></td>
-		</tr>
-		<tr class="half">
-			<td>:30</td>
-			<td id="2"></td>
-		</tr>
-		<tr class="fourfive">
-			<td>:45</td>
-			<td id="3"></td>
-		</tr>
-
-		<tr class="zero" >
-			<th rowspan="4">1AM</th>
-			<td >:00</td>
-			<td id="4"></td>
-		</tr>
-		<tr class="quarter">
-			<td >:15</td>
-			<td id="5"></td>
-		</tr>
-		<tr class="half">
-			<td>:30</td>
-			<td id="6"></td>
-		</tr>
-		<tr>
-			<td>:45</td>
-			<td id="7"></td>
-		</tr>
-
-		<tr class="zero">
-			<th rowspan="4">2AM</th>
-			<td>:00</td>
-			<td id="8"></td>
-		</tr>
-		<tr class="quarter">
-			<td>:15</td>
-			<td id="9"></td>
-		</tr>
-		<tr class="half">
-			<td>:30</td>
-			<td id="10"></td>
-		</tr>
-		<tr>
-			<td>:45</td>
-			<td id="11"></td>
-		</tr>
-
-		<tr class="zero" >
-			<th rowspan="4">3AM</th>
-			<td >:00</td>
-			<td id="12"></td>
-		</tr>
-		<tr class="quarter">
-			<td >:15</td>
-			<td id="13"></td>
-		</tr>
-		<tr class="half">
-			<td>:30</td>
-			<td id="14"></td>
-		</tr>
-		<tr>
-			<td>:45</td>
-			<td id="15"></td>
-		</tr>
-
-		<tr class="zero" >
-			<th rowspan="4">4AM</th>
-			<td >:00</td>
-			<td id="16"></td>
-		</tr>
-		<tr class="quarter">
-			<td >:15</td>
-			<td id="17"></td>
-		</tr>
-		<tr class="half">
-			<td>:30</td>
-			<td id="18"></td>
-		</tr>
-		<tr>
-			<td>:45</td>
-			<td id="19"></td>
-		</tr>
-
-		<tr class="zero" >
-			<th rowspan="4">5AM</th>
-			<td >:00</td>
-			<td id="20"></td>
-		</tr>
-		<tr class="quarter">
-			<td >:15</td>
-			<td id="21"></td>
-		</tr>
-		<tr class="half">
-			<td>:30</td>
-			<td id="22"></td>
-		</tr>
-		<tr>
-			<td>:45</td>
-			<td id="23"></td>
-		</tr>
-
-		<tr class="zero" >
-			<th rowspan="4">6AM</th>
-			<td >:00</td>
-			<td id="24"></td>
-		</tr>
-		<tr class="quarter">
-			<td >:15</td>
-			<td id="25"></td>
-		</tr>
-		<tr class="half">
-			<td>:30</td>
-			<td id="26"></td>
-		</tr>
-		<tr>
-			<td>:45</td>
-			<td id="27"></td>
-		</tr>
-
-		<tr class="zero" >
-			<th rowspan="4">7AM</th>
-			<td >:00</td>
-			<td id="28"></td>
-		</tr>
-		<tr class="quarter">
-			<td >:15</td>
-			<td id="29"></td>
-		</tr>
-		<tr class="half">
-			<td>:30</td>
-			<td id="30"></td>
-		</tr>
-		<tr>
-			<td>:45</td>
-			<td id="31"></td>
-		</tr>
-
-		<tr class="zero" >
-			<th rowspan="4">8AM</th>
-			<td >:00</td>
-			<td id="32"></td>
-		</tr>
-		<tr class="quarter">
-			<td >:15</td>
-			<td id="33"></td>
-		</tr>
-		<tr class="half">
-			<td>:30</td>
-			<td id="34"></td>
-		</tr>
-		<tr>
-			<td>:45</td>
-			<td id="35"></td>
-		</tr>
-
-		<tr class="zero" >
-			<th rowspan="4">9AM</th>
-			<td >:00</td>
-			<td id="36"></td>
-		</tr>
-		<tr class="quarter">
-			<td >:15</td>
-			<td id="37"></td>
-		</tr>
-		<tr class="half">
-			<td>:30</td>
-			<td id="38"></td>
-		</tr>
-		<tr>
-			<td>:45</td>
-			<td id="39"></td>
-		</tr>
-
-		<tr class="zero" >
-			<th rowspan="4">10AM</th>
-			<td >:00</td>
-			<td id="40"></td>
-		</tr>
-		<tr class="quarter">
-			<td >:15</td>
-			<td id="41"></td>
-		</tr>
-		<tr class="half">
-			<td>:30</td>
-			<td id="42"></td>
-		</tr>
-		<tr>
-			<td>:45</td>
-			<td id="43"></td>
-		</tr>
-	
-		<tr class="zero" >
-			<th rowspan="4">11AM</th>
-			<td >:00</td>
-			<td id="44"></td>
-		</tr>
-		<tr class="quarter">
-			<td >:15</td>
-			<td id="45"></td>
-		</tr>
-		<tr class="half">
-			<td>:30</td>
-			<td id="46"></td>
-		</tr>
-		<tr>
-			<td>:45</td>
-			<td id="47"></td>
-		</tr>
-
-		<tr class="zero" >
-			<th rowspan="4">12PM</th>
-			<td >:00</td>
-			<td id="48"></td>
-		</tr>
-		<tr class="quarter">
-			<td >:15</td>
-			<td id="49"></td>
-		</tr>
-		<tr class="half">
-			<td>:30</td>
-			<td id="50"></td>
-		</tr>
-		<tr>
-			<td>:45</td>
-			<td id="51"></td>
-		</tr>
-
-		<tr class="zero" >
-			<th rowspan="4">1PM</th>
-			<td >:00</td>
-			<td id="52"></td>
-		</tr>
-		<tr class="quarter">
-			<td >:15</td>
-			<td id="53"></td>
-		</tr>
-		<tr class="half">
-			<td>:30</td>
-			<td id="54"></td>
-		</tr>
-		<tr>
-			<td>:45</td>
-			<td id="55"></td>
-		</tr>
-
-		<tr class="zero" >
-			<th rowspan="4">2PM</th>
-			<td >:00</td>
-			<td id="56"></td>
-		</tr>
-		<tr class="quarter">
-			<td >:15</td>
-			<td id="57"></td>
-		</tr>
-		<tr class="half">
-			<td>:30</td>
-			<td id="58"></td>
-		</tr>
-		<tr>
-			<td>:45</td>
-			<td id="59"></td>
-		</tr>
-
-		<tr class="zero" >
-			<th rowspan="4">3PM</th>
-			<td >:00</td>
-			<td id="60"></td>
-		</tr>
-		<tr class="quarter">
-			<td >:15</td>
-			<td id="61"></td>
-		</tr>
-		<tr class="half">
-			<td>:30</td>
-			<td id="62"></td>
-		</tr>
-		<tr>
-			<td>:45</td>
-			<td id="63"></td>
-		</tr>
-
-		<tr class="zero" >
-			<th rowspan="4">4PM</th>
-			<td >:00</td>
-			<td id="64"></td>
-		</tr>
-		<tr class="quarter">
-			<td >:15</td>
-			<td id="65"></td>
-		</tr>
-		<tr class="half">
-			<td>:30</td>
-			<td id="66"></td>
-		</tr>
-		<tr>
-			<td>:45</td>
-			<td id="67"></td>
-		</tr>
-
-		<tr class="zero" >
-			<th rowspan="4">5PM</th>
-			<td >:00</td>
-			<td id="68"></td>
-		</tr>
-		<tr class="quarter">
-			<td >:15</td>
-			<td id="69"></td>
-		</tr>
-		<tr class="half">
-			<td>:30</td>
-			<td id="70"></td>
-		</tr>
-		<tr>
-			<td>:45</td>
-			<td id="71"></td>
-		</tr>
-
-		<tr class="zero" >
-			<th rowspan="4">6PM</th>
-			<td >:00</td>
-			<td id="72"></td>
-		</tr>
-		<tr class="quarter">
-			<td >:15</td>
-			<td id="73"></td>
-		</tr>
-		<tr class="half">
-			<td>:30</td>
-			<td id="74"></td>
-		</tr>
-		<tr>
-			<td>:45</td>
-			<td id="75"></td>
-		</tr>
-
-		<tr class="zero" >
-			<th rowspan="4">7PM</th>
-			<td >:00</td>
-			<td id="76"></td>
-		</tr>
-		<tr class="quarter">
-			<td >:15</td>
-			<td id="77"></td>
-		</tr>
-		<tr class="half">
-			<td>:30</td>
-			<td id="78"></td>
-		</tr>
-		<tr>
-			<td>:45</td>
-			<td id="79"></td>
-		</tr>
-
-		<tr class="zero" >
-			<th rowspan="4">8PM</th>
-			<td >:00</td>
-			<td id="80"></td>
-		</tr>
-		<tr class="quarter">
-			<td >:15</td>
-			<td id="81"></td>
-		</tr>
-		<tr class="half">
-			<td>:30</td>
-			<td id="82"></td>
-		</tr>
-		<tr>
-			<td>:45</td>
-			<td id="83"></td>
-		</tr>
-
-		<tr class="zero" >
-			<th rowspan="4">9PM</th>
-			<td >:00</td>
-			<td id="84"></td>
-		</tr>
-		<tr class="quarter">
-			<td >:15</td>
-			<td id="85"></td>
-		</tr>
-		<tr class="half">
-			<td>:30</td>
-			<td id="86"></td>
-		</tr>
-		<tr>
-			<td>:45</td>
-			<td id="87"></td>
-		</tr>
-
-		<tr class="zero" >
-			<th rowspan="4">10PM</th>
-			<td >:00</td>
-			<td id="88"></td>
-		</tr>
-		<tr class="quarter">
-			<td >:15</td>
-			<td id="89"></td>
-		</tr>
-		<tr class="half">
-			<td>:30</td>
-			<td id="90"></td>
-		</tr>
-		<tr>
-			<td>:45</td>
-			<td id="91"></td>
-		</tr>
-
-		<tr class="zero" >
-			<th rowspan="4">11PM</th>
-			<td >:00</td>
-			<td id="92"></td>
-		</tr>
-		<tr class="quarter">
-			<td >:15</td>
-			<td id="93"></td>
-		</tr>
-		<tr class="half">
-			<td>:30</td>
-			<td id="94"></td>
-		</tr>
-		<tr>
-			<td>:45</td>
-			<td id="95"></td>
-		</tr>
-	</table>  
-
-</div>
-
--->
-	{{#each accounts.0.events}}
-	<!--	<p>name: {{name}}</p>
-		<p>id start: {{timestart}}</p>
-		<p>id end: {{timeend}}</p> -->	
-		<script>
-			console.log("this is the timestart being called in javascript"+ {{timestart}});
-			//document.getElementByID({{timestart}}).style.background-color="red";
-			
-		</script>
-	
-	{{/each}}
 
 
-
-
-
-<!--
-	<script src="/js/jquery-1.11.0.js"></script>
-	<script src="/js/bootstrap.js"></script>-->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	
+		<p id="centerMsg">No Events Added Today</p>
+	
 
 	<script type="text/javascript">
 		var decodedJson = decodeURIComponent("{{{encodedJson}}}");
@@ -644,7 +117,11 @@
 		//console.log(jsonObj.accounts.0);
 		//var localdata = "{{accounts.0.events}}";
 
+		console.log("eventsArray.length="+eventsArray.length)
+
 		for(var x=1; x<eventsArray.length; x++){
+
+				document.getElementById("centerMsg").style.display="none";
 				var eve = eventsArray[x]
 				
 				var div = document.createElement("div");
@@ -671,10 +148,20 @@
 
 
 		}
-		/*
-		if(eventsArray.length==1)
-			document.getElementById('default').src = "./images/default.png"
-		*/
+
+
+		
+		// if(eventsArray.length==1){
+		// 	var middleDiv = document.createElement("div");
+		// 	middleDiv.classList.add("middleDiv");
+		// 	// middleDiv.style.width = "800px";
+		// 	// middleDiv.style.margin = "0 auto";
+		// 	// middleDiv.style.backgroundColor = "red";
+
+		// 	middleDiv.innerHTML = "<div class='emptyMsg'><h1>No Events Added for This Day</h1></div>";
+		// 	document.body.appendChild(middleDiv);
+		// }
+		
 
 	</script>
 <!--
@@ -707,5 +194,7 @@
 		});
 
 		</script>
+
+
 </body>
 </html>
