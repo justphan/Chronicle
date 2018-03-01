@@ -118,7 +118,7 @@ nav.menu > a {
     padding: 5px;
     margin: 15px 0 0px 20px;
     color: #494949;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
 }
 main {
 	width: 100%;
@@ -169,7 +169,7 @@ footer {
     bottom: 35px;
     right: 35px;
 
-    color:green;
+    color:rgb(60, 178, 200);
 }
 
 #calendar-icon{
@@ -179,4 +179,8 @@ footer {
 
 #hamburger-pullout{
 	z-index: 2;
+}
+
+.item_menu{
+font-family: 'Krona One', sans-serif;
 }
