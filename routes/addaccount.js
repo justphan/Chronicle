@@ -24,6 +24,10 @@ exports.addAccount = function(req, res){
 	var month = date.getMonth()+1;
 	var day = date.getDate();
 	var year = date.getFullYear();
+	if(month < 10)
+		month = '0'+month;
+	if(day < 10)
+		day = '0'+day;
 	var date = year+'-'+month+'-'+day;
 	var events=[];
 	events.push(date);

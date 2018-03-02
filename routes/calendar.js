@@ -6,7 +6,11 @@ exports.view = function(req,res){
 	var date = new Date();
 	var month = date.getMonth()+1;
 	var day = date.getDate();
-	var year = date.getFullYear();
+	var year = date.getFullYear()
+	if(month < 10)
+		month = '0'+month;
+	if(day < 10)
+		day = '0'+day;
 	var date = year+'-'+month+'-'+day;
 	events.push(date);
 
@@ -20,7 +24,7 @@ exports.view = function(req,res){
 		}
 	}
 	for(var x=0; x<eventsArr.length; x++){
-		if(eventsArr[x]['month'] == month && eventsArr[x]['day'] == day && eventsArr[x]['year'] == year) {
+		if(eventsArr[x]['date']==date){//eventsArr[x]['month'] == month-1 && eventsArr[x]['day'] == day && eventsArr[x]['year'] == year) {
 			events.push(eventsArr[x]);
 		}
 	}
@@ -35,6 +39,10 @@ exports.date = function(req,res){
 	var date = new Date(req.query.viewdate);
 	var month = date.getMonth()+1;
 	var day = date.getDate()+1;
+	if(month < 10)
+		month = '0'+month;
+	if(day < 10)
+		day = '0'+day;
 	var year = date.getFullYear();
 	var date = year+'-'+month+'-'+day;
 	events.push(date);
@@ -52,7 +60,7 @@ exports.date = function(req,res){
 		}
 	}
 	for(var x=0; x<eventsArr.length; x++){
-		if(eventsArr[x]['month'] == month-1 && eventsArr[x]['day'] == day && eventsArr[x]['year'] == year) {
+		if(eventsArr[x]['date']==date){//eventsArr[x]['month'] == month-1 && eventsArr[x]['day'] == day && eventsArr[x]['year'] == year) {
 			events.push(eventsArr[x]);
 		}
 	}
@@ -65,6 +73,10 @@ exports.view2 = function(req,res){
 	var date = new Date(req.query.viewdate);
 	var month = date.getMonth()+1;
 	var day = date.getDate()+1;
+	if(month < 10)
+		month = '0'+month;
+	if(day < 10)
+		day = '0'+day;
 	var year = date.getFullYear();
 	var date = year+'-'+month+'-'+day;
 	events.push(date);
@@ -82,7 +94,7 @@ exports.view2 = function(req,res){
 		}
 	}
 	for(var x=0; x<eventsArr.length; x++){
-		if(eventsArr[x]['month'] == month-1 && eventsArr[x]['day'] == day && eventsArr[x]['year'] == year) {
+		if(eventsArr[x]['date']==date){//eventsArr[x]['month'] == month-1 && eventsArr[x]['day'] == day && eventsArr[x]['year'] == year) {
 			events.push(eventsArr[x]);
 		}
 	}

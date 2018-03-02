@@ -25,12 +25,16 @@ exports.login = function(req,res){
 				var month = date.getMonth()+1;
 				var day = date.getDate()/*-1*/;
 				var year = date.getFullYear();
+				if(month < 10)
+					month = '0'+month;
+				if(day < 10)
+					day = '0'+day;
 				var date = year+'-'+month+'-'+day;
 				var events = [];
 				var eventsArr = account.events;
 				events.push(date);
 				for(var x=0; x<eventsArr.length; x++){
-					if(eventsArr[x]['month'] == month && eventsArr[x]['day'] == day && eventsArr[x]['year'] == year) {
+					if(eventsArr[x]['date']==date){//eventsArr[x]['month'] == month && eventsArr[x]['day'] == day && eventsArr[x]['year'] == year) {
 						events.push(eventsArr[x]);
 					}
 				}

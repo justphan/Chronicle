@@ -31,15 +31,18 @@ exports.addEvent = function(req, res) {
 	}
 
 	var newColor;
+	var newColorName;
 	for (var x = 0; x < categories.length; x++) {
 		if(query.category == categories[x]['name']) {
 			newColor = categories[x]['color'];
+			newColorName = categories[x]['colorname'];
 		}
 	}
 
 	var newCategory = {
 		"name": query.category,
-		"color": newColor
+		"color": newColor,
+		"colorname": newColorName
 	};
 
 
@@ -80,7 +83,7 @@ exports.addEvent = function(req, res) {
 		"timestart" : timeStart,
 		"timeend" : timeEnd,
 		"month" : date.getMonth()+1,
-		"day" : date.getDate()+1,
+		"day" : date.getDate(),
 		"year" : date.getFullYear(),
 		"date" : query.date
 	};
@@ -109,6 +112,7 @@ exports.addEvent = function(req, res) {
 	}*/
 
 	//get the corresponding events for the account
+	/*
 	var account;
 	var eventsArr;
 	for(var x = 0; x < data.accounts.length; x++) {
@@ -117,7 +121,7 @@ exports.addEvent = function(req, res) {
 			eventsArr = data.accounts[x].events;
 		}
 	}
-
+	*/
 
 	//prevent page refresh error
 	var added = false;
@@ -133,7 +137,11 @@ exports.addEvent = function(req, res) {
 	var events = [];
 	var date2 = new Date();
 	var month = date2.getMonth()+1;
+	if(month < 10)
+		month = '0'+month;
 	var day = date2.getDate();
+	if(day < 10)
+		day = '0'+day;
 	var year = date2.getFullYear();
 	date2 = year+'-'+month+'-'+day;
 	console.log("date2: "+date2);
@@ -144,7 +152,7 @@ exports.addEvent = function(req, res) {
 	
 
 	for(var x=0; x<account.events.length; x++){
-		if(account.events[x]['month'] == month && account.events[x]['day'] == day && account.events[x]['year'] == year) {
+		if(account.events[x]['date']==date2){//account.events[x]['month'] == month && account.events[x]['day'] == day && account.events[x]['year'] == year) {
 			events.push(account.events[x]);
 		}
 	}
