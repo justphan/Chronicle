@@ -61,18 +61,18 @@ exports.addEvent = function(req, res) {
 	//convert to number
 	
 	var timeStart = query.timestart;
-	timeStart = calcTime(timeStart);
+
 	var timeEnd = query.timeend;
-	timeEnd = calcTime(timeEnd);
+
 	
 
 	
-	var totalTime = Math.abs((parseInt(timeEnd.substring(0,2))-parseInt(timeStart.substring(0,2))))+Math.abs(((parseInt(timeEnd.substring(3,5))-parseInt(timeStart.substring(3,5)))/60));//Math.abs(timeStart - timeEnd);
+	var totalTime = Math.abs((parseInt(timeEnd.substring(0,2))-parseInt(timeStart.substring(0,2))))+(((parseInt(timeEnd.substring(3,5))-parseInt(timeStart.substring(3,5)))/60));//Math.abs(timeStart - timeEnd);
 	//totalTime = totalTime / (60*1000);
 	console.log("totalTime is " + totalTime);
 
-
-	
+	timeStart = calcTime(timeStart);
+	timeEnd = calcTime(timeEnd);
 	
 
 	//creating new event
