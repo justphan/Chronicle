@@ -69,12 +69,12 @@ exports.date = function(req,res){
 }
 
 exports.view2 = function(req,res){
-		console.log(data);
+	console.log(data);
 	var events = [];
 	var date = new Date();
 	var month = date.getMonth()+1;
 	var day = date.getDate();
-	var year = date.getFullYear()
+	var year = date.getFullYear();
 	if(month < 10)
 		month = '0'+month;
 	if(day < 10)
@@ -85,7 +85,7 @@ exports.view2 = function(req,res){
 
 	var account;
 	var eventsArr;
-	for(var x = 0; x < data.accountnts.length; x++) {
+	for(var x = 0; x < data.accounts.length; x++) {
 		if(data.accounts[x].name == req.session.user_id) {
 			account = data.accounts[x];
 			eventsArr = data.accounts[x].events;
