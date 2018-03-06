@@ -80,7 +80,7 @@
 		<a href="/calendar" class="active"><i class="fas fa-calendar-alt"  style="font-size: 16px"></i><br>Calendar</a>
 		<a href="/graph"><i class="fas fa-chart-pie"  style="font-size: 16px"></i><br>Your Activity</a>
 		<a href="/settings"><i class="fas fa-cog"  style="font-size: 16px"></i><br>Settings</a>
-		<a href="/addevent"><i class="fas fa-plus-square"  style="font-size: 16px"></i><br>Add Event</a>
+		<a href="/addevent" id="addevent"><i class="fas fa-plus-square"  style="font-size: 16px"></i><br>Add Event</a>
 	</div>
 
 
@@ -200,6 +200,24 @@
 		//});
 
 		</script>
+
+<script>
+$(document).ready(function() {
+	initializePage();
+});
+
+/*
+ * Function that is called when the document is ready.
+ */
+function initializePage() {
+	// your code here
+	$("#addevent").click(callAnalytics);
+}
+
+function callAnalytics(e) {
+	ga("send", "event", "addevent1", "click");
+}
+</script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115181899-1"></script>
 <script>

@@ -171,6 +171,24 @@
 		});
 
 		</script>
+
+<script>
+$(document).ready(function() {
+	initializePage();
+});
+
+/*
+ * Function that is called when the document is ready.
+ */
+function initializePage() {
+	// your code here
+	$("#add-event-button").click(callAnalytics);
+}
+
+function callAnalytics(e) {
+	ga("send", "event", "addevent2", "click");
+}
+</script>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115181899-1"></script>
 <script>
