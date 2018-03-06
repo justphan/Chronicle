@@ -69,21 +69,19 @@ exports.date = function(req,res){
 }
 
 exports.view2 = function(req,res){
+		console.log(data);
 	var events = [];
-	var date = new Date(req.query.viewdate);
+	var date = new Date();
 	var month = date.getMonth()+1;
-	var day = date.getDate()+1;
+	var day = date.getDate();
+	var year = date.getFullYear()
 	if(month < 10)
 		month = '0'+month;
 	if(day < 10)
 		day = '0'+day;
-	var year = date.getFullYear();
 	var date = year+'-'+month+'-'+day;
 	events.push(date);
-	/*
-	var month = parseInt(date.substring(5,6));
-	var day = parseInt(date.substring(8,9));
-	var year = parseInt(date.substring(0,3));*/
+
 
 	var account;
 	var eventsArr;
@@ -98,6 +96,8 @@ exports.view2 = function(req,res){
 			events.push(eventsArr[x]);
 		}
 	}
+
+	
 	//res.render('calendar', data);
 	res.render('calendar2', {encodedJson : encodeURIComponent(JSON.stringify(events))});
 }
