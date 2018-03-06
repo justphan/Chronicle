@@ -70,14 +70,14 @@ exports.date = function(req,res){
 
 exports.view2 = function(req,res){
 	var events = [];
-	var date = new Date(req.query.viewdate);
+	var date = new Date();
 	var month = date.getMonth()+1;
 	var day = date.getDate()+1;
 	if(month < 10)
 		month = '0'+month;
 	if(day < 10)
 		day = '0'+day;
-	var year = date.getFullYear();
+	var year = date.getFullYear();     	 	
 	var date = year+'-'+month+'-'+day;
 	events.push(date);
 	/*
@@ -87,7 +87,7 @@ exports.view2 = function(req,res){
 
 	var account;
 	var eventsArr;
-	for(var x = 0; x < data.accounts.length; x++) {
+	for(var x = 0; x < data.accountnts.length; x++) {
 		if(data.accounts[x].name == req.session.user_id) {
 			account = data.accounts[x];
 			eventsArr = data.accounts[x].events;

@@ -54,7 +54,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 
   <div class="input-group mb-3">
   <form class="form-inline" method="get" action="/calendardate">
-    <input class="form-control mr-sm-2" id='datePicker' type="date" name="viewdate" style="width:auto;font-family: 'Inconsolata', monospace;font-size: 1.3rem">
+    <input class="form-control mr-sm-2" id='datePicker' type="date" name="viewdate" style="width:auto;font-size: 1.3rem">
     <div class="input-group-prepend">
     <button class="btn btn-success" type="submit" style="background-color:rgb(60, 178, 200); border-color:rgb(60, 178, 200); margin-left:10px">Go</button>
 	</div>
@@ -104,7 +104,10 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 			mm='0'+mm;
 
 		var today = y+'-'+mm+'-'+d;
-		document.getElementById('datePicker').defaultValue = today;
+		//document.getElementById('datePicker').defaultValue = today;
+		document.getElementById('datePicker').defaultValue = eventsArray[0];
+
+
 		//console.log(jsonObj.accounts);
 		//console.log(jsonObj.accounts.0);
 		//var localdata = "{{accounts.0.events}}";
