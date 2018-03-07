@@ -21,6 +21,9 @@ input{
 html, body {
     height: 100%;
     margin: 0px 25px;
+    /*background: linear-gradient(to bottom, #b7deed 0%,#71ceef 50%,#21b4e2 51%,#b7deed 100%);*/
+    background: linear-gradient(#b7deed,#71ceef);
+
 }
 
 body{
@@ -40,8 +43,19 @@ body{
 }*/
 
 #title{
-    font-family: 'Poiret One', cursive;
-    font-size: 60px;
-    padding-top: 20%;
-    padding-bottom: 35%;
+    font-family: 'Lobster', cursive;
+    font-size: 80px;
+    padding-top: 35%;
+    padding-bottom: 20%;
+    color: white;
+}
+
+#btn-two{
+    width: 40%;
+    margin: 15px 15px;
+    display: inline;
+}
+
+.bootstrap-override{
+font-family: 'Lato', sans-serif;
 }

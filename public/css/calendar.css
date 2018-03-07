@@ -73,6 +73,7 @@ body{
 html, body {
     height: 100%;
     margin: 0px 25px;
+    background: 
 }
 
 
@@ -148,7 +149,7 @@ footer {
 }
 @media screen and (max-width: 360px) {
 	nav.menu {
-		width: 100%;
+		width: 65%;
 		left: -100%; 
 	}
 }
@@ -183,4 +184,8 @@ footer {
 
 .item_menu{
 font-family: 'Krona One', sans-serif;
+}
+
+.bootstrap-override{
+font-family: 'Lato', sans-serif;
 }

@@ -70,4 +70,13 @@
     visibility: hidden;
 }
 
+#title{
+    font-family: 'Lobster', cursive;
+    color:white;
+}
+
+#navbar-header{
+    border-bottom: 1px solid gray; 
+    background: linear-gradient(#b7deed,#71ceef)
+}
     

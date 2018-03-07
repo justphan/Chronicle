@@ -28,6 +28,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Inconsolata|Krona+One" rel="stylesheet">
+	 <link href="https://fonts.googleapis.com/css?family=Lato|Lobster" rel="stylesheet">
 
 
 
@@ -44,17 +45,14 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 	<script src="js/burgermenu.js"> </script>
 
 </head>
-<body>
+<body class="bootstrap-override">
 	
-<nav class="navbar fixed-top navbar-expand bg-faded navbar-light" style="border-bottom: 1px solid gray">
+<nav class="navbar fixed-top navbar-expand bg-faded navbar-light" id="navbar-header">
 <div class="top">
 	<a href="#" class="menu_icon"><i class="material-icons">dehaze</i></a>
 </div>
 
-
-
-
-  <div class="input-group mb-3">
+<div class="input-group mb-3">
   <form class="form-inline" method="get" action="/calendardate">
     <input class="form-control mr-sm-2" id='datePicker' type="date" name="viewdate" style="width:auto;font-size: 1.3rem">
     <div class="input-group-prepend">
@@ -63,9 +61,14 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
   </form>
   </div>
 
+
+  
+
   
 
 </nav>
+
+
 
 
 
