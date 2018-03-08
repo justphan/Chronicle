@@ -43,14 +43,19 @@
 
 	<div>
 		<form id="addCategoryForm" role="form" method="get" action="/addcategory">
-			<h1>Add Category</h1>
-			<div> 
-				<br>Category name:<br>
+			<h2>Add Category</h2>
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text">Category</span>
+				</div>
 				<input class="form-control" type="text" name="name"><br>
 			</div>
-
-			<div>
-				<select name="color">
+			
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text">Color</span>
+				</div>
+				<select class="custom-select" name="color">
 					<option value="red">Red</option>
 					<option value="orange">Orange</option>
 					<option value="yellow">Yellow</option>
@@ -62,26 +67,32 @@
 			</div>
 
 			<div class="save">
-				<button class="btn btn-primary" type="submit">Add</button>
+				<button class="btn btn-primary" type="submit" style="float: right">Add</button>
 			</div>
 		</form>
+		<br><br><br>
 
 
 
 		<form id="changeColorForm" role="form" method="get" action="/changecolor">
-			<h1>Change Color</h1>
-			<div> 
-				<br>Category:<br>
-				<select name="category">
+			<h2>Change Color</h2>
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text">Category</span>
+				</div>
+				<select class="custom-select" name="category">
 					{{#each categories}}
 					<option value="{{name}}">{{name}}</option>
 					{{/each}}
 				</select>
 			</div>
 
-			<div>
-				<br>Color:<br>
-				<select name="color">
+
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text">Color</span>
+				</div>
+				<select class="custom-select" name="color">
 					<option value="red">Red</option>
 					<option value="orange">Orange</option>
 					<option value="yellow">Yellow</option>
@@ -93,29 +104,34 @@
 			</div>
 
 			<div class="save">
-				<button class="btn btn-primary" type="submit">Change</button>
+				<button class="btn btn-primary" type="submit" style="float: right">Change</button>
 			</div>
 		</form>
+		<br><br><br>
 
 
 
 
 
 		<form id="delCategoryForm" role="form" method="get" action="/delcategory">
-			<h1>Delete Category</h1>
+			<h2>Delete Category</h2>
 
-			<div>
-				<select name="category">
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text">Category</span>
+				</div>
+				<select class="custom-select" name="category">
 					{{#each categories}}
-					<option value="{{name}}">{{name}}</option>
+						<option value="{{name}}">{{name}}</option>
 					{{/each}}
 				</select>
 			</div>
 
 			<div class="delete">
-				<button class="btn btn-primary" type="submit">Delete</button>
+				<button class="btn btn-primary" type="submit" style="float: right">Delete</button>
 			</div>
 		</form>
+		<br><br><br>
 
 
 		
