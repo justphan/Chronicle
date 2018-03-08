@@ -130,9 +130,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 				div.classList.add("mb-3");
 				div.classList.add("eventCard");
 				div.innerHTML = 
-					'<div class="card-header">'+ eventsArray[x].timestart + ' - '+eventsArray[x].timeend+
-					'</div> <div class = "card-body"> <h5 class="card-title">'+eventsArray[x].name+
-					'</h5> <p class="card-text">Category: '+eve.category.name+'</p> </div>';
+				'<div class="card-header">' + eventsArray[x].timestart + ' - ' + eventsArray[x].timeend + '</div> <div class="card-block"><h5 class="card-title">' + eventsArray[x].name + '</h5><p class="card-text">Category: ' + eve.category.name + '</p><form method="get" action="/edit"><input type="hidden" name="timestart" value="' + eventsArray[x].timestart + '"/><input type="hidden" name="timeend" value="' + eventsArray[x].timeend + '"/><input type="hidden" name="name" value="' + eventsArray[x].name + '"/><input type="hidden" name="category" value="' + eve.category.name + '"/>' + '<input type="hidden" name="date" value="' + eventsArray[x].date + '"/><button class="btn btn-primary" type="submit">Edit</button></form></div></div>';
 
 				
 				var color = eve['category']['color'];				/*
