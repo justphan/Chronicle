@@ -2,8 +2,8 @@ var data = require("../accounts.json");
 
 exports.addAccount = function(req, res){
 	var newAccount = {
-		"name": req.body.name,
-		"pass": req.body.pass,
+		"name": req.query.name,//req.body.name,
+		"pass": req.query.pass,//req.body.pass,
 		"events":[],
 		"categories": [
 				{ "name": "Work",
@@ -19,7 +19,7 @@ exports.addAccount = function(req, res){
 	};
 	data.accounts.push(newAccount);
 	console.log(data);
-	req.session.user_id = req.body.name;
+	req.session.user_id = req.query.name;//req.body.name;
 	var date = new Date();
 	var month = date.getMonth()+1;
 	var day = date.getDate();

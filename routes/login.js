@@ -11,8 +11,8 @@ exports.err = function(req,res){
 
 exports.login = function(req,res){
 	console.log(data);
-	var username = req.body.name;
-	var password = req.body.pass;
+	var username = req.query.name;//req.body.name;
+	var password = req.query.pass;//req.body.pass;
 	console.log(username);
 	console.log(password);
 	var account;

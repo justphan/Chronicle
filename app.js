@@ -47,7 +47,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', login.view);
-app.post('/loginacc', login.login);	
+app.get('/loginacc', login.login);	
 app.get('/calendar', auth, calendar.view);
 app.get('/calendar2', auth, calendar.view2);
 app.get('/signup', signup.view);
@@ -58,7 +58,8 @@ app.get('/calendardate', auth, calendar.date);
 app.get('/graphweek', auth, graph.week);
 app.get('/graphmonth', auth, graph.month);
 app.get('/graphyear', auth, graph.year);
-app.post('/addaccount', addaccount.addAccount);
+app.get('/addaccount', addaccount.addAccount);
+//app.post('/addaccount', addaccount.addAccount);
 app.get('/signout', login.signout);
 app.get('/login', login.view);
 app.get('/loginerror', login.err);
