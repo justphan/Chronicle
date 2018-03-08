@@ -239,26 +239,41 @@
 			</div>
 		</div>
 
+<hr>
+<div class="row">
+	<div class="col-12 tip" style="text-align:left!important"  id="help-btn">
+		<i class="fa fa-question-circle"></i>
+
+		<span class="tiptext hidden" id="help-txt">Please Enter Time Format as HH:MM:PM<br>Ex. 10:00:AM
+  		</span>
+	</div>
+
+	<div class="col-6">
+
+	</div>
+</div>
 
 
 <div class="row">
-	<div class="col-6">
+	<div class="col-12">
 		<div class="input-group mb-3 input-group-sm">
 			<div class="input-group-prepend">
 				<span class="input-group-text">Start Time</span>
 			</div>
-			<input class="form-control" type="time" name="timestart" required>
+			<input class="form-control" id="start-time" type="time" name="timestart" step="900" required>
 		</div>
 	</div>
-	<div class="col-6">
+	<div class="col-12">
 		<div class="input-group mb-3 input-group-sm">
 			<div class="input-group-prepend">
 				<span class="input-group-text">End Time</span>
 			</div>
-			<input class="form-control" type="time" name="timeend" required>
+			<input class="form-control" type="time" name="timeend" step="900" required>
 		</div>
 	</div>
 </div>
+
+
 		
 		
 		
@@ -312,6 +327,14 @@
 			var newCat = document.getElementById("category-input").value;
 			alert(newCat);
 			var category = {"name": newCat};
+		})
+
+		$("#help-btn").click(function(event){
+			document.getElementById("help-txt").classList.toggle("hidden");
+		})
+
+		$("#start-time").focus(function(event){
+			document.getElementById("help-txt").classList.remove("hidden");
 		})
 
 	</script>
