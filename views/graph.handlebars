@@ -7,6 +7,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="css/navbar.css" rel="stylesheet">
 	<link href="css/bootstrap.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/graph.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		 <link href="https://fonts.googleapis.com/css?family=Lato|Lobster" rel="stylesheet">
+
+		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
@@ -118,8 +123,13 @@
 			var options = {
 				//title:'Your Day',
 				pieSliceText:'label',
+				//width: screen.width,
+				//height: screen.height,
+				
 				width: screen.width,
-				height: screen.height,
+				height: screen.height*.5,
+				chartArea: {'width': '80%', 'height': '80%'},
+
 				legend: 'none',
 				slices: slice
 			};
@@ -135,7 +145,7 @@
 			var dataBarGraph = google.visualization.arrayToDataTable(barjson);
 			var barOptions = {
 				width: screen.width,
-				height: screen.height,
+				height: screen.height*.75,
 				legend: { position: "none" },
 				hAxis: {title: "Activities"},
 				vAxis: {title: "# of hours"}
@@ -148,23 +158,48 @@
 		}
 
 	</script>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384 -KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="js/burgermenu.js"> </script>
 </head>
 
 <body>
 
-	<div class="navbad bootstrap-override2">
+<nav class="navbar fixed-top navbar-expand bg-faded navbar-light" id="navbar-header">
+<div class="top">
+	<a href="#" class="menu_icon" ><i id="hamburger-icon" class="material-icons">dehaze</i></a>
+	<p id="title">Chronicle</p>
+</div>
+
+
+
+
+ 
+</nav>
+
+
+<nav class="menu" id="hamburger-pullout" >
+		<a href="/calendar2" class="active item_menu"><i class="fas fa-calendar-alt"  style="font-size: 16px; margin-right:5px;"></i> Calendar</a>
+		<a href="/graph" class="item_menu"><i class="fas fa-chart-pie  item_menu"  style="font-size: 16px; margin-right:5px"></i> Your Activity</a>
+		<a href="/settings" class="item_menu"><i class="fas fa-cog  item_menu"  style="font-size: 16px; margin-right:5px"></i> Settings</a>
+		<a href="/addevent" class="item_menu"><i class="fas fa-plus-square  item_menu"  style="font-size: 16px; margin-right:5px"></i> Add Event</a>
+</nav>
+
+
+
+	<!-- <div class="navbad bootstrap-override2">
 		<a href="/graph" style="font-size: 16px" class="graph active">Day</a>
 		<a href="/graphweek" style="font-size: 16px" class="graph">Week</a>
 		<a href="/graphmonth" style="font-size: 16px" class="graph">Month</a>
 		<a href="/graphyear" style="font-size: 16px" class="graph">Year</a>
-	</div>
+	</div> -->
 
-	<div class="navbad bootstrap-override">
+	<!-- <div class="navbad bootstrap-override">
 		<a href="/calendar"><i class="fas fa-calendar-alt"  style="font-size: 16px"></i><br>Calendar</a>
 		<a href="/graph" class="active"><i class="fas fa-chart-pie"  style="font-size: 16px"></i><br>Your Activity</a>
 		<a href="/settings"><i class="fas fa-cog"  style="font-size: 16px"></i><br>Settings</a>
 		<a href="/addevent"><i class="fas fa-plus-square"  style="font-size: 16px"></i><br>Add Event</a>
-	</div>
+	</div> -->
 <!--
 	<table width ="100%">
 		<tr>

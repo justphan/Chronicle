@@ -15,6 +15,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css?family=Lato|Lobster" rel="stylesheet">
+
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -26,12 +29,16 @@
     $( "#datepicker" ).datepicker();
   } );
   </script>
+
+
+
+	<script src="js/burgermenu.js"> </script>
 </head>
 
 <body class="text-center">
 
 
-	<div class="main"><div class="wrapper">
+	<div class="main">
 
 
 	<!-- 		<div class="input-group mb-3">
@@ -180,6 +187,28 @@
 		
 
 
+<nav class="navbar fixed-top navbar-expand bg-faded navbar-light " id="navbar-header">
+<div class="top navbar-override">
+	<a href="#" class="menu_icon" ><i id="hamburger-icon" class="material-icons">dehaze</i></a>
+	<p id="title">Chronicle</p>
+</div>
+
+
+
+
+ 
+</nav>
+
+
+<nav class="menu" id="hamburger-pullout" >
+		<a href="/calendar2" class="active item_menu"><i class="fas fa-calendar-alt"  style="font-size: 16px; margin-right:5px;"></i> Calendar</a>
+		<a href="/graph" class="item_menu"><i class="fas fa-chart-pie  item_menu"  style="font-size: 16px; margin-right:5px"></i> Your Activity</a>
+		<a href="/settings" class="item_menu"><i class="fas fa-cog  item_menu"  style="font-size: 16px; margin-right:5px"></i> Settings</a>
+		<a href="/addevent" class="item_menu"><i class="fas fa-plus-square  item_menu"  style="font-size: 16px; margin-right:5px"></i> Add Event</a>
+</nav>
+
+
+<div class="wrapper">
 <form id="addEventForm" class="form-group"role="form" method="get" action="/add">
 		<h3>Add Event</h3>
 
@@ -263,13 +292,13 @@
 	</form>
 
 </div></div>
-	<div class="navbad bootstrap-override">
+	<!-- <div class="navbad bootstrap-override">
 		<a href="/calendar"><i class="fas fa-calendar-alt"  style="font-size: 16px"></i><br>Calendar</a>
 		<a href="/graph"><i class="fas fa-chart-pie"  style="font-size: 16px"></i><br>Your Activity</a>
 		<a href="/settings"><i class="fas fa-cog"  style="font-size: 16px"></i><br>Settings</a>
 		<a href="/addevent" class="active"><i class="fas fa-plus-square"  style="font-size: 16px"></i><br>Add Event</a>
 	</div>
-
+ -->
 
 	<script>
 

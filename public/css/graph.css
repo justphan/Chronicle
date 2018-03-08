@@ -1,82 +1,7 @@
-ul {list-style-type: none;}
-
-/* Month header */
-.month {
-	padding: 25px 25px 0px 25px;
-	width: 100%;
-	position: fixed;
-	top: 0;
-	left: 0;
-	background-color: white;
-	z-index:2;
-
-}
-
-/* Month list */
-.month ul {
-    margin: 0;
-    padding: 0;
-}
-
-.month ul li {
-    color: black;
-    font-size: 20px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-}
-
-/* Add button */
-.month .add {
-	padding-top: 0px;
-	float: right;	
-	padding-right: 10%;
-}
-
-table {
-	border: 1px solid black;
-	border-spacing: 0px;
-}
-
-td {
-	border-bottom: 1px solid black;
-
-}
-
-.quarter td, .half td, .zero td{
-	border-bottom: 1px dashed black;
-}
-
-
-.content{
-	padding-top: 177px;
-	padding-bottom:60px;
-}
-
 body{
-	padding-top: 62.67px;
-	left: 0;
-	right: 0;
+	
+	/*margin-top: 50px;*/
 }
-
-.eventCard{
-	width: 85%;
-	margin: auto;
-}
-
-#centerMsg{
-	padding-top: 60%;
-	text-align: center;
-	font-size:24px;
-	color:gray;
-}
-
-html, body {
-    height: 100%;
-    margin: 0px 25px;
-    background: 
-}
-
-
 
 header {
 	height: 70px;
@@ -157,6 +82,7 @@ footer {
 
 .top{
 	padding-right: 25px;
+	width: 100%;
 }
 
 .bottom-right {
@@ -169,7 +95,6 @@ footer {
 	position: fixed;
     bottom: 35px;
     right: 35px;
-
     color:rgb(60, 178, 200);
 }
 
@@ -182,10 +107,25 @@ footer {
 	z-index: 2;
 }
 
-.item_menu{
-font-family: 'Krona One', sans-serif;
+#title{
+	font-family: 'Lobster', cursive;
+	color: white;
+	display: inline;
+	font-size: 24px;
+	text-align: center;
+	width: 90%;
+	vertical-align: middle;
+	padding-left: 32%;
+
 }
 
-.bootstrap-override{
-font-family: 'Lato', sans-serif;
+#hamburger-icon{
+	color: white;
+	vertical-align: middle;
 }
+
+#hamburger-pullout{
+	height: 130%;
+    padding-top: 50px;
+}
+

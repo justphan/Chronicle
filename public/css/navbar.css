@@ -29,7 +29,7 @@
     text-decoration: none;
     font-size: 11px;
     width:25%;
-    border-right: 1px solid gray;
+    /*border-right: 1px solid white;*/
 }
 
 .navbad a.graph {
@@ -76,7 +76,7 @@
 }
 
 #navbar-header{
-    border-bottom: 1px solid gray; 
+    /*border-bottom: 1px solid gray; */
     background: linear-gradient(#b7deed,#71ceef)
 }
     
