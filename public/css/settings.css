@@ -118,6 +118,7 @@ footer {
 
 #hamburger-pullout{
 	z-index: 2;
+
 }
 
 #title{
@@ -138,7 +139,7 @@ footer {
 }
 
 #hamburger-pullout{
-	height: 90%;
+	height: 100%;
     padding-top: 50px;
 }
 
