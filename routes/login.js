@@ -41,7 +41,7 @@ exports.login = function(req,res){
 
 
 				req.session.user_id = username;
-				res.render('calendar', {encodedJson : encodeURIComponent(JSON.stringify(events))});
+				res.render('calendar2', {encodedJson : encodeURIComponent(JSON.stringify(events))});
 				return;
 			}
 			else {
