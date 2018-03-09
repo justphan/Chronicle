@@ -31,5 +31,5 @@ exports.addAccount = function(req, res){
 	var date = year+'-'+month+'-'+day;
 	var events=[];
 	events.push(date);
-	res.render('calendar', {encodedJson : encodeURIComponent(JSON.stringify(events))});
+	res.render('calendar2', {encodedJson : encodeURIComponent(JSON.stringify(events))});
 }
