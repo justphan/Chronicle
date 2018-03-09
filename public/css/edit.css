@@ -38,7 +38,7 @@ nav.menu > a {
     display: block;
     padding: 5px;
     margin: 15px 0 0px 20px;
-    color: #494949;
+    color: gray;
     /*text-transform: uppercase;*/
 }
 main {
@@ -127,4 +127,12 @@ footer {
 
 .navbar-override{
 	text-align: left;
+}
+
+body{
+
+}
+
+menu{
+	color:gray;
 }

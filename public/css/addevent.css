@@ -177,3 +177,14 @@ footer {
 #calendar-icon{
 	
 }
+
+#save-btn{
+	font-family: Lobster, cursive;
+    background: linear-gradient(#b7deed,#71ceef);
+    border-color: #b7deed;
+}
+
+#cancel-btn{
+	color: #b7deed;
+}
+

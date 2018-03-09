@@ -199,16 +199,16 @@
 
 
 <nav class="menu" id="hamburger-pullout" >
-		<a href="/calendar2" class="active item_menu" style="font-size:16px; font-family:Lato, cursive"><i class="fas fa-calendar-alt"  style="font-size: 16px; margin-right:5px;"></i> Calendar</a>
-		<a href="/graph" class="item_menu" style="font-size:16px; font-family:Lato, cursive"><i class="fas fa-chart-pie  item_menu"  style="font-size: 16px; margin-right:5px"></i> Your Activity</a>
-		<a href="/settings" class="item_menu" style="font-size:16px; font-family:Lato, cursive"><i class="fas fa-cog  item_menu"  style="font-size: 16px; margin-right:5px"></i> Settings</a>
-		<a href="/addevent" class="item_menu" style="font-size:16px; font-family:Lato, cursive"><i class="fas  	fa-plus-square  item_menu"  style="font-size: 16px; margin-right:5px"></i> Add Event</a>
+		<a href="/calendar2" class="active item_menu" style="font-size:16px; font-family:Lato, cursive; color:gray"><i class="fas fa-calendar-alt"  style="font-size: 16px; margin-right:5px;"></i> Calendar</a>
+		<a href="/graph" class="item_menu" style="font-size:16px; font-family:Lato, cursive; color:gray"><i class="fas fa-chart-pie  item_menu"  style="font-size: 16px; margin-right:5px"></i> Your Activity</a>
+		<a href="/settings" class="item_menu" style="font-size:16px; font-family:Lato, cursive; color:gray"><i class="fas fa-cog  item_menu"  style="font-size: 16px; margin-right:5px"></i> Settings</a>
+		<a href="/addevent" class="item_menu" style="font-size:16px; font-family:Lato, cursive; color:gray"><i class="fas  	fa-plus-square  item_menu"  style="font-size: 16px; margin-right:5px"></i> Add Event</a>
 </nav>
 
 
 <div class="wrapper">
 <form id="addEventForm" class="form-group"role="form" method="get" action="/add">
-		<h3>Add Event</h3>
+		<h3  style="font-family:Lobster, cursive">Add Event</h3>
 
 		<!-- <i id="calendar-icon" class="fas fa-calendar-plus"></i> -->
 
@@ -288,13 +288,13 @@
 					<th>
 
 						<div class="cancel">
-							<a href="/calendar2" class="btn btn-default">Cancel</a>
+							<a href="/calendar2" id="cancel-btn" class="btn btn-default">Cancel</a>
 						</div>
 					</th>
 
 					<th>
 						<div class="save">
-							<button class="btn btn-primary" type="submit">Save</button>
+							<button class="btn btn-primary" id="save-btn" type="submit">Save</button>
 						</div>
 					</th>
 				</tr>

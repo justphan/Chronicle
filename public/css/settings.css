@@ -56,7 +56,7 @@ nav.menu > a {
     display: block;
     padding: 5px;
     margin: 15px 0 0px 20px;
-    color: #494949;
+    color: gray;
     /*text-transform: uppercase;*/
 }
 main {
@@ -146,3 +146,36 @@ footer {
 .navbar-override{
 	text-align: left;
 }
+
+.blue-btn{
+	font-family: Lobster, cursive;
+    background: linear-gradient(#b7deed,#71ceef);
+    border-color: #b7deed;
+    float: right;
+    color: white;
+}
+
+.bad-btn{
+	font-family: Lobster, cursive;
+	background-color: lightgray;
+	border-color: lightgray;
+	color:white;
+}
+
+#logout-btn{
+	margin: 15px 0px;
+}
+
+#delete-btn{
+	float: right;
+}
+
+h2{
+	font-family: Lobster, cursive!important;
+}
+
+body{
+	font-family:Lobster,cursive!important;
+}
+
+menu{color:gray;}
