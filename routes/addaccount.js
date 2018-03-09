@@ -9,7 +9,7 @@ exports.addAccount = function(req, res){
 				{ "name": "Work",
 				"color": "linear-gradient(#9cecfb, #65c7f7, #0052d4)",
 				"colorname": "blue"},
-				{ "name": "Sleep",
+				{ "name": "Leisure",
 				"color": "linear-gradient(#dce35b, #45b649)",
 				"colorname": "green"},
 				{ "name": "Exercise",
