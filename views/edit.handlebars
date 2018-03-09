@@ -20,6 +20,12 @@
   	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+  	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato|Lobster" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384 -KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="js/burgermenu.js"> </script>
+
 
 	  <script>
 	  $( function() {
@@ -32,6 +38,23 @@
 <body class="text-center">
 
 <div class="main">
+
+<nav class="navbar fixed-top navbar-expand bg-faded navbar-light " id="navbar-header">
+<div class="top navbar-override">
+	<a href="#" class="menu_icon"><i id="hamburger-icon" class="material-icons">dehaze</i></a>
+	<p id="title">Chronicle</p>
+</div>
+ 
+</nav>
+
+
+<nav class="menu" id="hamburger-pullout">
+		<a href="/calendar2" class="active item_menu" style="font-size:16px; font-family:Lato, cursive"><svg class="svg-inline--fa fa-calendar-alt fa-w-14" style="font-size: 16px; margin-right: 5px;" aria-hidden="true" data-prefix="fas" data-icon="calendar-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M436 160H12c-6.6 0-12-5.4-12-12v-36c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48v36c0 6.6-5.4 12-12 12zM12 192h424c6.6 0 12 5.4 12 12v260c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V204c0-6.6 5.4-12 12-12zm116 204c0-6.6-5.4-12-12-12H76c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12v-40zm0-128c0-6.6-5.4-12-12-12H76c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12v-40zm128 128c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12v-40zm0-128c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12v-40zm128 128c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12v-40zm0-128c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12v-40z"></path></svg><!-- <i class="fas fa-calendar-alt" style="font-size: 16px; margin-right:5px;"></i> --> Calendar</a>
+		<a href="/graph" class="item_menu" style="font-size:16px; font-family:Lato, cursive"><svg class="svg-inline--fa fa-chart-pie fa-w-18 item_menu" style="font-size: 16px; margin-right: 5px;" aria-hidden="true" data-prefix="fas" data-icon="chart-pie" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M288 12.3V240h227.7c6.9 0 12.3-5.8 12-12.7-6.4-122.4-104.5-220.6-227-227-6.9-.3-12.7 5.1-12.7 12zM552.7 288c6.9 0 12.3 5.8 12 12.7-2.8 53.2-23.2 105.6-61.2 147.8-4.6 5.1-12.6 5.4-17.5.5L325 288h227.7zM401 433c4.8 4.8 4.7 12.8-.4 17.3-42.6 38.4-99 61.7-160.8 61.7C107.6 511.9-.2 403.8 0 271.5.2 143.4 100.8 38.9 227.3 32.3c6.9-.4 12.7 5.1 12.7 12V272l161 161z"></path></svg><!-- <i class="fas fa-chart-pie  item_menu" style="font-size: 16px; margin-right:5px"></i> --> Your Activity</a>
+		<a href="/settings" class="item_menu" style="font-size:16px; font-family:Lato, cursive"><svg class="svg-inline--fa fa-cog fa-w-16 item_menu" style="font-size: 16px; margin-right: 5px;" aria-hidden="true" data-prefix="fas" data-icon="cog" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M444.788 291.1l42.616 24.599c4.867 2.809 7.126 8.618 5.459 13.985-11.07 35.642-29.97 67.842-54.689 94.586a12.016 12.016 0 0 1-14.832 2.254l-42.584-24.595a191.577 191.577 0 0 1-60.759 35.13v49.182a12.01 12.01 0 0 1-9.377 11.718c-34.956 7.85-72.499 8.256-109.219.007-5.49-1.233-9.403-6.096-9.403-11.723v-49.184a191.555 191.555 0 0 1-60.759-35.13l-42.584 24.595a12.016 12.016 0 0 1-14.832-2.254c-24.718-26.744-43.619-58.944-54.689-94.586-1.667-5.366.592-11.175 5.459-13.985L67.212 291.1a193.48 193.48 0 0 1 0-70.199l-42.616-24.599c-4.867-2.809-7.126-8.618-5.459-13.985 11.07-35.642 29.97-67.842 54.689-94.586a12.016 12.016 0 0 1 14.832-2.254l42.584 24.595a191.577 191.577 0 0 1 60.759-35.13V25.759a12.01 12.01 0 0 1 9.377-11.718c34.956-7.85 72.499-8.256 109.219-.007 5.49 1.233 9.403 6.096 9.403 11.723v49.184a191.555 191.555 0 0 1 60.759 35.13l42.584-24.595a12.016 12.016 0 0 1 14.832 2.254c24.718 26.744 43.619 58.944 54.689 94.586 1.667 5.366-.592 11.175-5.459 13.985L444.788 220.9a193.485 193.485 0 0 1 0 70.2zM336 256c0-44.112-35.888-80-80-80s-80 35.888-80 80 35.888 80 80 80 80-35.888 80-80z"></path></svg><!-- <i class="fas fa-cog  item_menu" style="font-size: 16px; margin-right:5px"></i> --> Settings</a>
+		<a href="/addevent" class="item_menu" style="font-size:16px; font-family:Lato, cursive"><svg class="svg-inline--fa fa-plus-square fa-w-14 item_menu" style="font-size: 16px; margin-right: 5px;" aria-hidden="true" data-prefix="fas" data-icon="plus-square" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-32 252c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92H92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"></path></svg><!-- <i class="fas fa-plus-square  item_menu" style="font-size: 16px; margin-right:5px"></i> --> Add Event</a>
+</nav>
+
 	<div class="wrapper">
 		
 
@@ -111,12 +134,12 @@
 </div>
 </div>
 	
-<div class="navbad bootstrap-override">
+<!-- <div class="navbad bootstrap-override">
 	<a href="/calendar2"><i class="fas fa-calendar-alt"  style="font-size: 16px"></i><br>Calendar</a>
 	<a href="/graph"><i class="fas fa-chart-pie"  style="font-size: 16px"></i><br>Your Activity</a>
 	<a href="/settings"><i class="fas fa-cog"  style="font-size: 16px"></i><br>Settings</a>
 	<a href="/addevent"><i class="fas fa-plus-square"  style="font-size: 16px"></i><br>Add Event</a>
-</div>
+</div> -->
 
 	<script>
 		var decodedJson = decodeURIComponent("{{{encodedJson}}}");
