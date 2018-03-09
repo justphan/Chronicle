@@ -2,30 +2,28 @@
 
 <html>
 <head>
-	<title>Login</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="css/login.css">
+
+
+  <title>Login</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/login.css">
     <link href="css/bootstrap.css" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css?family=Lato|Lobster" rel="stylesheet">
 </head>
-<body class="text-center">
+<body class="text-center bootstrap-override">
 <div class="main"><div class="wrapper">
 <form class="form-signin" method="get" action="/loginacc">
+  <h1 id="title">Chronicle</h1>
     
-
-  <h1>Incorrect ID/pass! 
-  </h1>
-  <h1>Try again!</h1>
-  <br>
-  <br>
-	<h1 class="h3 mb-3 font-weight-normal">Login</h1>
-
-	<div class="container">
+  <!-- <h1 class="h3 mb-3 font-weight-normal">Login</h1> -->
+  <h3 style="color: white">Incorrect ID or password. Please try again.</h3>
+  <div class="container">
     <label for="name"><b></b></label>
-    <input class="form-control" type="text" placeholder="Enter Username" name="name" required>
+    <input class="form-control" type="text" placeholder="Username" name="name" required>
 
     <label for="pass"><b></b></label>
-    <input class="form-control"  type="password" placeholder="Enter Password" name="pass" required>
+    <input class="form-control"  type="password" placeholder="Password" name="pass" required>
 
     <!-- <a href="calendar.html"><button type="submit">Login</button></a> -->
     
@@ -39,27 +37,22 @@
 
   
 
-  <button style="margin: 15px 0px" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-	<!-- <a href="calendar.html">Login</a> -->
-	<a href="/signup">Sign Up</a>
+  <button style="margin: 15px 0px;" class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>
+  <!-- <a href="calendar.html">Login</a> -->
+  <div id="btn-two">
+   <a href="/signup">Don't Have An Account? Sign Up</a>
+  </div>
 
   </div></div>
   
 
 </form>
 </div>
-<div>or Login with Facebook
+<div style="/*margin-top: -10%*/">or Login with Facebook
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 </fb:login-button>
 </div>
 {{> facebook}}
-<script src="/js/facebook.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-115181899-1', 'auto');
-    ga('send', 'pageview');
-  </script>
+
 </body>
 </html>
