@@ -169,9 +169,9 @@ exports.addCategory = function(req, res) {
 
 	
 	if(newcolor == "red")
-		newcolor = "linear-gradient(#f85032, #e73827)";
+		newcolor = "linear-gradient(#EA384D, #b31217)";
 	else if (newcolor == "orange")
-		newcolor = "linear-gradient(#ff7e5f, #feb47b)";
+		newcolor = "linear-gradient(45deg, #fc4a1a, #f7b733)";
 	else if (newcolor == "yellow")
 		newcolor = "linear-gradient(#fffc00, #ffffff)";
 	else if (newcolor == "green")
@@ -235,7 +235,7 @@ exports.changeColor = function(req, res) {
 	var category = req.query.category;
 	var newcolor = req.query.color;
 	if(newcolor == "red")
-		newcolor = "linear-gradient(#f85032, #e73827)";
+		newcolor = "linear-gradient(#EA384D, #b31217)";
 	else if (newcolor == "orange")
 		newcolor = "linear-gradient(#ff7e5f, #feb47b)";
 	else if (newcolor == "yellow")

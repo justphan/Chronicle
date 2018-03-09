@@ -13,7 +13,7 @@ exports.addAccount = function(req, res){
 				"color": "linear-gradient(#dce35b, #45b649)",
 				"colorname": "green"},
 				{ "name": "Exercise",
-				"color": "linear-gradient(#f85032, #e73827)",
+				"color": "linear-gradient(#EA384D, #b31217)",
 				"colorname": "red"}
 				]
 	};

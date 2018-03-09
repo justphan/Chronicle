@@ -171,6 +171,10 @@ footer {
     right: 35px;
 
     color:rgb(60, 178, 200);
+
+     z-index: 2;
+    background: white;
+    border-radius: 100%;
 }
 
 #calendar-icon{
@@ -188,4 +192,12 @@ font-family: 'Krona One', sans-serif;
 
 .bootstrap-override{
 font-family: 'Lato', sans-serif;
+}
+
+.card-block{
+	padding: 10px 20px;
+}
+
+.edit-btn{
+	background-color: #61adff;
 }

@@ -30,8 +30,6 @@
   } );
   </script>
 
-
-
 	<script src="js/burgermenu.js"> </script>
 </head>
 
@@ -204,13 +202,15 @@
 		<a href="/calendar2" class="active item_menu" style="font-size:16px; font-family:Lato, cursive"><i class="fas fa-calendar-alt"  style="font-size: 16px; margin-right:5px;"></i> Calendar</a>
 		<a href="/graph" class="item_menu" style="font-size:16px; font-family:Lato, cursive"><i class="fas fa-chart-pie  item_menu"  style="font-size: 16px; margin-right:5px"></i> Your Activity</a>
 		<a href="/settings" class="item_menu" style="font-size:16px; font-family:Lato, cursive"><i class="fas fa-cog  item_menu"  style="font-size: 16px; margin-right:5px"></i> Settings</a>
-		<a href="/addevent" class="item_menu" style="font-size:16px; font-family:Lato, cursive"><i class="fas fa-plus-square  item_menu"  style="font-size: 16px; margin-right:5px"></i> Add Event</a>
+		<a href="/addevent" class="item_menu" style="font-size:16px; font-family:Lato, cursive"><i class="fas  	fa-plus-square  item_menu"  style="font-size: 16px; margin-right:5px"></i> Add Event</a>
 </nav>
 
 
 <div class="wrapper">
 <form id="addEventForm" class="form-group"role="form" method="get" action="/add">
 		<h3>Add Event</h3>
+
+		<!-- <i id="calendar-icon" class="fas fa-calendar-plus"></i> -->
 
 		
 
@@ -229,7 +229,7 @@
 
 			<div class="form-group">
 			<select class="custom-select" name="category" required>
-					<option selected>Select Category</option>
+					<option selected="selected" disabled="disabled" value="">Select Category</option>
 					{{#each categories}}
 					<option value="{{name}}">{{name}}</option>
 					
@@ -239,6 +239,20 @@
 			</div>
 		</div>
 
+<hr>
+<div class="row">
+	<div class="col-12 tip" style="text-align:left!important"  id="help-btn">
+		<i class="fa fa-question-circle"></i>
+
+		<span class="tiptext hidden" id="help-txt">Please Enter Time Format as HH:MM:PM<br>Ex. 10:00:AM
+  		</span>
+	</div>
+
+	<div class="col-6">
+
+	</div>
+</div>
+
 
 
 <div class="row">
@@ -247,7 +261,7 @@
 			<div class="input-group-prepend">
 				<span class="input-group-text">Start Time</span>
 			</div>
-			<input class="form-control" type="time" name="timestart" required>
+			<input class="form-control" id="start-time" type="time" name="timestart" required>
 		</div>
 	</div>
 	<div class="col-6">
@@ -312,6 +326,16 @@
 			var newCat = document.getElementById("category-input").value;
 			alert(newCat);
 			var category = {"name": newCat};
+		})
+
+
+
+		$("#help-btn").click(function(event){
+			document.getElementById("help-txt").classList.toggle("hidden");
+		})
+
+		$("#start-time").focus(function(event){
+			document.getElementById("help-txt").classList.remove("hidden");
 		})
 
 	</script>
