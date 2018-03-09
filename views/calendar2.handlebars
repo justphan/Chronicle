@@ -2,20 +2,7 @@
 
 <html>
 <head>
-<!-- Google Analytics Content Experiment code -->
-<script>function utmx_section(){}function utmx(){}(function(){var
-k='170943927-2',d=document,l=d.location,c=d.cookie;
-if(l.search.indexOf('utm_expid='+k)>0)return;
-function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
-indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
-length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
-'<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
-'://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
-'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
-valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
-'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
-</script><script>utmx('url','A/B');</script>
-<!-- End of Google Analytics Content Experiment code -->
+
 
 	<title>Calendar</title>
 	<meta charset="utf-8">
@@ -36,16 +23,13 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 
 	
 	
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
-
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-	<script src="js/burgermenu.js"> </script>
+
 
 </head>
 <body class="bootstrap-override">
+
 	
 <nav class="navbar fixed-top navbar-expand bg-faded navbar-light" id="navbar-header">
 <div class="top">
@@ -72,6 +56,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 
 
 
+
 <nav class="menu" id="hamburger-pullout" style="height:88%">
 		<a href="/calendar2" class="active item_menu" style="font-size:16px; font-family:Lato, cursive"><i class="fas fa-calendar-alt"  style="font-size: 16px; margin-right:5px;"></i> Calendar</a>
 		<a href="/graph" class="item_menu" style="font-size:16px; font-family:Lato, cursive"><i class="fas fa-chart-pie  item_menu"  style="font-size: 16px; margin-right:5px"></i> Your Activity</a>
@@ -80,8 +65,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 </nav>
 
 
-
-
+	
 
 	
 			<a href="/addevent"><i id="add-event-button" class="fas fa-plus-circle  item_menu"  style="font-size: 52px"></i></a>
@@ -99,24 +83,9 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 		var jsonObj = JSON.parse(decodedJson);
 		console.log(jsonObj);
 		var eventsArray = jsonObj; 
-		/*var date = new Date(eventsArray[0]);
-		
-		var d = date.getDate();
-
-		var mm = date.getMonth()+1;
-		var y = date.getFullYear();
-		if(d<10)
-			d='0'+d;
-		if(mm<10)
-			mm='0'+mm;
-
-		var today = y+'-'+mm+'-'+d;*/
 
 		document.getElementById('datePicker').defaultValue = eventsArray[0];
 
-		//console.log(jsonObj.accounts);
-		//console.log(jsonObj.accounts.0);
-		//var localdata = "{{accounts.0.events}}";
 
 		console.log("eventsArray.length="+eventsArray.length)
 
@@ -130,7 +99,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 				div.classList.add("mb-3");
 				div.classList.add("eventCard");
 				div.innerHTML = 
-				'<div class="card-header">' + eventsArray[x].timestart + ' - ' + eventsArray[x].timeend + '</div> <div class="card-block"><h5 class="card-title">' + eventsArray[x].name + '</h5><p class="card-text">Category: ' + eve.category.name + '</p><form method="get" action="/edit"><input type="hidden" name="timestart" value="' + eventsArray[x].timestart + '"/><input type="hidden" name="timeend" value="' + eventsArray[x].timeend + '"/><input type="hidden" name="name" value="' + eventsArray[x].name + '"/><input type="hidden" name="category" value="' + eve.category.name + '"/>' + '<input type="hidden" name="date" value="' + eventsArray[x].date + '"/><button class="btn btn-primary" type="submit">Edit</button></form></div></div><hr>';
+				'<div class="card-header">' + eventsArray[x].timestart + ' - ' + eventsArray[x].timeend + '</div> <div class="card-block"><h5 class="card-title">' + eventsArray[x].name + '</h5><p class="card-text">Category: ' + eve.category.name + '</p><form method="get" action="/edit"><input type="hidden" name="timestart" value="' + eventsArray[x].timestart + '"/><input type="hidden" name="timeend" value="' + eventsArray[x].timeend + '"/><input type="hidden" name="name" value="' + eventsArray[x].name + '"/><input type="hidden" name="category" value="' + eve.category.name + '"/>' + '<input type="hidden" name="date" value="' + eventsArray[x].date + '"/><button class="btn btn-primary" type="submit">Edit</button></form></div></div>';
 
 				
 				var color = eve['category']['color'];				/*
@@ -164,61 +133,11 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 		
 
 	</script>
-<!--
-		{{#each accounts.0.events}}
-		<script>console.log("event going in");</script>
-
-		<div class="card mb-3">
-				<div class="card-header"> {{timestart}} - {{timeend}}
-				</div>
-				<div class = "card=body">
-					<h5 class="card=title">{{name}}</h5>
-					<p class="card=text">insert more info here</p>
-				</div>
-
-		{{/each}}
--->
-
-
-
-
-		<!-- TODO: option to click on events to edit -->
-		<script>
-		$("div.eventCard").click(function(event){
-			event.preventDefault();
-			eventsArray[x].timestart
-			eventsArray[x].timeend
-			//get timestart, timeend, and name
-			//somehow put this into the json file by editing in the spots instead of pushing all the data
-			/*alert("this event was clicked.  Edit page coming soon");*/
-		});
-
-		</script>
-    <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-115181899-1', 'auto');
-    ga('send', 'pageview');
-  </script>
-
-
-<script>
-$(document).ready(function() {
-	initializePage();
-});
-
-/*
- * Function that is called when the document is ready.
- */
-function initializePage() {
-	// your code here
-	$("#add-event-button").click(callAnalytics);
-}
-
-function callAnalytics(e) {
-	ga("send", "event", "addevent2", "click");
-}
-</script>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+	
+	<script src="js/burgermenu.js"> </script>
 
 </body>
 
