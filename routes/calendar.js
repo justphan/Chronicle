@@ -65,7 +65,7 @@ exports.date = function(req,res){
 		}
 	}
 	//res.render('calendar', data);
-	res.render('calendar', {encodedJson : encodeURIComponent(JSON.stringify(events))});
+	res.render('calendar2', {encodedJson : encodeURIComponent(JSON.stringify(events))});
 }
 
 exports.view2 = function(req,res){

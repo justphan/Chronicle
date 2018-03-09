@@ -132,7 +132,7 @@ exports.editEvent = function(req, res){
 		}
 	}
 
-	res.render('calendar', {encodedJson : encodeURIComponent(JSON.stringify(events))});
+	res.render('calendar2', {encodedJson : encodeURIComponent(JSON.stringify(events))});
 }
 
 
