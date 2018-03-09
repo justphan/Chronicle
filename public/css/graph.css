@@ -130,3 +130,13 @@ footer {
     
 }
 
+.button-div{
+	width:25%;
+}
+
+#centerMsg{
+	padding-top: 60%;
+	text-align: center;
+	font-size:24px;
+	color:gray;
+}

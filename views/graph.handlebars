@@ -187,12 +187,14 @@
 
 
 
-	0<!-- <div class="navbad bootstrap-override2" style="padding-top: 50px">
-		<a href="/graph" style="font-size: 16px" class="graph active">Day</a>
-		<a href="/graphweek" style="font-size: 16px" class="graph">Week</a>
-		<a href="/graphmonth" style="font-size: 16px" class="graph">Month</a>
-		<a href="/graphyear" style="font-size: 16px" class="graph">Year</a>
-	</div> -->
+	<div class="btn-group btn-group-lg" role="group" style="width: 80%;   margin: auto 10%;  margin-top: 80px;">
+		<div class="button-div"><a href="/graph" style="font-size: 16px" class="graph active"><button type="button " class="btn btn-secondary btn-block">Day</button></a></div>
+		<div class="button-div"><a href="/graphweek" style="font-size: 16px" class="graph"><button type="button" class="btn btn-secondary btn-block">Week</button></a></div>
+		<div class="button-div"><a href="/graphmonth" style="font-size: 16px" class="graph"><button type="button" class="btn btn-secondary btn-block">Month</button></a></div>
+		<div class="button-div"><a href="/graphyear" style="font-size: 16px" class="graph"><button type="button" class="btn btn-secondary btn-block">Year</button></a></div>
+	</div> 
+
+	<p id="centerMsg">No Events Added Today<br><i id="calendar-icon" class="fas fa-calendar-alt"></i></p>
 
 	<!-- <div class="navbad bootstrap-override">
 		<a href="/calendar"><i class="fas fa-calendar-alt"  style="font-size: 16px"></i><br>Calendar</a>
@@ -232,6 +234,14 @@
 	<div id="piechart" style="padding-top: 50px"></div>
 	<div id="barChart"> </div>
 <!-- Global site tag (gtag.js) - Google Analytics -->
+
+	<script>
+	if(jsonObj[1].length > 0){
+		document.getElementById("centerMsg").style.display="none";
+	}
+
+</script>
+
 	<script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
