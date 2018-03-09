@@ -255,7 +255,7 @@ exports.changeColor = function(req, res) {
 			account.categories[x]['colorname'] = req.query.color;
 		}
 	}
-	res.render('settings', account.categories);
+	res.render('settings', account);
 }
 
 function timeToString(starttime, endtime, meridiem){
