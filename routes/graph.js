@@ -22,10 +22,11 @@ exports.view = function(req,res){
 	var year;
 	var eventDate;
 	for(var x = 0; x < eventsArray.length; x++){
+		var date1 = eventsArray[x]['date'];
 		month = eventsArray[x]['month'];
 		date = eventsArray[x]['day'];
 		year = eventsArray[x]['year'];
-		eventDate = new Date(year, month, date);
+		eventDate = new Date(date1); //new Date(year, month, date);
 		if((today - eventDate) < (24*60*60*1000)) {
 			events.push(eventsArray[x]);
 		}
@@ -52,10 +53,11 @@ exports.week = function(req,res){
 	var year;
 	var eventDate;
 	for(var x = 0; x < eventsArray.length; x++){
+		var date1 = eventsArray[x]['date'];
 		month = eventsArray[x]['month'];
 		date = eventsArray[x]['day'];
 		year = eventsArray[x]['year'];
-		eventDate = new Date(year, month, date);
+		eventDate = new Date(date1); //new Date(year, month, date);
 		if((today - eventDate) < (7*24*60*60*1000)) {
 			events.push(eventsArray[x]);
 		}
@@ -82,10 +84,11 @@ exports.month = function(req,res){
 	var year;
 	var eventDate;
 	for(var x = 0; x < eventsArray.length; x++){
+		var date1 = eventsArray[x]['date'];
 		month = eventsArray[x]['month'];
 		date = eventsArray[x]['day'];
 		year = eventsArray[x]['year'];
-		eventDate = new Date(year, month, date);
+		eventDate = new Date(date1); //new Date(year, month, date);
 		if((today - eventDate) < (30*24*60*60*1000)) {
 			events.push(eventsArray[x]);
 		}
@@ -112,10 +115,11 @@ exports.year = function(req,res){
 	var year;
 	var eventDate;
 	for(var x = 0; x < eventsArray.length; x++){
+		var date1 = eventsArray[x]['date'];
 		month = eventsArray[x]['month'];
 		date = eventsArray[x]['day'];
 		year = eventsArray[x]['year'];
-		eventDate = new Date(year, month, date);
+		eventDate = new Date(date1); //new Date(year, month, date);
 		if((today - eventDate) < (365*24*60*60*1000)) {
 			events.push(eventsArray[x]);
 		}
