@@ -7,10 +7,10 @@ exports.addAccount = function(req, res){
 		"events":[],
 		"categories": [
 				{ "name": "Work",
-				"color": "linear-gradient(#9cecfb, #65c7f7, #0052d4)",
+				"color": "linear-gradient(rgb(29, 200, 232), rgb(17, 157, 183))",
 				"colorname": "blue"},
 				{ "name": "Leisure",
-				"color": "linear-gradient(#dce35b, #45b649)",
+				"color": "linear-gradient(rgb(22, 210, 22), rgb(18, 146, 18))",
 				"colorname": "green"},
 				{ "name": "Exercise",
 				"color": "linear-gradient(#EA384D, #b31217)",

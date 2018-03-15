@@ -171,17 +171,17 @@ exports.addCategory = function(req, res) {
 	if(newcolor == "red")
 		newcolor = "linear-gradient(#EA384D, #b31217)";
 	else if (newcolor == "orange")
-		newcolor = "linear-gradient(45deg, #fc4a1a, #f7b733)";
+		newcolor = "linear-gradient(45deg, rgb(252, 137, 26), rgb(222, 102, 0))";
 	else if (newcolor == "yellow")
-		newcolor = "linear-gradient(#fffc00, #ffffff)";
+		newcolor = "linear-gradient(#fffd28, #dad831)";
 	else if (newcolor == "green")
-		newcolor = "linear-gradient(#dce35b, #45b649)";
+		newcolor = "linear-gradient(rgb(22, 210, 22), rgb(18, 146, 18))";
 	else if (newcolor == "blue")
-		newcolor = "linear-gradient(#9cecfb, #65c7f7, #0052d4)";
+		newcolor = "linear-gradient(rgb(29, 200, 232), rgb(17, 157, 183))";
 	else if (newcolor == "purple")
-		newcolor = "linear-gradient(#20002c, #cbb4d4)";
+		newcolor = "linear-gradient(rgb(200, 55, 255), rgb(157, 58, 195))";
 	else
-		newcolor = "linear-gradient(#bdc3c7, #2c3e50)";
+		newcolor = "linear-gradient(rgb(189, 195, 199), rgb(127, 132, 136))";
 
 
 	var category = {
@@ -237,17 +237,17 @@ exports.changeColor = function(req, res) {
 	if(newcolor == "red")
 		newcolor = "linear-gradient(#EA384D, #b31217)";
 	else if (newcolor == "orange")
-		newcolor = "linear-gradient(#ff7e5f, #feb47b)";
+		newcolor = "linear-gradient(45deg, rgb(252, 137, 26), rgb(222, 102, 0))";
 	else if (newcolor == "yellow")
-		newcolor = "linear-gradient(#fffc00, #ffffff)";
+		newcolor = "linear-gradient(#fffd28, #dad831)";
 	else if (newcolor == "green")
-		newcolor = "linear-gradient(#dce35b, #45b649)";
+		newcolor = "linear-gradient(rgb(22, 210, 22), rgb(18, 146, 18))";
 	else if (newcolor == "blue")
-		newcolor = "linear-gradient(#9cecfb, #65c7f7, #0052d4)";
+		newcolor = "linear-gradient(rgb(29, 200, 232), rgb(17, 157, 183))";
 	else if (newcolor == "purple")
-		newcolor = "linear-gradient(#20002c, #cbb4d4)";
+		newcolor = "linear-gradient(rgb(200, 55, 255), rgb(157, 58, 195))";
 	else
-		newcolor = "linear-gradient(#bdc3c7, #2c3e50)";
+		newcolor = "linear-gradient(rgb(189, 195, 199), rgb(127, 132, 136))";
 
 	for (var x = 0; x < account.categories.length; x++) {
 		if(category == account.categories[x]['name']) {
