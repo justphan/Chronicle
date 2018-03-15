@@ -44,19 +44,19 @@
 	<div>
 		<br>
 <br><form id="addCategoryForm" role="form" method="get" action="/addcategory">
-			<h2 style="color:#464673">Add Category</h2>
+			<h2 style="color:#464673; font-size: large">Add Category</h2>
 			<div class="input-group mb-3">
 				<div class="input-group-prepend">
-					<span class="input-group-text" style="color:lightgray" style="font-size: large">Category</span>
+					<span class="input-group-text" style="height: 50px; font-size: large">Category</span>
 				</div>
-				<input class="form-control" type="text" name="name" style="color:#464673" style="height: 50px" required><br>
+				<input class="form-control" type="text" name="name" style="color:#464673; height:50px; font-size: large" required><br>
 			</div>
 			
 			<div class="input-group mb-3">
 				<div class="input-group-prepend">
-					<span class="input-group-text" style="color:lightgray" style="font-size: large">Color</span>
+					<span class="input-group-text" style="height: 50px; font-size: large">Color</span>
 				</div>
-				<select class="custom-select" name="color" style="height: 50px; font-size: large" style="color:#464673">
+				<select class="custom-select" name="color" style="height: 50px; font-size: large; color:#464673">
 					<option value="red">Red</option>
 					<option value="orange">Orange</option>
 					<option value="yellow">Yellow</option>
@@ -81,9 +81,9 @@
 			<h2 style="color:#464673">Change Color</h2>
 			<div class="input-group mb-3">
 				<div class="input-group-prepend">
-					<span class="input-group-text" style="font-size: large">Category</span>
+					<span class="input-group-text" style="font-size: large; height: 50px">Category</span>
 				</div>
-				<select class="custom-select" name="category" style="font-size: large; height: 50px">
+				<select class="custom-select" name="category" style="font-size: large; height: 50px; color:#464673">
 					{{#each categories}}
 					<option value="{{name}}">{{name}}</option>
 					{{/each}}
@@ -93,9 +93,9 @@
 
 			<div class="input-group mb-3">
 				<div class="input-group-prepend">
-					<span class="input-group-text" style="font-size: large">Color</span>
+					<span class="input-group-text" style="font-size: large; height: 50px">Color</span>
 				</div>
-				<select class="custom-select" name="color" style="font-size: large; height: 50px">
+				<select class="custom-select" name="color" style="font-size: large; height: 50px; color:#464673">
 					<option value="red">Red</option>
 					<option value="orange">Orange</option>
 					<option value="yellow">Yellow</option>
@@ -124,7 +124,7 @@
 				<div class="input-group-prepend" >
 					<span class="input-group-text" style="font-size: large">Category</span>
 				</div>
-				<select class="custom-select" name="category" style="font-size: large; height: 50px">
+				<select class="custom-select" name="category" style="font-size: large; height: 50px; color:#464673">
 					{{#each categories}}
 					<option value="{{name}}">{{name}}</option>
 					{{/each}}

@@ -33,8 +33,8 @@
 	<script src="js/burgermenu.js"> </script>
 </head>
 
-<body class="text-center">
-
+<body style="padding-top:50px" class="text-center">
+	
 
 	<div class="main">
 
@@ -211,7 +211,7 @@
 
 		<h3  style="font-family:Lobster, cursive; color:#464673">Add Event</h3>
 
-
+		<hr>
 
 
 		<!-- <i id="calendar-icon" class="fas fa-calendar-plus"></i> -->
@@ -219,23 +219,23 @@
 		
 
 		<div class="input-group mb-3 input-group-lg"> 
-			<input class="form-control" placeholder="New Event Name" type="text" name="name">
+			<input style="height:50px; font-size: large" class="form-control" placeholder="New Event Name" type="text" name="name">
 		</div>
 
 		<div>
 
 			<div class="input-group mb-3">
 				<div class="input-group-prepend">
-					<span class="input-group-text">Date</span>
+					<span style="height:50px; font-size: large" class="input-group-text">Date</span>
 				</div>
-				<input type="date" class="form-control" name="date" required>
+				<input style="height:50px; font-size: large" type="date" class="form-control" name="date" required>
 			</div>
 
 			<div class="form-group">
-			<select class="custom-select" name="category" required>
-					<option selected="selected" disabled="disabled" value="">Select Category</option>
+			<select style="height:50px; font-size: large" class="custom-select" name="category" required>
+					<option style="font-size: large" selected="selected" disabled="disabled" value="">Select Category</option>
 					{{#each categories}}
-					<option value="{{name}}">{{name}}</option>
+					<option style="font-size: large" value="{{name}}">{{name}}</option>
 					
 					{{/each}}
 			</select>
@@ -262,16 +262,16 @@
 
 		<div class="input-group mb-3 input-group-sm">
 			<div class="input-group-prepend">
-				<span class="input-group-text">Start Time</span>
+				<span style="height:50px; font-size: large" class="input-group-text">Start Time</span>
 			</div>
-			<input class="form-control" id="start-time" type="time" name="timestart" required>
+			<input style="height:50px; font-size: large" class="form-control" id="start-time" type="time" name="timestart" required>
 		</div>
 
 		<div class="input-group mb-3 input-group-sm">
 			<div class="input-group-prepend">
-				<span class="input-group-text">End Time</span>
+				<span style="height:50px; font-size: large" class="input-group-text">End Time</span>
 			</div>
-			<input class="form-control" type="time" name="timeend" required>
+			<input style="height:50px; font-size: large" class="form-control" type="time" name="timeend" id="end-time" required>
 		</div>
 
 		<hr>
@@ -291,13 +291,13 @@
 
 						<div class="cancel">
 
-							<a href="/calendar2" id="cancel-btn" class="btn btn-default">Cancel</a>
+							<a href="/calendar2" id="cancel-btn" class="btn btn-lg bad-btn">Cancel</a>
 
 						</div>
 		
 						<div class="save">
 
-							<button class="btn btn-primary" id="save-btn" type="submit">Save</button>
+							<button class="btn btn-lg btn-primary btn-block" style="font-size: large" id="save-btn" type="submit">Save</button>
 
 						</div>
 	
@@ -334,6 +334,10 @@
 		})
 
 		$("#start-time").focus(function(event){
+			document.getElementById("help-txt").classList.remove("hidden");
+		})
+
+		$("#end-time").focus(function(event){
 			document.getElementById("help-txt").classList.remove("hidden");
 		})
 
